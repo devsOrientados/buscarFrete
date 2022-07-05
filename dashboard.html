@@ -16,6 +16,35 @@
             <!--<div class="sidebar_usuario"></div> -->
         </figure>
     </header>
-    
+
+    <main>
+        <section class="dados">
+
+            <div class="dados_img" >
+                <p class="title_img">Imagem</p>
+            </div>
+
+           <div id="input_img">
+            <input class="selecionar_img" type="file" accept="image/*" oninput="displayImagem()">
+           </div>
+
+           <div class="dados_usuario">
+          
+            <input type="text" placeholder="nome" value="">
+            <input type="tel" placeholder="whatsapp/telefone"  value="">
+            <input type="text" placeholder="preço do frete"  value="">
+            <input type="text" placeholder="enderenço"  value="">
+            <input type="email" placeholder="email"  value="">
+
+            <div>
+            <button class="atualizar">ATUALIZAR</button>
+            <button type="reset" class="limpar">LIMPAR</button>
+            </div>
+        
+           </div>
+        </section>
+    </main>
+
+    <script type="text/javascript" src="assets/js/inputs.js"></script>    
 </body>
 </html>
