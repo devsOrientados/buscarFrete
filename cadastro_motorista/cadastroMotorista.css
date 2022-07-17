@@ -30,11 +30,18 @@ h3 {
     font-size: 24px;
     font-weight: bold;
     background-color:#CB3506;
-    color:#F2F2F2;
-    box-sizing:border-box;
-    border: 3px solid #0000;
-   
+    color:#F2F2F2; 
+    display: flexbox;
+    border: solid 3px black;
+    width: 30vh ;
+    padding: auto;
+    text-align: center;
 }
+
+section {
+    display: inline-flexbox;
+}
+
 
 footer {
     background-color: gray;

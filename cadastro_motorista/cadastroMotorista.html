@@ -23,18 +23,24 @@
     <section class="cadastroMotorista">
         <form>
             <h3 class="dadosPessoais">Dados Pessoais</h3> 
+                <section class="coluna2">
                 <div>
-                    <label for="nome">Nome:</label> 
+                    <label for="nome">Nome:</label>
+                    <br> 
                     <input type="text" name="nome" id="nome" placeholder="digite seu nome" required>
                 </div>
                 <div>
                     <label for="sobrenome">Sobrenome:</label> 
+                    <br>
                     <input type="text"name="sobrenome" id="sobrenome" placeholder="digite seu sobrenome" required >
                 </div>
                 <div>
                     <label for="cpf">CPF:</label> 
+                    <br>
                     <input type="number"name="cpf" id="cpf" placeholder="digite o CPF, apenas números" required >
                 </div>
+                </section>
+                <section class="coluna3">
                 <div>
                     <label for="email">Email:</label> 
                     <input type="email"name="email" id="email" placeholder="digite um email válido" required  >
@@ -47,6 +53,8 @@
                     <label for="cnh">CNH:</label> 
                     <input type="number"name="cnh" id="cnh" placeholder="digite o número da sua CNH" required  >
                 </div>
+                </section>
+                <section class="coluna4">
                 <div>
                     <label for="categoria">Categoria da sua CNH:</label> 
                     <select id="categoria" name="categoria">
@@ -65,7 +73,8 @@
                 <div>
                     <label for="senha2">Confirme sua senha:</label>
                     <input type="password"name="senha2" id="senha2" placeholder="repita a mesma senha" required >
-                </div>    
+                </div>
+            </section>     
             <h3 class="seuServico">Seu Serviço</h3> 
                 <div>
                     <label for="cep">CEP:</label> 
@@ -138,34 +147,15 @@
                     <label for="autoDescricao">Escreva sobre você para seus clientes te conhecerem:</label>
                     <textarea name="autoDescricao" id="autoDescricao">Sobre você</textarea>
                 </div>
+        </form>       
     </section>
-    <section class="cadastroVeiculo">
-        <form>
-            <h3 class="cadastroVeiculo">Mostre seu veículo</h3>
-                <div>    
-                    <label for="veiculo">Modelo:</label> 
-                    <input type="text"name="veiculo" id="veiculo" placeholder="Modelo do veículo">
-                </div>
-                <div>    
-                    <label for="anoVeiculo">Ano:</label> 
-                    <input type="year"name="anoVeiculo" id="anoVeiculo" placeholder="Ano de fabricação do veículo">
-                </div>
-                    <input type="file" name="fotoVeículo1" accept="image/*">
-                    <input type="file" name="fotoVeículo2" accept="image/*">
-                    <input type="file" name="fotoVeículo3" accept="image/*">
-                </div>
-                <button type="submit" name="cadastrarmais">Cadastrar veículo</button>
-        </form>
-    </section>    
-                <button type="reset" name="resetar">CANCELAR</button>
-                <button type="submit" name="cadastrogeral">CADASTRAR</button>     
-        </form>
+    <div)>
+        <button type="reset" name="resetar">CANCELAR</button>
+        <button type="submit" name="cadastrogeral">CADASTRAR</button> 
     </div>
 
  
 </main>
 
 </body>
-
-
-
+</html>
