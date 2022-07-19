@@ -83,3 +83,23 @@ input{
     width: 90px;
     cursor: pointer;
 }
+
+.estatisticas{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 220px;
+}
+
+.estatisticas__titulo{
+    color: black;
+    font-size: 26px;
+}
+
+.estatisticas__dados{
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+}
