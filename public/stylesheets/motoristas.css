@@ -1,0 +1,32 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+body > header {
+    background-color: #ff8c00;
+    min-height: 10%;
+}
+
+main {
+    background-color: #ffffff;
+    min-height: 80%;
+}
+
+footer {
+    background-color: #d3d3d3;
+    min-height: 10%;
+}
+
+.rodape {
+    display: flex;
+    align-items: flex-end;
+}
