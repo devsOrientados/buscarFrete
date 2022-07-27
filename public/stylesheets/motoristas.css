@@ -16,17 +16,50 @@ body > header {
     min-height: 10%;
 }
 
+.logo-marca:hover {
+    background-color: #d3d3d3;
+    color: orange;
+    transition: 
+    background-color 0,5s,
+    color 0,5s;
+
+}
+
+.logo-marca {
+    display: flexbox;
+    color: black;
+    line-height: 20px;
+    width: 130px;
+    margin-left: 50px;
+}
+
+.inicio:hover {
+    background-color: #d3d3d3;
+    color: orange;
+    transition: 
+    background-color 0,5s,
+    color 0,5s;
+}
+
+.inicio {
+    display: flexbox;
+    line-height: 20px;
+    width: 100px;
+    margin-left: 40px;
+    margin-top: 13px;
+}
+
 main {
     background-color: #ffffff;
     min-height: 80%;
 }
 
+.painel-principal {
+    display: flexbox;
+    text-align: center;
+}
+
 footer {
     background-color: #d3d3d3;
     min-height: 10%;
-}
-
-.rodape {
-    display: flex;
-    align-items: flex-end;
 }
