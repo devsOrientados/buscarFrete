@@ -4,24 +4,27 @@
     box-sizing: border-box;
 }
 
-body {
+/*body {
     display: flex;
     flex-direction: column;
     height: 100vh;
     width: 100vw;
 }
-
+*/
 body > header {
     background-color:#CB3506;
     color:#F2F2F2;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-
+    border-bottom: 3px solid gray;
 }
 
-
+p{
+    border-bottom: 1px solid gray;
+    margin-bottom: 3px;
+}
 main {
-    background-color:#F2F2F2;
+    /*background-color:#F2F2F2;*/
     color: black;
     font-family:Arial, Helvetica, sans-serif;
 }
@@ -31,16 +34,56 @@ h3 {
     font-weight: bold;
     background-color:#CB3506;
     color:#F2F2F2; 
-    display: flexbox;
+    display: inline;
     border: solid 3px black;
-    width: 30vh ;
-    padding: auto;
+    padding: 10px;
     text-align: center;
+    margin: 10px;
+    line-height:5px;
+    box-sizing: border-box;
+    position:relative;
+    bottom:50%;    
 }
 
-section {
-    display: inline-flexbox;
+
+.dadospessoais{
+    position:relative;
+    padding: 1rem;
+    line-height: 1.7rem;
 }
+
+.segunda{
+    display:inline-block;
+    position: relative;
+    left: 25%;
+}
+
+.terceira{
+    display:inline-block;
+    position: relative;
+    left: 50%;
+}
+
+.quarta{
+    position: relative;
+    left: 75%;
+}
+
+input {
+    border-radius:5px;
+    border-style: groove;  
+    position:relative;
+}
+
+
+input:hover{
+    border: solid 0.25em; 
+}
+
+input:focus{
+    color:red; /*checar melhor cor*/
+}
+
 
 
 footer {
