@@ -5,158 +5,34 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cadastro do Motorista</title>
-        <link rel="stylesheet" href="cadastroMotorista.css">
+        <link rel="stylesheet" href="styleCadastro.css">
     </head>
-</html>
+
 
 <!-- cadastro do motorista, entrada dos dados para o anuncio -->
-<body>
 <header>
-    <h1>
-        Cadastro do Motorista
-    </h1>
-    
+    <h1 class="titulo">Cadastro do Motorista</h1>
 </header>
 
-<main>
+<body>
     <p>Precisamos que você preencha corretamente seu casdastro para disponibilizar o seu contato para os interessados em seu serviço de frete.</p>
-    <form>
-    <!-- dados pessoais em 4 colunas-->
-        <section class="dadospessoais">
-            <h3>Dados Pessoais</h3> 
-                <section class="segunda coluna">
-                <spam>
-                    <label for="nome">Nome:</label>
-                    <input type="text" name="nome" id="nome" placeholder="digite seu nome" required>
-                </spam>
-                <spam>
-                    <label for="sobrenome">Sobrenome:</label>
-                    <input type="text"name="sobrenome" id="sobrenome" placeholder="digite seu sobrenome" required >
-                </spam>
-                <spam>
-                    <label for="cpf">CPF:</label> 
-                    <input type="number"name="cpf" id="cpf" placeholder="digite o CPF, apenas números" required >
-                </spam>
-                </section>
-                <section class="terceira coluna">
-                <div>
-                    <label for="email">Email:</label> 
-                    <input type="email"name="email" id="email" placeholder="digite um email válido" required  >
-                </div>
-                <div>
-                    <label for="telefone">Telefone para contato:</label> 
-                    <input type="tel"name="telefone" id="telefone" placeholder="(11)11111-1111" required  >
-                </div>
-                <div>
-                    <label for="cnh">CNH:</label> 
-                    <input type="number"name="cnh" id="cnh" placeholder="digite o número da sua CNH" required  >
-                </div>
-                </section>
-                <section class="quarta coluna">
-                <div>
-                    <label for="categoria">Categoria da sua CNH:</label> 
-                    <select id="categoria" name="categoria">
-                        <option value="" selected hidden>selecione</option>
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="C">C</option>
-                        <option value="D">D</option>
-                        <option value="E">E</option>
-                    </select>
-                </div>
-                <div>    
-                    <label for="senha">Senha:</label> 
-                    <input type="password"name="senha" id="senha" placeholder="sua senha" required >
-                </div>
-                <div>
-                    <label for="senha2">Confirme sua senha:</label>
-                    <input type="password"name="senha2" id="senha2" placeholder="repita a mesma senha" required >
-                </div>
-            </section> 
-        </section>
-    <!--dados do serviço -->
-            <h3 class="seuServico">Seu Serviço</h3> 
-                <div>
-                    <label for="cep">CEP:</label> 
-                    <input type="number" name="cep" id="cep" placeholder="digite o CEP, apenas números" required>
-                </div>
-                <div>
-                    <label for="logradouro">Logradouro:</label> 
-                    <input type="text"name="logradouro" id="logradouro" placeholder="digite o logradouro" required  >
-                </div>
-                <div>
-                    <label for="numero">Numero:</label>
-                    <input type="number"name="numero" id="numero" placeholder="digite o número" required >
-                </div> 
-                <div>
-                    <label for="bairro">Bairro:</label> 
-                    <input type="text"name="bairro" id="bairro" placeholder="digite o bairro" required >
-                </div>
-                <div>    
-                    <label for="cidade">Cidade:</label> 
-                    <input type="text"name="cidade" id="cidade" placeholder="cidade principal" required >
-                </div>
-                <div>
-                    <label for="Estado">Estado:</label> 
-                    <select id="Estado" name="estado">
-                        <option value="" selected hidden>Estado</option>
-                        <option value="AC">Acre</option>
-                        <option value="AL">Alagoas</option>
-                        <option value="AP">Amapá</option>
-                        <option value="AM">Amazonas</option>
-                        <option value="BA">Bahia</option>
-                        <option value="CE">Ceará</option>
-                        <option value="DF">Distrito Federal</option>
-                        <option value="ES">Espírito Santo</option>
-                        <option value="GO">Goiás</option>
-                        <option value="MA">Maranhão</option>
-                        <option value="MT">Mato Grosso</option>
-                        <option value="MS">Mato Grosso do Sul</option>
-                        <option value="MG">Minas Gerais</option>
-                        <option value="PA">Pará</option>
-                        <option value="PB">Paraíba</option>
-                        <option value="PR">Paraná</option>
-                        <option value="PE">Pernambuco</option>
-                        <option value="PI">Piauí</option>
-                        <option value="RJ">Rio de Janeiro</option>
-                        <option value="RN">Rio Grande do Norte</option>
-                        <option value="RS">Rio Grande do Sul</option>
-                        <option value="RO">Rondônia</option>
-                        <option value="RR">Roraima</option>
-                        <option value="SC">Santa Catarina</option>
-                        <option value="SP">São Paulo</option>
-                        <option value="SE">Sergipe</option>
-                        <option value="TO">Tocantins</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="serviço">Selecione o alcance das viagens que pretende fazer:</label>
-                    <input type="radio" name="serviço" value="viagens locais">
-                    <label>Viagens locais</label>
-                    <input type="radio" name="serviço" value="viagens intermunicipais">
-                    <label>Viagens intermunicipais</label>
-                    <input type="radio" name="serviço" value="viagens interestaduais">
-                    <label>Viagens interestaduais</label>
-                </div>   
 <!-- dados do perfil--> 
-            <h3 class="seuPerfil">Seu perfil</h3>
-                <div>
-                    <label>Sua foto de perfil</label>
-                    <input type="file" name="fotoPerfil" accept="image/*">
-                </div>
-                <div>
-                    <label for="autoDescricao">Escreva sobre você para seus clientes te conhecerem:</label>
-                    <textarea name="autoDescricao" id="autoDescricao">Sobre você</textarea>
-                </div>
-        </form>       
-    </section>
-    <div)>
-        <button type="reset" name="resetar">CANCELAR</button>
-        <button type="submit" name="cadastrogeral">CADASTRAR</button> 
-    </div>
-
- 
-</main>
+<form>                 
+    <h3 class="seuPerfil">Seu perfil</h3>
+        <div>
+            <label for="autoDescricao">Escreva sobre você para seus clientes te conhecerem:</label>
+            <textarea name="autoDescricao" id="autoDescricao">Sobre você</textarea>
+        </div>
+            <div>
+                <label>Sua foto de perfil</label>
+                <input type="file" name="fotoPerfil" accept="image/*">
+            </div>
+            <div)>
+                <button type="reset" name="resetar">CANCELAR</button>
+                <button type="submit" name="cadastrogeral">CADASTRAR</button> 
+            </div>
+    </form>   
 
 </body>
+
 </html>
