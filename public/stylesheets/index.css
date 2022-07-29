@@ -1,0 +1,43 @@
+.paginaInicial{
+    display: block;
+    width: 100%;
+    height: 140px;
+    background-color: #ff8c00;
+}
+
+.Nav_paginaInicial{
+    display: flex;
+    flex-direction: row;
+}
+
+.logoBuscarFrete{
+    display: block;
+    width: 150px;
+}
+
+.container_menu{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu_buscarFrete{
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    cursor: pointer;
+}
+
+.menu_buscarFrete{
+    text-decoration: none;
+    list-style: none
+}
+
+.menu_buscarFrete li a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    text-shadow: 0 0 2px red;
+    cursor: pointer;
+}
