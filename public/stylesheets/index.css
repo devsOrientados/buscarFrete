@@ -73,6 +73,71 @@
     background: #ffffff;
 }
 
- .slick-active button{
+.slick-active button{
     background-color: #4f4f4f !important;
- }
+}
+
+.information__website{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
+}
+
+.imagem_information{
+    display: block;
+    width: 600px;
+}
+
+.section_consultar{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 40px;
+}
+
+.section_login{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.section_login h3{
+    font-size: 40px;
+}
+
+.container_botoes{
+    display:inline-flex;
+    flex-wrap: wrap;
+    gap: 26px;
+    margin: 0 auto;
+}
+
+.botoes{
+    display: block;
+    width: 140px;
+    height: 40px;
+    cursor: pointer;
+    border-radius:50px ;
+    border: none;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.no_active{
+    background-color: #000000;
+    border: 1px solid #000000;
+}
+
+.active{
+    background-color: #cb3506;
+    width: 140px;
+}
+
+.active:hover{
+    background-color: #fff000;
+    color: #000000;
+    border: 1px solid #000;
+}
