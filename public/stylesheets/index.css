@@ -141,3 +141,49 @@
     color: #000000;
     border: 1px solid #000;
 }
+
+.footer__website{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    margin-top: 100px;
+    width: 100%;
+    height: 160px;
+    background-color: #ff8c00;
+}
+
+.contatos{
+    padding-top: 2px;
+    padding-left: 16px;
+    display: block;
+    height: 80px;
+    width: 180px;
+}
+
+.contatos p{
+    font-family: 'Roboto', 'Arial';
+    color: #ffffff;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.rede-sociais {
+    padding-top: 40px;
+    width: 180px;
+    display: block;
+}
+
+.rede-sociais img {
+    min-width: 38px;
+    background-color: #ffffff;
+}
+
+.pagamentos{
+    padding-top: 20px;
+    width: 200px;
+    display: block;
+}
+
+.pagamentos img{
+    width: 50px;
+}
