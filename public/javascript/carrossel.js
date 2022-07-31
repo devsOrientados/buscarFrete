@@ -2,6 +2,8 @@ $('.slide_paginaInicial').slick({
     arrows: false,
     adaptiveHeight: false,
     dots: true,
+    autoplay: true,
+    autoplaySpeed: 6000,
     responsive: [
       {
         breakpoint: 768,
