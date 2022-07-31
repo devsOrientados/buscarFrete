@@ -1,8 +1,13 @@
+body{
+    background-color: #ffffff;
+    outline: none;
+}
+
 .paginaInicial{
     display: block;
     width: 100%;
     height: 140px;
-    background-color: #ff8c00;
+    background-color: #4f4f4f;
 }
 
 .Nav_paginaInicial{
@@ -36,10 +41,10 @@
 
 .menu_buscarFrete li a{
     text-decoration: none;
-    color: black;
+    color: #ffffff;
     font-size: 20px;
-    text-shadow: 0 0 2px red;
     cursor: pointer;
+    font-weight: 600;
 }
 
 .slide_paginaInicial{
@@ -93,20 +98,29 @@
     width: 600px;
 }
 
-.section_consultar{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    font-size: 40px;
-}
-
 .section_login{
     display: flex;
     flex-direction: column;
+    text-align: center;
+    font-size: 48px;
+}
+
+.section_login h1{
+    font-size: 40px;
+    color:#000000;
+    font-weight: 600;
+}
+
+.section_consultar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 40px;
 }
 
-.section_login h3{
+.section_consultar h3{
+    color: #000000;
+    font-weight: 600;
     font-size: 40px;
 }
 
@@ -119,22 +133,23 @@
 
 .botoes{
     display: block;
-    width: 140px;
+    width: 148px;
     height: 40px;
     cursor: pointer;
     border-radius:50px ;
     border: none;
     background-color: #000000;
     color: #ffffff;
+    font-size: 14px;
+    font-weight: 200;
 }
 
 .no_active{
     background-color: #000000;
-    border: 1px solid #000000;
 }
 
 .active{
-    background-color: #cb3506;
+    background: #cb3506;
     width: 140px;
 }
 
@@ -151,7 +166,7 @@
     margin-top: 100px;
     width: 100%;
     height: 160px;
-    background-color: #ff8c00;
+    background-color: #5b5b5b;
 }
 
 .contatos{
