@@ -22,11 +22,9 @@ body > header {
     transition: 
     background-color 0,5s,
     color 0,5s;
-
 }
 
 .logo-marca {
-    display: flexbox;
     color: black;
     line-height: 20px;
     width: 130px;
@@ -42,7 +40,6 @@ body > header {
 }
 
 .inicio {
-    display: flexbox;
     line-height: 20px;
     width: 100px;
     margin-left: 40px;
@@ -54,6 +51,68 @@ main {
     min-height: 80%;
 }
 
+#Estado {
+    line-height: 20px;
+    width: 160px;
+    margin-left: 30px;
+    margin-top: 13px;
+}
+
+#volvo {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    margin-left: 300px;
+    margin-top: 40px;
+}
+
+#scania {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    margin-left: 500px;
+    margin-top: -100px;
+}
+
+#ford {
+    display: flex;
+    width: 100px;
+    height: 60px;
+    margin-left: 700px;
+    margin-top: -84px;
+}
+
+#volkswagen {
+    display: flex;
+    width: 100px;
+    height: 60px;
+    margin-left: 300px;
+    margin-top: 40px;
+}
+
+#mercedes-benz {
+    display: flex;
+    width: 100px;
+    height: 60px;
+    margin-left: 500px;
+    margin-top: -59px;
+}
+
+#iveco {
+    display: flex;
+    width:  100px;
+    height: 60px;
+    margin-left: 700px;
+    margin-top: -60px;
+}
+
+.filtro {
+    line-height: 20px;
+    width: 100px;
+    margin-left: 50px;
+    margin-top: 12px;
+}
+
 .painel-principal {
     display: flexbox;
     text-align: center;
@@ -62,4 +121,21 @@ main {
 footer {
     background-color: #d3d3d3;
     min-height: 10%;
+    margin-top: 5px;
+}
+
+#setaEsquerda{
+    display: flex;
+    width: 36px;
+    height: 25px;
+    margin-left: 1050px;
+    margin-top: 20px;
+}
+
+#setaDireita{
+    display: flex;
+    width: 36px;
+    height: 23px;
+    margin-left: 1125px;
+    margin-top: -24px;
 }
