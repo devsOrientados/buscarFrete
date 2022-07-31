@@ -8,32 +8,28 @@
         <link rel="stylesheet" href="styleCadastro.css">
     </head>
 
-    <header>
-        <h1>
-            Cadastro do Motorista
-        </h1>
-    </header>
 <body>
-
-<p>Precisamos que você preencha corretamente seu casdastro para disponibilizar o seu contato para os interessados em seu serviço de frete.</p>
-
-  <form>
-        <h3>Dados Pessoais</h3> 
-            <section class="segundaColuna">
-            <span>
+    <header>
+        <h1 class="titulo">CADASTRO DO MOTORISTA</h1>
+    </header>
+    <h3>DADOS PESSOAIS</h3> 
+    
+    <form>
+        <section class="segundaColuna">
+            <div>
                 <label for="nome">Nome:</label>
                 <input type="text" name="nome" id="nome" placeholder="digite seu nome" required>
-            </span>
-            <span>
+            </div>
+            <div>
                 <label for="sobrenome">Sobrenome:</label>
                 <input type="text"name="sobrenome" id="sobrenome" placeholder="digite seu sobrenome" required >
-            </span>
-            <span>
-                <label for="cpf">CPF:</label> 
-                <input type="number"name="cpf" id="cpf" placeholder="digite o CPF, apenas números" required >
-            </span>
-            </section>
-            <section class="terceiraColuna">
+            </div>
+        <div>
+            <label for="cpf">CPF:</label> 
+            <input type="number"name="cpf" id="cpf" placeholder="digite o CPF, apenas números" required >
+        </div>
+        </section>
+        <section class="terceiraColuna">
             <div>
                 <label for="email">Email:</label> 
                 <input type="email"name="email" id="email" placeholder="digite um email válido" required  >
@@ -46,8 +42,8 @@
                 <label for="cnh">CNH:</label> 
                 <input type="number"name="cnh" id="cnh" placeholder="digite o número da sua CNH" required  >
             </div>
-            </section>
-            <section class="quartaColuna">
+        </section>
+        <section class="quartaColuna">
             <div>
                 <label for="categoria">Categoria da sua CNH:</label> 
                 <select id="categoria" name="categoria">
@@ -68,9 +64,10 @@
                 <input type="password"name="senha2" id="senha2" placeholder="repita a mesma senha" required >
             </div>
         </section> 
-        <div)>
-        <button type="reset" name="resetar">CANCELAR</button>
-        <button type="submit" name="cadastrogeral">CADASTRAR</button> 
+        <div class="botes">
+            <button type="reset" name="resetar">CANCELAR</button>
+            <button type="submit" name="cadastrogeral">CADASTRAR</button> 
+        </div>
     </div>
 </form>
 </body>

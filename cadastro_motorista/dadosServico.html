@@ -8,35 +8,35 @@
     <link rel="stylesheet" href="styleCadastro.css">
 </head>
 
-<header>
-    <h1 class="titulo">Cadastro do Motorista</h1>
-</header>
 
 <body>
+    <header>
+        <h1 class="titulo">CADASTRO DO MOTORISTA</h1>
+    </header>
+    <h3 class="seuServico">SEU SERVIÇO</h3> 
     <form>
-        <h3 class="seuServico">Seu Serviço</h3> 
-                <div>
-                    <label for="cep">CEP:</label> 
-                    <input type="number" name="cep" id="cep" placeholder="digite o CEP, apenas números" required>
-                </div>
-                <div>
-                    <label for="logradouro">Logradouro:</label> 
-                    <input type="text"name="logradouro" id="logradouro" placeholder="digite o logradouro" required  >
-                </div>
-                <div>
-                    <label for="numero">Numero:</label>
-                    <input type="number"name="numero" id="numero" placeholder="digite o número" required >
-                </div> 
-                <div>
-                    <label for="bairro">Bairro:</label> 
-                    <input type="text"name="bairro" id="bairro" placeholder="digite o bairro" required >
-                </div>
-                <div>    
-                    <label for="cidade">Cidade:</label> 
-                    <input type="text"name="cidade" id="cidade" placeholder="cidade principal" required >
-                </div>
-                <div>
-                    <label for="Estado">Estado:</label> 
+            <div>
+                <label for="cep">CEP:</label> 
+                <input type="number" name="cep" id="cep" placeholder="digite o CEP, apenas números" required>
+            </div>
+            <div>
+                <label for="logradouro">Logradouro:</label> 
+                <input type="text"name="logradouro" id="logradouro" placeholder="digite o logradouro" required  >
+            </div>
+            <div>
+                <label for="numero">Numero:</label>
+                <input type="number"name="numero" id="numero" placeholder="digite o número" required >
+             </div> 
+             <div>
+                <label for="bairro">Bairro:</label> 
+                <input type="text"name="bairro" id="bairro" placeholder="digite o bairro" required >
+             </div>
+             <div>    
+                <label for="cidade">Cidade:</label> 
+                <input type="text"name="cidade" id="cidade" placeholder="cidade principal" required >
+             </div>
+             <div>
+                <label for="Estado">Estado:</label> 
                     <select id="Estado" name="estado">
                         <option value="" selected hidden>Estado</option>
                         <option value="AC">Acre</option>
@@ -67,20 +67,22 @@
                         <option value="SE">Sergipe</option>
                         <option value="TO">Tocantins</option>
                     </select>
-                </div>
-                <div>
-                    <label for="serviço">Selecione o alcance das viagens que pretende fazer:</label>
-                    <input type="radio" name="serviço" value="viagens locais">
+            </div>
+            <div>
+                <label for="servico">Selecione o alcance das viagens que pretende fazer:</label>
+                <div class="radio">
+                    <input type="radio" name="servico" value="viagens locais">
                     <label>Viagens locais</label>
-                    <input type="radio" name="serviço" value="viagens intermunicipais">
+                    <input type="radio" name="servico" value="viagens intermunicipais">
                     <label>Viagens intermunicipais</label>
-                    <input type="radio" name="serviço" value="viagens interestaduais">
+                    <input type="radio" name="servico" value="viagens interestaduais">
                     <label>Viagens interestaduais</label>
-                </div>   
-                <div)>
-                    <button type="reset" name="resetar">CANCELAR</button>
-                    <button type="submit" name="cadastrogeral">CADASTRAR</button> 
                 </div>
+            </div>   
+            <div class="botoes">
+                <button type="reset" name="resetar">CANCELAR</button>
+                <button type="submit" name="cadastrogeral">CADASTRAR</button> 
+            </div>
             
     </form>
 
