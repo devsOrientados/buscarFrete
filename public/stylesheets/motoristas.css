@@ -52,58 +52,67 @@ main {
 }
 
 #Estado {
+    display: flex;
     line-height: 20px;
     width: 160px;
     margin-left: 30px;
-    margin-top: 13px;
+    margin-top: 70px;
+}
+
+#Cidade {
+    display: flex;
+    line-height: 20px;
+    width: 160px;
+    margin-left: 30px;
+    margin-top: 60px;
 }
 
 #volvo {
     display: flex;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     margin-left: 300px;
-    margin-top: 40px;
+    margin-top: -80px;
 }
 
 #scania {
     display: flex;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     margin-left: 500px;
-    margin-top: -100px;
+    margin-top: -120px;
 }
 
 #ford {
     display: flex;
-    width: 100px;
-    height: 60px;
+    width: 140px;
+    height: 110px;
     margin-left: 700px;
-    margin-top: -84px;
+    margin-top: -115px;
 }
 
 #volkswagen {
     display: flex;
-    width: 100px;
-    height: 60px;
-    margin-left: 300px;
+    width: 190px;
+    height: 150px;
+    margin-left: 265px;
     margin-top: 40px;
 }
 
 #mercedes-benz {
     display: flex;
-    width: 100px;
-    height: 60px;
-    margin-left: 500px;
-    margin-top: -59px;
+    width: 200px;
+    height: 110px;
+    margin-left: 470px;
+    margin-top: -120px;
 }
 
 #iveco {
     display: flex;
-    width:  100px;
-    height: 60px;
-    margin-left: 700px;
-    margin-top: -60px;
+    width:  120px;
+    height: 80px;
+    margin-left: 710px;
+    margin-top: -110px;
 }
 
 .filtro {
@@ -116,6 +125,12 @@ main {
 .painel-principal {
     display: flexbox;
     text-align: center;
+}
+
+h2 {
+    display: flex;
+    margin-left: 440px;
+    margin-top: -150px;
 }
 
 footer {
