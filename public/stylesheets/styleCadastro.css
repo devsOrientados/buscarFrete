@@ -1,0 +1,136 @@
+
+/*inicio padrão*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*padrão do título da página de cadastro*/
+header {
+    background-color: #CB3506;
+    min-height: 10%;
+    text-align: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding:3vmax;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    font-family:Arial, Helvetica, sans-serif ;
+}
+
+
+p{
+    border-bottom: 1px solid gray;
+    margin-bottom: 3px;
+    text-align: center;
+    padding: 3px;
+}
+
+
+h3 {
+    font-size: 24px;
+    background-color:#CB3506;
+    color:#F2F2F2; 
+    display: flex;
+    border: solid 1vmax #f2f2f2;
+    padding: 1vmax;
+    margin:0 auto;
+    box-sizing: border-box;
+    width: 100vw;
+    justify-content: center;
+}
+
+form{
+    width: 100vw;
+    height: 100vh;
+    background-color: #f2f2f2;
+    margin: 0 auto;
+    display: flex  ;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+label{
+    color:#000;
+    text-align: center;
+    margin: auto;
+}
+
+
+input {
+    display: flex;
+    margin: 0 auto;
+    height: 30px;
+    width: 90vw;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+input:hover{
+    border: solid 0.15em; 
+}
+
+select{
+    display: flex;
+    margin: 0 auto;
+    height: 30px;
+    width: 90vw;
+    margin-top: 5px;
+    margin-bottom: 5px; 
+}
+select:hover{
+    border: solid 0.15em; 
+}
+
+.radio{
+    height: 30px;
+    width: 90vw;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 10px; 
+    display: flex;
+}
+
+div.seuPerfil{
+    height: 60px;
+    width: 90vw;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    display: flex-start;
+    flex-wrap: wrap;
+}
+
+textarea.seuPerfil{
+    display: flex;
+    margin: 0 auto;
+    height: 40px;
+    width: 90vw;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+textarea.seuPerfil:hover{
+    border: solid 0.15em; 
+}
+
+button{
+    display: block;
+    width: 140px;
+    height: 40px;
+    cursor: pointer;
+    border-radius:50px ;
+    border: none;
+    background-color: #000000;
+    color: #ffffff;
+    margin-top: 1vh;
+ }
