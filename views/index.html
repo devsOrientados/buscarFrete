@@ -27,8 +27,17 @@
                     </li>
                  </ul>
             </div>
-           
         </nav>
+
+        <div class="minicart">
+            <button class="minicart_button">
+                <img class="img-bag_icon" src="/public/images/icon_login.png">
+            </button>
+
+            <div class="minicart_drawer">
+
+            </div>
+        </div>
     </header>
 
     <main>
@@ -50,8 +59,8 @@
 
                     <h1>Voce é um Freteiro parceiro ?</h1>
                      <div class="container_botoes">
-                       <button class="botoes no_active">ENTRAR</button>
-                       <button class="botoes active" >CADASTRAR</button>
+                       <button class="botoes no_active" onclick="abrirLogin()">ENTRAR</button>
+                       <button class="botoes active" onclick="abrirCadstro()">CADASTRAR</button>
                       </div>
   
                   </section>
@@ -71,6 +80,27 @@
             </div>
 
         </section>
+
+        <section class="popup_cadastro">
+
+            <div class="popup">
+                <form class="form_sistema">
+         
+                    <label class="Label_Titulo">Faça o seu CADASTRO</label>
+                    
+                      <input class="inputs_cadastroLogin" type="text" placeholder="nome" value="">
+                      <input class="inputs_cadastroLogin" type="email" placeholder="email"  value="">
+                      <input class="inputs_cadastroLogin" type="text" placeholder="senha"  value="">
+        
+                      <div class="botoesPopup">
+                        <button class="btn_cadastrar active">CADASTRAR</button>
+                        <button type="reset" class="btn_login no_active" onclick="abrirLogin()"">LOGIN</button>
+                      </div>
+        
+                  </form>
+            </div>
+          </section>
+
     </main>
 
     <footer class="footer__website">
@@ -108,5 +138,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script type="text/javascript" src="/public/javascript/carrossel.js"></script>
+    <script type="text/javascript" src="/public/javascript/popup.js"></script> 
 </body>
 </html>
