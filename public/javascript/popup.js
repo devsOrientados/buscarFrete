@@ -1,20 +1,29 @@
-let open_popup = document.querySelector('.open-popup');
-let popup = document.querySelector('.popup')
+let popup_cadastro = document.querySelector('.popup_cadastro');
+let popupLogin = document.querySelector('.popup_login');
+
 
 function abrirCadstro(){
-	let popupCadastro = document.querySelector('.popup_cadastro');
-    popupCadastro.classList.add('open_popup')
+    popup_cadastro.classList.add('open_popup')
+
+    closePopup(popup_cadastro)
 }
 
 function abrirLogin(){
-	let popupLogin = document.querySelector('.popup_login');
-    popupLogin.classList.add('popup')
+    popup_cadastro.classList.remove('open_popup')
+    popupLogin.classList.add('open_popup')
+
+    closePopup(popupLogin)
 }
 
-popup.addEventListener("click", function(){
-    let popupCadastro = document.querySelector('.popup_cadastro');
-    popupCadastro.classList.remove('open_popup')
-})
+function closePopup(ListenerPopup){
+    ListenerPopup.addEventListener("click", function(close){
+
+       if(close.target.classList == 'popup'){
+        ListenerPopup.classList.remove('open_popup')
+        }
+
+    })
+}
 
 
 
