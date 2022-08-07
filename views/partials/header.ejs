@@ -1,10 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-Br">
 
 <%- include('head')  %> 
 
 <body>
-    <header> 
-        <button type="button" class="logo-marca">|| BuscarFrete.com</button>
-        <button type="button" class="inicio">Início</button>
+
+    <header class="paginaInicial">
+        <nav class="Nav_paginaInicial">
+
+            <div>
+                <img class="logoBuscarFrete" src="/public/images/logoBuscarFrete.png" alt="logo_buscarFrete">
+            </div>
+           
+            <div class="container_menu">
+                <ul class="menu_buscarFrete">
+                    <li>
+                        <a  href="#">HOME</a>
+                    </li>
+                    <li>
+                        <a  href="#">CONSULTAR</a>
+                    </li>
+                 </ul>
+            </div>
+        </nav>
+
+        <div class="minicart">
+            <button class="minicart_button" onclick="openMinicart()">
+                <img class="img-bag_icon" src="/public/images/user-icon.png">
+            </button>
+     
+            <div class="minicart_drawer">
+                <img class="seta_minicart" src="/public/images/Polygon.png" />
+                <ul>
+                    <li onclick="abrirLogin()">
+                        Login 
+                    </li>
+                    <li onclick="abrirCadstro()">
+                        Cadastrar
+                    </li>
+                </ul>
+            </div>
+        </div>
+
     </header>

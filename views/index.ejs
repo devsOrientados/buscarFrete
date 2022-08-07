@@ -1,11 +1,86 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+   <%- include('partials/header')  %>
+    <main>
+        <section id="slide_paginaInicial" class="slide_paginaInicial">
+            <div><img class="imagem_slide" src="/public/images/1.png" alt="Image do slide"></div>
+            <div><img class="imagem_slide" src="/public/images/2.png"></div>
+            <div><img class="imagem_slide" src="/public/images/3.png"></div>
+        </section>
+
+        <section class="information__website">
+
+            <div>
+                <img class="imagem_information" src="/public/images/banner_cadastro.png" />
+            </div>
+
+            <div>
+   
+                <section class="section_login">
+
+                    <h1>Voce é um Freteiro parceiro ?</h1>
+                     <div class="container_botoes">
+                       <button class="botoes no_active" onclick="abrirLogin()">ENTRAR</button>
+                       <button class="botoes active" onclick="abrirCadstro()">CADASTRAR</button>
+                      </div>
+  
+                  </section>
+
+                <section class="section_consultar">
+
+                    <div>
+                        <h3>Precisa de um frete?</h3>  
+                    </div>
+
+                    <div class="container_botoes">
+                        <button class="botoes no_active">CONSULTAR</button>
+                    </div>
+        
+                </section>
+
+            </div>
+
+        </section>
+
+        <section class="popup_cadastro">
+
+            <div class="popup">
+                <form class="form_sistema">
+         
+                    <label class="Label_Titulo">Faça o seu CADASTRO</label>
+                    
+                      <input class="inputs_cadastroLogin" type="text" placeholder="nome" value="">
+                      <input class="inputs_cadastroLogin" type="email" placeholder="email"  value="">
+                      <input class="inputs_cadastroLogin" type="text" placeholder="senha"  value="">
+        
+                      <div class="botoesPopup">
+                        <button class="btn_cadastrar active">CADASTRAR</button>
+                        <button type="reset" class="btn_login no_active" onclick="abrirLogin()"">LOGIN</button>
+                      </div>
+        
+                  </form>
+            </div>
+          </section>
+
+          <section class="popup_login">
+
+            <div class="popup">
+                <form class="form_sistema">
+         
+                    <label class="Label_Titulo">Faça o seu Login</label>
+                    
+                      <input class="inputs_cadastroLogin" type="email" placeholder="email"  value="">
+                      <input class="inputs_cadastroLogin" type="text" placeholder="senha"  value="">
+        
+                      <div class ="botoesPopup">
+                        <button type="reset" class="btn_login active"><a href="login.html">LOGAR</a></button>
+                      </div>
+        
+                  </form>
+            </div>
+
+          </section>
+
+
+
+    </main>
+
+<%- include('partials/footer')  %> 
