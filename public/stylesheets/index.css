@@ -4,6 +4,7 @@ body{
 }
 
 .paginaInicial{
+    position: relative;
     display: block;
     width: 100%;
     height: 140px;
@@ -32,10 +33,6 @@ body{
     flex-direction: row;
     gap: 18px;
     cursor: pointer;
-}
-
-.menu_buscarFrete{
-    text-decoration: none;
     list-style: none
 }
 
@@ -45,6 +42,70 @@ body{
     font-size: 20px;
     cursor: pointer;
     font-weight: 600;
+}
+
+.minicart{
+    position: absolute;
+    top: 60px;
+    right: 214px;
+    z-index: 8;
+}
+
+.minicart_button{
+    position: absolute;
+    left: 140px;
+    cursor: pointer;
+    background-color: #4f4f4f;
+    border: none;
+}
+
+.img-bag_icon{
+    display: block;
+    width: 34px;
+}
+
+.minicart_drawer{
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: -14px;
+    width: 200px;
+    height: 200px;
+    background-color: #ffffff;
+    border: 1px solid #4f4f4f;
+    z-index: 8;
+}
+
+.seta_minicart{
+    display: block;
+    width: 20px;
+    position: absolute;
+    top: -10px;
+    left: 180px;
+}
+
+.minicart_drawer ul {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.minicart_drawer ul li {
+    text-decoration: none;
+    list-style: none;
+    margin-top: -14px;
+    margin-left: -36px;
+    width: 190px;
+    height: 40px;
+    background-color: #4f4f4f;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.minicart_drawer ul li {
+   color: #ffffff;
 }
 
 .slide_paginaInicial{

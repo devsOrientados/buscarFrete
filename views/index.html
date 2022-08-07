@@ -30,14 +30,23 @@
         </nav>
 
         <div class="minicart">
-            <button class="minicart_button">
-                <img class="img-bag_icon" src="/public/images/icon_login.png">
+            <button class="minicart_button" onclick="openMinicart()">
+                <img class="img-bag_icon" src="/public/images/user-icon.png">
             </button>
-
+     
             <div class="minicart_drawer">
-
+                <img class="seta_minicart" src="/public/images/Polygon.png" />
+                <ul>
+                    <li onclick="abrirLogin()">
+                        Login 
+                    </li>
+                    <li onclick="abrirCadstro()">
+                        Cadastrar
+                    </li>
+                </ul>
             </div>
         </div>
+
     </header>
 
     <main>
@@ -160,5 +169,6 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script type="text/javascript" src="/public/javascript/carrossel.js"></script>
     <script type="text/javascript" src="/public/javascript/popup.js"></script> 
+    <script type="text/javascript" src="/public/javascript/minicart.js"></script>
 </body>
 </html>
