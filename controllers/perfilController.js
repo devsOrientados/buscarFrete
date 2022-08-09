@@ -5,6 +5,7 @@ const perfilController = {
     salvarForm:(req,res) => {
         var cadastroTeste1 = {}; 
         cadastroTeste1 =req.body;
+        res.redirect('/servico');
     }
 }
 

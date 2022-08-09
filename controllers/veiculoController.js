@@ -5,6 +5,7 @@ const veiculoController = {
     salvarForm:(req,res) => {
         var cadastroTeste2 = {}; 
         cadastroTeste2 =req.body;
+        res.redirect('/');
     }
 }
 

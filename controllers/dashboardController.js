@@ -5,6 +5,7 @@ const dashboardController = {
     salvarForm:(req,res) => {
         var cadastroTeste = {}; 
         cadastroTeste =req.body;
+        res.redirect('/perfil');
     }
 }
 
