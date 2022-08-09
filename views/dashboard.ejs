@@ -1,20 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Dados Pessoais</title>
-        <link rel="stylesheet" href="/public/stylesheets/styleCadastro.css">
-    </head>
-
+<%- include('partials/header')  %>
+<!--inicio do Dashboard do motorista, dados pessoais -->
 <body>
-    <header>
-        <h1 class="titulo">CADASTRO DO MOTORISTA</h1>
-    </header>
+    <h1 class="titulo">CADASTRO DO MOTORISTA</h1>
     <h3>DADOS PESSOAIS</h3> 
     
-    <form> <!--action= "definir rota" method="POST"-->
+    <form action="/dashboard"  method="POST"> 
         <section class="segundaColuna">
             <div>
                 <label for="nome">Nome:</label>
@@ -65,19 +55,11 @@
             </div>
         </section> 
         <div class="botes">
-            <button type="reset" name="resetar">CANCELAR</button>
-            <button type="submit" name="cadastrogeral">CADASTRAR</button> 
+            <button type="submit" name="cadastroPessoal">PRÓXIMO</button> 
         </div>
     </div>
 </form>
 </body>
 
 
-
-
-</html>
-
-
-
-
-
+<%- include('partials/footer')  %> 
