@@ -200,6 +200,11 @@ body{
     border: none;
 }
 
+.container_botoes a{
+   text-decoration: none;
+   color: #ffffff;
+}
+
 .popup_login, .popup_cadastro{
     display: none;
 }
