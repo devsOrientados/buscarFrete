@@ -4,22 +4,22 @@
 
 <body>
      <h1 class="titulo">CADASTRO DO MOTORISTA</h1>
-     <p>Precisamos que você preencha corretamente seu casdastro para disponibilizar o seu contato para os interessados em seu serviço de frete.</p>
+     <p class="description_dashboard" >Precisamos que você preencha corretamente seu casdastro para disponibilizar o seu contato para os interessados em seu serviço de frete.</p>
 <!-- dados do perfil--> 
-    <h3 class="seuPerfil">Seu perfil</h3>
+    <h3 class="sub_titulo">Seu perfil</h3>
 
-    <form action= "/perfil" method="POST">                
+    <form class="form_dashboard" action= "/perfil" method="POST">                
         <div class="seuPerfil">
-            <label for="autoDescricao">Escreva sobre você para seus clientes te conhecerem:</label>
+            <label class="label_dashboard" for="autoDescricao">Escreva sobre você para seus clientes te conhecerem:</label>
             <textarea class="seuPerfil" name="autoDescricao" id="autoDescricao">Sobre você</textarea>
         </div>
             <div>
-                <label>Sua foto de perfil</label>
-                <input type="file" name="fotoPerfil" accept="image/*">
+                <label class="label_dashboard">Sua foto de perfil</label>
+                <input class="input_dashboard" type="file" name="fotoPerfil" accept="image/*">
             </div>
-            <div class="botoes">
-                <button type="button" name="paginaAnterior">ANTERIOR</button>
-                <button type="submit" name="cadastroPerfil">PRÓXIMO</button> 
+            <div class="botoes_dashboard">
+                <button class="botao_dashboard" type="button" name="paginaAnterior">ANTERIOR</button>
+                <button class="botao_dashboard" type="submit" name="cadastroPerfil">PRÓXIMO</button> 
             </div>
     </form>   
 

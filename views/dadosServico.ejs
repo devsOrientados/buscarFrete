@@ -3,30 +3,30 @@
 
 <body>
         <h1 class="titulo">CADASTRO DO MOTORISTA</h1>
-    <h3 class="seuServico">SEU SERVIÇO</h3> 
-    <form action= "/servico" method="POST">
+    <h3 class="sub_titulo">SEU SERVIÇO</h3> 
+    <form class="form_dashboar" action= "/servico" method="POST">
             <div>
-                <label for="cep">CEP:</label> 
-                <input type="number" name="cep" id="cep" placeholder="digite o CEP, apenas números" required>
+                <label class="label_dashboard" for="cep">CEP:</label> 
+                <input class="input_dashboard" type="number" name="cep" id="cep" placeholder="digite o CEP, apenas números" required>
             </div>
             <div>
-                <label for="logradouro">Logradouro:</label> 
-                <input type="text"name="logradouro" id="logradouro" placeholder="digite o logradouro" required  >
+                <label class="label_dashboard" for="logradouro">Logradouro:</label> 
+                <input class="input_dashboard" type="text"name="logradouro" id="logradouro" placeholder="digite o logradouro" required  >
             </div>
             <div>
-                <label for="numero">Numero:</label>
-                <input type="number"name="numero" id="numero" placeholder="digite o número" required >
+                <label class="label_dashboard" for="numero">Numero:</label>
+                <input class="input_dashboard" type="number"name="numero" id="numero" placeholder="digite o número" required >
              </div> 
              <div>
-                <label for="bairro">Bairro:</label> 
-                <input type="text"name="bairro" id="bairro" placeholder="digite o bairro" required >
+                <label class="label_dashboard" for="bairro">Bairro:</label> 
+                <input class="input_dashboard" type="text"name="bairro" id="bairro" placeholder="digite o bairro" required >
              </div>
              <div>    
-                <label for="cidade">Cidade:</label> 
-                <input type="text"name="cidade" id="cidade" placeholder="cidade principal" required >
+                <label class="label_dashboard" for="cidade">Cidade:</label> 
+                <input class="input_dashboard" type="text"name="cidade" id="cidade" placeholder="cidade principal" required >
              </div>
              <div>
-                <label for="Estado">Estado:</label> 
+                <label class="label_dashboard" for="Estado">Estado:</label> 
                     <select id="Estado" name="estado">
                         <option value="" selected hidden>Estado</option>
                         <option value="AC">Acre</option>
@@ -59,19 +59,19 @@
                     </select>
             </div>
             <div>
-                <label for="servico">Selecione o alcance das viagens que pretende fazer:</label>
+                <label class="label_dashboard" for="servico">Selecione o alcance das viagens que pretende fazer:</label>
                 <div class="radio">
-                    <input type="radio" name="servico" value="viagens locais">
-                    <label>Viagens locais</label>
-                    <input type="radio" name="servico" value="viagens intermunicipais">
-                    <label>Viagens intermunicipais</label>
-                    <input type="radio" name="servico" value="viagens interestaduais">
-                    <label>Viagens interestaduais</label>
+                    <input class="input_dashboard" type="radio" name="servico" value="viagens locais">
+                    <label class="label_dashboard">Viagens locais</label>
+                    <input class="input_dashboard" type="radio" name="servico" value="viagens intermunicipais">
+                    <label class="label_dashboard">Viagens intermunicipais</label>
+                    <input class="input_dashboard" type="radio" name="servico" value="viagens interestaduais">
+                    <label class="label_dashboard">Viagens interestaduais</label>
                 </div>
             </div>   
-            <div class="botoes">
-                <button type="button" name="paginaAnterior">ANTERIOR</button>
-                <button type="submit" name="paginaServico">PRÓXIMO</button>  
+            <div class="botoes_dashboard">
+                <button class="botao_dashboard" type="button" name="paginaAnterior">ANTERIOR</button>
+                <button class="botao_dashboard" type="submit" name="paginaServico">PRÓXIMO</button>  
             </div>
             
     </form>

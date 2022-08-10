@@ -1,36 +1,39 @@
 <%- include('partials/header')  %>
 <!--inicio do Dashboard do motorista, dados pessoais -->
-<body>
-    <h1 class="titulo">CADASTRO DO MOTORISTA</h1>
-    <h3>DADOS PESSOAIS</h3> 
+<section>
+
+    <div class="container_titulo">
+       <h1 class="titulo">CADASTRO DO MOTORISTA</h1>
+       <h3 class="sub_titulo">DADOS PESSOAIS</h3> 
+    </div>
     
-    <form action="/dashboard"  method="POST"> 
+    <form class="form_dashboar" action="/dashboard"  method="POST"> 
         <div>
-            <label for="nome">Nome:</label>
-            <input type="text" name="nome" id="nome" placeholder="digite seu nome" required>
+            <label class="label_dashboard" for="nome">Nome:</label>
+            <input class="input_dashboard" type="text" name="nome" id="nome" placeholder="digite seu nome" required>
         </div>
         <div>
-            <label for="sobrenome">Sobrenome:</label>
-            <input type="text"name="sobrenome" id="sobrenome" placeholder="digite seu sobrenome" required >
+            <label class="label_dashboard" for="sobrenome">Sobrenome:</label>
+            <input class="input_dashboard" type="text"name="sobrenome" id="sobrenome" placeholder="digite seu sobrenome" required >
         </div>
         <div>
-            <label for="cpf">CPF:</label> 
-            <input type="number"name="cpf" id="cpf" placeholder="digite o CPF, apenas números" required >
+            <label class="label_dashboard" for="cpf">CPF:</label> 
+            <input class="input_dashboard" type="number"name="cpf" id="cpf" placeholder="digite o CPF, apenas números" required >
         </div>
         <div>
-            <label for="email">Email:</label> 
-            <input type="email"name="email" id="email" placeholder="digite um email válido" required  >
+            <label  class="label_dashboard"for="email">Email:</label> 
+            <input class="input_dashboard" type="email"name="email" id="email" placeholder="digite um email válido" required  >
         </div>
         <div>
-            <label for="telefone">Telefone para contato:</label> 
-            <input type="tel"name="telefone" id="telefone" placeholder="(11)11111-1111" required  >
+            <label  class="label_dashboard" for="telefone">Telefone para contato:</label> 
+            <input class="input_dashboard" type="tel"name="telefone" id="telefone" placeholder="(11)11111-1111" required  >
         </div>
         <div>
-            <label for="cnh">CNH:</label> 
-            <input type="number"name="cnh" id="cnh" placeholder="digite o número da sua CNH" required  >
+            <label class="label_dashboard" for="cnh">CNH:</label> 
+            <input class="input_dashboard" type="number"name="cnh" id="cnh" placeholder="digite o número da sua CNH" required  >
         </div>
         <div>
-            <label for="categoria">Categoria da sua CNH:</label> 
+            <label class="label_dashboard" for="categoria">Categoria da sua CNH:</label> 
             <select id="categoria" name="categoria">
                 <option value="" selected hidden>selecione</option>
                 <option value="A">A</option>
@@ -41,18 +44,18 @@
             </select>
         </div>
         <div>    
-            <label for="senha">Senha:</label> 
-            <input type="password"name="senha" id="senha" placeholder="sua senha" required >
+            <label class="label_dashboard" for="senha">Senha:</label> 
+            <input class="input_dashboard" type="password"name="senha" id="senha" placeholder="sua senha" required >
         </div>
         <div>
-            <label for="senha2">Confirme sua senha:</label>
-            <input type="password"name="senha2" id="senha2" placeholder="repita a mesma senha" required >
+            <label class="label_dashboard" for="senha2">Confirme sua senha:</label>
+            <input class="input_dashboard" type="password"name="senha2" id="senha2" placeholder="repita a mesma senha" required >
         </div>
-        <div class="botes">
-            <button type="submit" name="cadastroPessoal">PRÓXIMO</button> 
+        <div class="botoes_dashboard">
+            <button class="botao_dashboard" type="submit" name="cadastroPessoal">PRÓXIMO</button> 
         </div>
     </form>
-</body>
+</section>
 
 
 <%- include('partials/footer')  %> 

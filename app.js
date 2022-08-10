@@ -7,7 +7,7 @@ var methodOverride = require('method-override');
 
 //"declaração" das rotas
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/anuncio');
 var motoristasRouter = require('./routes/motoristas');
 var dashboardRouter = require('./routes/dashboard');
 var perfilRouter = require ('./routes/perfil');
@@ -31,7 +31,7 @@ app.use(methodOverride('_method'));
 //rotas
 app.use('/', indexRouter);
 app.use('/motoristas', motoristasRouter);
-app.use('/users', usersRouter);
+app.use('/anuncio', usersRouter);
 app.use('/dashboard', dashboardRouter)
 app.use('/perfil', perfilRouter)
 app.use('/veiculo', veiculoRouter)
