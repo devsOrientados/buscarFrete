@@ -14,6 +14,10 @@ var perfilRouter = require ('./routes/perfil');
 var veiculoRouter = require ('./routes/veiculo');
 var servicoRouter = require ('./routes/servico');
 
+// rotas para Crud
+
+var cadastroRouter = require('./routes/cadastro')
+
 var app = express();
 
 // view engine setup
@@ -22,7 +26,7 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+pp.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
@@ -32,10 +36,11 @@ app.use(methodOverride('_method'));
 app.use('/', indexRouter);
 app.use('/motoristas', motoristasRouter);
 app.use('/anuncio', usersRouter);
-app.use('/dashboard', dashboardRouter)
-app.use('/perfil', perfilRouter)
-app.use('/veiculo', veiculoRouter)
-app.use('/servico', servicoRouter)
+app.use('/dashboard', dashboardRouter);
+app.use('/perfil', perfilRouter);
+app.use('/veiculo', veiculoRouter);
+app.use('/servico', servicoRouter);
+app.use('/cadastro', cadastroRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
