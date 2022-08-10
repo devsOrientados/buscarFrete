@@ -7,6 +7,7 @@
 body{
     background-color: #ffffff;
     outline: none;
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 }
 
 .paginaInicial{
@@ -408,9 +409,95 @@ body{
     justify-content:center;
 }
 
-h2 {
+.label_painel-principal {
     text-align: center;
     display: flex;
     margin-top: -150px;
 }
 
+/* css da pagina anuncio do motorista */
+
+  #container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  #bate_papo img{
+    width: 94%;
+    cursor: pointer;
+  }
+  
+  #info_motorista {
+    width: 40%;
+    text-align: center;
+  }
+
+  .descrição_motorista {
+    margin-bottom: 20px;
+  }
+
+  .container_nome_motorista{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nome_motorista{
+    margin-bottom: 20px;
+  }
+
+  .dados_motorista{
+    display: flex;
+    flex-direction: row;
+    gap:14px;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .container_img_caminhao{
+    display: block;
+    width: 400px;
+    margin-top: 20px;
+  }
+
+  #img_caminhao {
+    display:block;
+    width: 100%;
+  }
+  
+  .container_anuncio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+  
+  #comentarios {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+  }
+  
+  #avalicao{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  #avaliacao img {
+    margin-top: 14px;
+    width: 26px;
+  }
+  
