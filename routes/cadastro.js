@@ -4,6 +4,6 @@ var cadastroController = require ('../controllers/cadastroController');
 
 
 
-router.post('/', cadastroController.cadastro);
+router.post("/", cadastroController.Cadastro);
 
 module.exports = router;
