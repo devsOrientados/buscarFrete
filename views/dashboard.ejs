@@ -7,7 +7,7 @@
        <h3 class="sub_titulo">DADOS PESSOAIS</h3> 
     </div>
     
-    <form class="form_dashboar" action="/dashboard"  method="POST"> 
+    <form class="form_dashboard" action="/dashboard"  method="POST"> 
         <div>
             <label class="label_dashboard" for="cpf">CPF:</label> 
             <input class="input_dashboard" type="number"name="cpf" id="cpf" placeholder="digite o CPF, apenas números" required >
@@ -41,43 +41,43 @@
         </div>
         <h3 class="sub_titulo">DADOS DO SERVIÇO</h3>
         <div>    
+            <div>
+               <label class="label_dashboard" for="Estado">Estado:</label> 
+                   <select id="Estado" name="estado">
+                       <option value="" selected hidden>Estado</option>
+                       <option value="AC">Acre</option>
+                       <option value="AL">Alagoas</option>
+                       <option value="AP">Amapá</option>
+                       <option value="AM">Amazonas</option>
+                       <option value="BA">Bahia</option>
+                       <option value="CE">Ceará</option>
+                       <option value="DF">Distrito Federal</option>
+                       <option value="ES">Espírito Santo</option>
+                       <option value="GO">Goiás</option>
+                       <option value="MA">Maranhão</option>
+                       <option value="MT">Mato Grosso</option>
+                       <option value="MS">Mato Grosso do Sul</option>
+                       <option value="MG">Minas Gerais</option>
+                       <option value="PA">Pará</option>
+                       <option value="PB">Paraíba</option>
+                       <option value="PR">Paraná</option>
+                       <option value="PE">Pernambuco</option>
+                       <option value="PI">Piauí</option>
+                       <option value="RJ">Rio de Janeiro</option>
+                       <option value="RN">Rio Grande do Norte</option>
+                       <option value="RS">Rio Grande do Sul</option>
+                       <option value="RO">Rondônia</option>
+                       <option value="RR">Roraima</option>
+                       <option value="SC">Santa Catarina</option>
+                       <option value="SP">São Paulo</option>
+                       <option value="SE">Sergipe</option>
+                       <option value="TO">Tocantins</option>
+                   </select>
+           </div>
+           <div>
             <label class="label_dashboard" for="cidade">Cidade:</label> 
             <input class="input_dashboard" type="text"name="cidade" id="cidade" placeholder="cidade principal" required >
          </div>
-         <div>
-            <label class="label_dashboard" for="Estado">Estado:</label> 
-                <select id="Estado" name="estado">
-                    <option value="" selected hidden>Estado</option>
-                    <option value="AC">Acre</option>
-                    <option value="AL">Alagoas</option>
-                    <option value="AP">Amapá</option>
-                    <option value="AM">Amazonas</option>
-                    <option value="BA">Bahia</option>
-                    <option value="CE">Ceará</option>
-                    <option value="DF">Distrito Federal</option>
-                    <option value="ES">Espírito Santo</option>
-                    <option value="GO">Goiás</option>
-                    <option value="MA">Maranhão</option>
-                    <option value="MT">Mato Grosso</option>
-                    <option value="MS">Mato Grosso do Sul</option>
-                    <option value="MG">Minas Gerais</option>
-                    <option value="PA">Pará</option>
-                    <option value="PB">Paraíba</option>
-                    <option value="PR">Paraná</option>
-                    <option value="PE">Pernambuco</option>
-                    <option value="PI">Piauí</option>
-                    <option value="RJ">Rio de Janeiro</option>
-                    <option value="RN">Rio Grande do Norte</option>
-                    <option value="RS">Rio Grande do Sul</option>
-                    <option value="RO">Rondônia</option>
-                    <option value="RR">Roraima</option>
-                    <option value="SC">Santa Catarina</option>
-                    <option value="SP">São Paulo</option>
-                    <option value="SE">Sergipe</option>
-                    <option value="TO">Tocantins</option>
-                </select>
-        </div>
-        <div>
             <label class="label_dashboard" for="servico">Selecione o alcance das viagens que pretende fazer:</label>
             <div class="radio">
                 <input class="input_dashboard" type="radio" name="servico" value="viagens locais">
@@ -106,7 +106,7 @@
             <input class="input_dashboard" type="file" name="fotoVeículo3" accept="image/*">
         </div>
         <div class="botoes_dashboard">
-            <button class="botao_dashboard" type="submit" name="cadastrarDAshboard">FINALIZAR CADASTRO</button>
+            <button class="botao_dashboard" type="submit" name="cadastrarDashboard">FINALIZAR CADASTRO</button>
         </div>
     </form>
 </section>

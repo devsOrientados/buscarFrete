@@ -5,8 +5,8 @@ const dashboardController = {
     salvarForm:(req,res) => {
         var cadastroTeste = {}; 
         cadastroTeste = req.body;
-        res.status(201).render;/**router.put('/:id, dashboardController.editar) */
-        res.redirect('/perfil');
+        res.status(201).render;
+        res.redirect('/');
     }
 }
 
