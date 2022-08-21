@@ -10,9 +10,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/anuncio');
 var motoristasRouter = require('./routes/motoristas');
 var dashboardRouter = require('./routes/dashboard');
-var perfilRouter = require ('./routes/perfil');
-var veiculoRouter = require ('./routes/veiculo');
-var servicoRouter = require ('./routes/servico');
+
 
 // rotas para Crud
 
@@ -37,9 +35,6 @@ app.use('/', indexRouter);
 app.use('/motoristas', motoristasRouter);
 app.use('/anuncio', usersRouter);
 app.use('/dashboard', dashboardRouter);
-app.use('/perfil', perfilRouter);
-app.use('/veiculo', veiculoRouter);
-app.use('/servico', servicoRouter);
 app.use('/cadastro', cadastroRouter);
 
 // catch 404 and forward to error handler

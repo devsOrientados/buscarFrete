@@ -1,12 +1,22 @@
 var  cadastroModels  = require ('../models/cadastro');
 
-const createCadastro= {
-   cadastro:(req,res) => {
-      let cadastro = req.body;
+const createCadastro = {
+   async Cadastro (req, res) {
+  
+      try{
+     
+         let cadastro = req.body;
+   
+         cadastro = await cadastroModels.insert(cadastro);
+         res.send(cadastro)
+      
+         }catch(err){
+            
+            res.status(400).send({error: err.message})
+      
+         }
+   }
+};
 
-      cadastro = await cadastroModels.createCadastro(cadastro);
-      res.send(cadastro);
-    }
-}
 
 module.exports = createCadastro;
