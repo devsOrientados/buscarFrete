@@ -153,6 +153,7 @@ body{
 }
 
 .information__website{
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -261,6 +262,7 @@ body{
 }
 
 .botoes{
+    margin-top: 20px;
     display: block;
     width: 148px;
     height: 40px;
