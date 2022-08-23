@@ -1,0 +1,53 @@
+{
+  "nextId": 9,
+  "motorista": [
+    {
+      "id": 1,
+      "nome": "alecioj",
+      "email": "santosalecio03@gmail.com",
+      "senha": "124562332mhgikjjk"
+    },
+    {
+      "id": 2,
+      "nome": "aleciojunior",
+      "email": "santosalecio03@gmail.com",
+      "senha": "124562332mhgikjjk"
+    },
+    {
+      "id": 3,
+      "nome": "fernando",
+      "email": "santosal@gmail.com",
+      "senha": "vfgtgegrege"
+    },
+    {
+      "id": 4,
+      "nome": "GUADALUPE",
+      "email": "guadalupenery@gmail.com",
+      "senha": "12345"
+    },
+    {
+      "id": 5,
+      "nome": "teste",
+      "email": "guadalupenery@gmail.com",
+      "senha": "12345"
+    },
+    {
+      "id": 6,
+      "nome": "GUADALUPE 5",
+      "email": "guadalupenery@gmail.com",
+      "senha": "66666"
+    },
+    {
+      "id": 7,
+      "nome": "GUADALUPE 5",
+      "email": "guadalupenery@gmail.com",
+      "senha": "66666"
+    },
+    {
+      "id": 8,
+      "nome": "teste 6",
+      "email": "guadalupenery@gmail.com",
+      "senha": "77777"
+    }
+  ]
+}

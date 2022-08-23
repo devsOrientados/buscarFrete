@@ -4,7 +4,7 @@ var dashboardController = require ('../controllers/dashboardController');
 
 /** cadastrando novo motorista */
 router.get('/', dashboardController.viewForm);
-router.post('/', dashboardController.salvarForm);
+router.post('/create', dashboardController.salvarForm);
 
 /**editar um motorista já cadastrado */
 

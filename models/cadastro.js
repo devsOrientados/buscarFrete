@@ -1,15 +1,19 @@
 var {promises} = require ('fs');
 
-async function createCadastro(cadastro){
-    var cadastroArray = JSON.parse(await fs.readFile("cadastro.json"));
+const insertCadastro = {
+    async insert (cadastro) {
+   
+        var cadastroArray = JSON.parse(await promises.readFile("./models/data/cadastro.json"));
         
-    cadastro = { id: pedidosArray.nextId++, ...cadastro };
+        cadastro = { id: cadastroArray.nextId++, ...cadastro };
+    
+        cadastroArray.motorista.push(cadastro);
+    
+        await promises.writeFile("./models/data/cadastro.json", JSON.stringify(cadastroArray,null, 2));
+    
+        return cadastro;
+       
+    }
+ };
 
-    cadastroArray.pedidos.push(cadastro);
-
-    await fs.writeFile("cadastro.json", JSON.stringify(cadastroArray,null, 2));
-
-    return cadastro;
-}
-
-module.exports = createCadastro;
+module.exports = insertCadastro; 

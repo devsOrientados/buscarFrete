@@ -3,17 +3,18 @@
 <section>
 
     <div class="container_titulo">
-       <h1 class="titulo">CADASTRO DO MOTORISTA</h1>
-       <h3 class="sub_titulo">DADOS PESSOAIS</h3> 
+       <h1 class="sub_titulo">CADASTRO DO MOTORISTA</h1>
+       <p class="description_dashboard">Vamos preparar o seu anúncio, para isso precisamos de algumas informações.</p>
     </div>
     
-    <form class="form_dashboard" action="/dashboard"  method="POST"> 
+    <form class="form_dashboard" action="/dashboard/create"  method="POST"> 
+        <h3 class="sub_titulo">DADOS PESSOAIS</h3> 
         <div>
             <label class="label_dashboard" for="cpf">CPF:</label> 
             <input class="input_dashboard" type="number"name="cpf" id="cpf" placeholder="digite o CPF, apenas números" required >
         </div>
         <div>
-            <label  class="label_dashboard" for="telefone">Telefone para contato:</label> 
+            <label class="label_dashboard" for="telefone">Telefone para contato:</label> 
             <input class="input_dashboard" type="tel"name="telefone" id="telefone" placeholder="(11)11111-1111" required  >
         </div>
         <div>
@@ -39,11 +40,11 @@
             <label class="label_dashboard">Sua foto de perfil</label>
             <input class="input_dashboard" type="file" name="fotoPerfil" accept="image/*">
         </div>
-        <h3 class="sub_titulo">DADOS DO SERVIÇO</h3>
-        <div>    
-            <div>
-               <label class="label_dashboard" for="Estado">Estado:</label> 
-                   <select id="Estado" name="estado">
+        
+        <h3 class="sub_titulo">DADOS DO SERVIÇO</h3>  
+        <div>
+            <label class="label_dashboard" for="Estado">Estado:</label> 
+                <select id="Estado" name="estado">
                        <option value="" selected hidden>Estado</option>
                        <option value="AC">Acre</option>
                        <option value="AL">Alagoas</option>
@@ -72,12 +73,13 @@
                        <option value="SP">São Paulo</option>
                        <option value="SE">Sergipe</option>
                        <option value="TO">Tocantins</option>
-                   </select>
-           </div>
-           <div>
+                </select>
+        </div>
+        <div>
             <label class="label_dashboard" for="cidade">Cidade:</label> 
             <input class="input_dashboard" type="text"name="cidade" id="cidade" placeholder="cidade principal" required >
-         </div>
+        </div>
+        <div>
             <label class="label_dashboard" for="servico">Selecione o alcance das viagens que pretende fazer:</label>
             <div class="radio">
                 <input class="input_dashboard" type="radio" name="servico" value="viagens locais">
@@ -91,7 +93,8 @@
         <div>    
             <label class="label_dashboard" for="preco">Preço médio por kilometro:</label> 
             <input class="input_dashboard" type="text" name="preco" id="preco" placeholder="preço médio do kilometro percorrido no frete" required >
-         </div>   
+        </div>
+
         <h3 class="sub_titulo">DADOS DO VEICULO</h3>
         <div>    
             <label class="label_dashboard" for="veiculo">Modelo:</label> 
@@ -101,11 +104,12 @@
             <label class="label_dashboard" for="anoVeiculo">Ano:</label> 
             <input class="input_dashboard" type="year"name="anoVeiculo" id="anoVeiculo" placeholder="Ano de fabricação do veículo">
         </div>
+        <div>
             <input class="input_dashboard" type="file" name="fotoVeículo1" accept="image/*">
             <input class="input_dashboard" type="file" name="fotoVeículo2" accept="image/*">
             <input class="input_dashboard" type="file" name="fotoVeículo3" accept="image/*">
         </div>
-        <div class="botoes_dashboard">
+        <div class="botao_dashboard">
             <button class="botao_dashboard" type="submit" name="cadastrarDashboard">FINALIZAR CADASTRO</button>
         </div>
     </form>

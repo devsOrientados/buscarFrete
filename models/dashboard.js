@@ -1,19 +1,13 @@
-var {promises} = require ('fs');
+const fs = require ('fs');
+const path = require('path')
 
-const insertDashboard = {
-    async insert (dashboard) {
-   
-        var dashboardArray = JSON.parse(await promises.readFile("./models/dashboard.json"));
-        
-        dashboard = { id: dashboardArray.nextId++, ...dashboard };
-    
-        dashboardArray.motorista.push(dashboard);
-    
-        await promises.writeFile("./models/dashboard.json", JSON.stringify(dashboardArray,null, 2));
-    
-        return dashboard;
+
+const dashboard = JSON.parse(fs.readFileSync(dashboardFilePath,'utf-8'));
+const novoDashboard = req.body;
+const newDashboard = {id:dashboard.length +1, ...novoDashboard}
        
-    }
- };
 
-module.exports = insertDashboard; 
+dashboard.push(newDashboard);  
+fs.writeFileSync(
+    path.resolve('../buscarfrete/models/data/dashboard.json'), 
+    JSON.stringify(dashboard));

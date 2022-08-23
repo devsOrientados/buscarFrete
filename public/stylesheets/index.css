@@ -557,7 +557,6 @@ body{
     margin: auto;
 }
 
-
 .input_dashboard {
     display: flex;
     margin: 0 auto;
@@ -576,9 +575,10 @@ select{
     margin: 0 auto;
     height: 30px;
     width: 90vw;
-    margin-top: 5px;
-    margin-bottom: 5px; 
+margin-top: 5px;
+    margin-bottom: 5px;
 }
+
 select:hover{
     border: solid 0.15em; 
 }
@@ -592,17 +592,7 @@ select:hover{
     display: flex;
 }
 
-div.seuPerfil{
-    height: 60px;
-    width: 90vw;
-    margin: 0 auto;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    display: flex-start;
-    flex-wrap: wrap;
-}
-
-textarea.seuPerfil{
+textarea{
     display: flex;
     margin: 0 auto;
     height: 40px;
@@ -611,9 +601,11 @@ textarea.seuPerfil{
     margin-bottom: 10px;
     flex-wrap: wrap;
 }
-textarea.seuPerfil:hover{
+
+textarea:hover{
     border: solid 0.15em; 
 }
+
 
 .botao_dashboard{
     display: block;

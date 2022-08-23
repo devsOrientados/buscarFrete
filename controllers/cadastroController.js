@@ -8,7 +8,8 @@ const createCadastro = {
          let cadastro = req.body;
    
          cadastro = await cadastroModels.insert(cadastro);
-         res.send(cadastro)
+         //res.send(cadastro)
+         res.redirect('/dashboard')
       
          }catch(err){
             
