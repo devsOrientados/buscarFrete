@@ -17,7 +17,6 @@ body {
   border: 2px solid #F2F2F2;
   background-color: #F2F2F2;
   padding: 10px;
-
 }
 
 header nav {
@@ -50,15 +49,13 @@ header nav ul li a {
 }
 
 #info_motorista {
-  width: 30%;
+  width: 40%;
   display: flex;
   flex-direction: column;
-
 }
 
 #img_caminhao {
   width: 20%;
-
 }
 
 main {
@@ -67,7 +64,6 @@ main {
   align-items: center;
   flex-direction: column;
   margin-bottom: 50px;
-
 }
 
 #comentarios {
@@ -98,3 +94,4 @@ footer {
   padding: 10px;
   margin-bottom: 5%;
 }
+
