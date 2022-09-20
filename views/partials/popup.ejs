@@ -1,16 +1,16 @@
    <section class="popup_cadastro">
 
             <div class="popup">
-                <form class="form_sistema">
+                <form class="form_sistema" action="http://localhost:3000/cadastro" method="post">
          
                     <label class="Label_Titulo">Faça o seu CADASTRO</label>
                     
-                      <input class="inputs_cadastroLogin" type="text" placeholder="nome" value="">
-                      <input class="inputs_cadastroLogin" type="email" placeholder="email"  value="">
-                      <input class="inputs_cadastroLogin" type="text" placeholder="senha"  value="">
+                      <input class="inputs_cadastroLogin" name="nome" type="text" placeholder="nome" value="">
+                      <input class="inputs_cadastroLogin" name="email" type="email" placeholder="email"  value="">
+                      <input class="inputs_cadastroLogin" name="senha" type="text" placeholder="senha"  value="">
         
                       <div class="botoesPopup">
-                        <button class="btn_cadastrar active">CADASTRAR</button>
+                        <button type="submit" class="btn_cadastrar active">CADASTRAR</button>
                         <button type="reset" class="btn_login no_active" onclick="abrirLogin()"">LOGIN</button>
                       </div>
         
