@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro do Veículo</title>
+    <link rel="stylesheet" href="/public/stylesheets/styleCadastro.css">
+</head>
+
+<!-- formulario de cadastro do veiculo, base para o anuncio-->
+<!-- pode receber mais de um veiculo para um mesmo cadastro de motorista-->
+
+<body>
+    <header>
+        <h1 class="titulo">CADASTRO DO VEÍCULO</h1>
+    </header>
+    <h3 class="cadastroVeiculo">MOSTRE SEU VEÍCULO</h3>
+    <form> <!--action= "definir rota" method="POST"-->
+        <div>    
+            <label for="veiculo">Modelo:</label> 
+            <input type="text"name="veiculo" id="veiculo" placeholder="Modelo do veículo">
+        </div>
+        <div>    
+            <label for="anoVeiculo">Ano:</label> 
+            <input type="year"name="anoVeiculo" id="anoVeiculo" placeholder="Ano de fabricação do veículo">
+        </div>
+            <input type="file" name="fotoVeículo1" accept="image/*">
+            <input type="file" name="fotoVeículo2" accept="image/*">
+            <input type="file" name="fotoVeículo3" accept="image/*">
+        </div>
+        <div class="botoes">
+            <button type="submit" name="cadastrarmais">CADASTRAR VEÍCULO</button>
+        </div>
+    </form>
+</body>
+</html>
