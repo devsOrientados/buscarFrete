@@ -1,0 +1,622 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #ffffff;
+    outline: none;
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+}
+
+.paginaInicial{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100px;
+    background-color: #4f4f4f;
+}
+
+.Nav_paginaInicial{
+    display: flex;
+    flex-direction: row;
+}
+
+.logoBuscarFrete{
+    display: block;
+    width: 120px;
+}
+
+.container_menu{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu_buscarFrete{
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    cursor: pointer;
+    list-style: none
+}
+
+.menu_buscarFrete li a{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.minicart{
+    position: absolute;
+    top: 60px;
+    right: 214px;
+    z-index: 8;
+}
+
+.minicart_button{
+    position: absolute;
+    left: 140px;
+    cursor: pointer;
+    background-color: #4f4f4f;
+    border: none;
+}
+
+.img-bag_icon{
+    display: block;
+    width: 18px;
+}
+
+.minicart_drawer{
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: -30px;
+    width: 200px;
+    height: 200px;
+    background-color: #ffffff;
+    border: 1px solid #4f4f4f;
+    z-index: 8;
+}
+
+.seta_minicart{
+    display: block;
+    width: 20px;
+    position: absolute;
+    top: -10px;
+    left: 180px;
+}
+
+.minicart_drawer ul {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.minicart_drawer ul li {
+    text-decoration: none;
+    list-style: none;
+    margin-top: 2px;
+    margin-left: 2px;
+    width: 190px;
+    height: 40px;
+    background-color: #4f4f4f;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.minicart_drawer ul li {
+   color: #ffffff;
+}
+
+.slide_paginaInicial{
+    display: block;
+    margin: 0 auto;
+}
+
+.imagem_slide{
+    display: block;
+    width: 80%;
+    height: 454px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.slick-dots{
+   list-style: none;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 18px;
+}
+  
+.slick-dots li button{
+    border-radius: 50%;
+    border: 1px solid #000000;
+    width: 16px;
+    height: 16px;
+    color: transparent;
+    cursor: pointer;
+    background: #ffffff;
+}
+
+.slick-active button{
+    background-color: #4f4f4f !important;
+}
+
+.information__website{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
+}
+
+.imagem_information{
+    display: block;
+    width: 600px;
+}
+
+.section_login{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 48px;
+}
+
+.section_login h1{
+    font-size: 40px;
+    color:#000000;
+    font-weight: 600;
+}
+
+.section_consultar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.section_consultar h3{
+    color: #000000;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+.container_botoes{
+    display:inline-flex;
+    flex-wrap: wrap;
+    gap: 26px;
+    margin: 0 auto;
+    border: none;
+}
+
+.container_botoes a{
+   text-decoration: none;
+   color: #ffffff;
+}
+
+.popup_login, .popup_cadastro{
+    display: none;
+}
+
+.open_popup{
+    display: flex;
+}
+
+.popup{
+    top: 0;
+    position: fixed;
+    z-index: 9;
+    background-color: #4f4f4fe8;
+    width: 100%;
+    height: 100%
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #f2f2f2;
+    width: 400px;
+    height: 300px;  
+}
+
+.form_sistema{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 12%;
+    background-color: #f2f2f2;
+    width: 400px;
+    height: 300px;  
+}
+
+.Label_Titulo{
+    color:#000;
+    text-align: center;
+}
+
+.inputs_cadastroLogin{
+    display: flex;
+    margin: 0 auto;
+    height: 30px;
+    width: 280px;
+    margin-top: 10px;
+}
+
+.botoes{
+    margin-top: 20px;
+    display: block;
+    width: 148px;
+    height: 40px;
+    cursor: pointer;
+    border-radius:50px ;
+    border: none;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.botoesPopup{
+    display:inline-flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 0 auto;
+}
+
+.btn_cadastrar{
+    display: block;
+    border: none;
+    margin-top: 8px;
+    width: 140px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.btn_login{
+    display: block;
+    border: none;
+    margin-top: 8px;
+    width: 140px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.btn_cadastrar a, .btn_login a{
+    text-decoration: none;
+    color:#000;
+}
+
+.no_active{
+    background-color: #4f4f4f;
+}
+
+.active{
+    background: #cb3506;
+}
+
+.active:hover{
+    background-color: #fff000;
+    color: #000000;
+    border: 1px solid #000;
+}
+
+
+.footer__website{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    margin-top: 100px;
+    width: 100%;
+    height: 116px;
+    background-color: #000000;
+}
+
+.contatos{
+    padding-top: 8px;
+    padding-left: 16px;
+    display: block;
+    height: 80px;
+    width: 180px;
+}
+
+.contatos p{
+    font-family: 'Roboto', 'Arial';
+    color: #ffffff;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.rede-sociais {
+    padding-top: 30px;
+    width: 180px;
+    display: block;
+}
+
+.rede-sociais img {
+    min-width: 38px;
+    background-color: #ffffff;
+}
+
+.pagamentos{
+    padding-top: 18px;
+    width: 200px;
+    display: block;
+}
+
+.pagamentos img{
+    width: 50px;
+}
+
+/*pagina filtro motorista*/
+
+#Estado {
+    display: flex;
+    line-height: 20px;
+    width: 160px;
+    margin-left: 30px;
+    margin-top: 70px;
+}
+
+#Cidade {
+    display: flex;
+    line-height: 20px;
+    width: 160px;
+    margin-left: 30px;
+    margin-top: 60px;
+}
+
+.painel_motoristas{
+    margin: -60px auto;
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+    gap: 40px;
+}
+
+.perfil_motorista{
+    display: block;
+    width: 120px;
+    height: 140px;
+}
+
+.filtro {
+    line-height: 20px;
+    width: 100px;
+    margin-left: 50px;
+    margin-top: 12px;
+}
+
+.painel-principal{
+    margin: 0 auto;
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+
+.label_painel-principal {
+    text-align: center;
+    display: flex;
+    margin-top: -150px;
+}
+
+/* css da pagina anuncio do motorista */
+
+  #container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  #bate_papo img{
+    width: 94%;
+    cursor: pointer;
+  }
+  
+  #info_motorista {
+    width: 40%;
+    text-align: center;
+  }
+
+  .descrição_motorista {
+    margin-bottom: 20px;
+  }
+
+  .container_nome_motorista{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nome_motorista{
+    margin-bottom: 20px;
+  }
+
+  .dados_motorista{
+    display: flex;
+    flex-direction: row;
+    gap:14px;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .container_img_caminhao{
+    display: block;
+    width: 400px;
+    margin-top: 20px;
+  }
+
+  #img_caminhao {
+    display:block;
+    width: 100%;
+  }
+  
+  .container_anuncio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+  
+  #comentarios {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+  }
+  
+  #avalicao{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  #avaliacao img {
+    margin-top: 14px;
+    width: 26px;
+  }
+
+  /* css da pagina dashboard */
+
+  .container_titulo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .description_dashboard{
+    border-bottom: 1px solid gray;
+    margin-bottom: 3px;
+    text-align: center;
+    padding: 3px;
+}
+
+
+.sub_titulo {
+    font-size: 24px;
+    background-color:#CB3506;
+    color:#F2F2F2; 
+    display: flex;
+    border: solid 1vmax #f2f2f2;
+    padding: 1vmax;
+    margin:0 auto;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.form_dashboard {
+    width: 90vw;
+    height: 100vh;
+    background-color: #f2f2f2;
+    margin: 0 auto;
+    display: flex  ;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.label_dashboard{
+    color:#000;
+    text-align: center;
+    margin: auto;
+}
+
+.input_dashboard {
+    display: flex;
+    margin: 0 auto;
+    height: 30px;
+    width: 90vw;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.input_dashboard:hover{
+    border: solid 0.15em; 
+}
+
+select{
+    display: flex;
+    margin: 0 auto;
+    height: 30px;
+    width: 90vw;
+margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+select:hover{
+    border: solid 0.15em; 
+}
+
+.radio{
+    height: 30px;
+    width: 90vw;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 10px; 
+    display: flex;
+}
+
+textarea{
+    display: flex;
+    margin: 0 auto;
+    height: 40px;
+    width: 90vw;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+textarea:hover{
+    border: solid 0.15em; 
+}
+
+
+.botao_dashboard{
+    display: block;
+    width: 140px;
+    height: 40px;
+    cursor: pointer;
+    border-radius:50px ;
+    border: none;
+    background-color: #000000;
+    color: #ffffff;
+    margin-top: 1vh;
+ }
+
+  
