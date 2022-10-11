@@ -515,7 +515,8 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    padding-top: 10px;
+    background-color: #F2F2F2;
   }
 
   .description_dashboard{
@@ -523,12 +524,13 @@ body{
     margin-bottom: 3px;
     text-align: center;
     padding: 3px;
+    background-color: #F2F2F2;
 }
 
 
 .sub_titulo {
     font-size: 24px;
-    background-color:#CB3506;
+    background-color:#cb3406dc;
     color:#F2F2F2; 
     display: flex;
     border: solid 1vmax #f2f2f2;
@@ -540,15 +542,16 @@ body{
 }
 
 .form_dashboard {
-    width: 90vw;
+    width: 100vw;
     height: 100vh;
     background-color: #f2f2f2;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
+    padding: 2.5%;
     display: flex  ;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap:nowrap;
 }
 
 .label_dashboard{
@@ -556,6 +559,8 @@ body{
     text-align: center;
     margin: auto;
 }
+
+
 
 .input_dashboard {
     display: flex;
@@ -575,7 +580,7 @@ select{
     margin: 0 auto;
     height: 30px;
     width: 90vw;
-margin-top: 5px;
+    margin-top: 5px;
     margin-bottom: 5px;
 }
 
@@ -610,13 +615,13 @@ textarea:hover{
 .botao_dashboard{
     display: block;
     width: 140px;
-    height: 40px;
+    height: 50px;
     cursor: pointer;
-    border-radius:50px ;
+    border-radius:70px ;
     border: none;
     background-color: #000000;
     color: #ffffff;
-    margin-top: 1vh;
+    /*margin-top: 1vh;*/
  }
 
   
