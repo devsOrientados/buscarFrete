@@ -4,10 +4,12 @@
 
     <div class="container_titulo">
        <h1 class="sub_titulo">CADASTRO DO MOTORISTA</h1>
-       <p class="description_dashboard">Vamos preparar o seu anúncio, para isso precisamos de algumas informações.</p>
+       <p class="description_dashboard">Aqui você pode atualizar o seu anúncio.</p>
     </div>
     
-    <form class="form_dashboard" action="/dashboard/create"  method="POST"> 
+<!-- para o formulario de editar: action="/dashboard/edit/id[id do motorista]?__method=PUT" method=POST-->  
+<!-- buscar os valores de acordo com área logada e id do motorista-->  
+    <form class="form_dashboard" action="dashboard/edit/id[id do motorista]?__method=PUT"  method="POST"> 
         <h3 class="sub_titulo">DADOS PESSOAIS</h3> 
         <div>
             <label class="label_dashboard" for="cpf">CPF:</label> 
@@ -42,9 +44,9 @@
         </div>
         
         <h3 class="sub_titulo">DADOS DO SERVIÇO</h3>  
-        <div class="estado">
+        <div>
             <label class="label_dashboard" for="Estado">Estado:</label> 
-                <select id="estado" name="estado">
+                <select id="Estado" name="estado">
                        <option value="" selected hidden>Estado</option>
                        <option value="AC">Acre</option>
                        <option value="AL">Alagoas</option>
@@ -110,7 +112,7 @@
             <input class="input_dashboard" type="file" name="fotoVeículo3" accept="image/*">
         </div>
         <div class="botao_dashboard">
-            <button class="botao_dashboard" type="submit" name="cadastrarDashboard">FINALIZAR CADASTRO</button>
+            <button class="botao_dashboard" type="submit" name="cadastrarDashboard">ATUALIZAR CADASTRO</button>
         </div>
     </form>
 </section>

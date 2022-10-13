@@ -1,8 +1,7 @@
 const fs = require ('fs');
 const path = require('path')
 
-const dashboardFilePath = path.join(__dirname,'../models/data/dashboard.json')
-
+const dashboardFilePath = path.join('/home/daniel/Documents/Guadalupe/projeto/buscarFrete/models/data/dashboard.json')
 
 const dashboardController = {
     /*redenrização do formulário de cadastro*/
@@ -21,11 +20,11 @@ const dashboardController = {
 
         dashboard.push(newDashboard);  
         fs.writeFileSync(
-            path.resolve('../buscarfrete/models/data/dashboard.json'), 
+            path.resolve('../models/data/dashboard.json'), 
             JSON.stringify(dashboard));
 
         res.status(201).render;
-        res.redirect('/');
+        res.redirect('/anuncio.js');
     }
 }
 

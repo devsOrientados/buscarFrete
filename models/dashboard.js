@@ -9,5 +9,6 @@ const newDashboard = {id:dashboard.length +1, ...novoDashboard}
 
 dashboard.push(newDashboard);  
 fs.writeFileSync(
-    path.resolve('../buscarfrete/models/data/dashboard.json'), 
+    path.resolve('../buscarFrete/models/data/dashboard.json'), 
     JSON.stringify(dashboard));
+
