@@ -2,7 +2,7 @@ let popup_cadastro = document.querySelector('.popup_cadastro');
 let popupLogin = document.querySelector('.popup_login');
 
 
-function abrirCadstro(){
+function abrirCadastro(){
     popup_cadastro.classList.add('open_popup')
 
     closePopup(popup_cadastro)

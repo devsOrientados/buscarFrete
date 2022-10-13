@@ -7,6 +7,7 @@
 body{
     background-color: #ffffff;
     outline: none;
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 }
 
 .paginaInicial{
@@ -152,6 +153,7 @@ body{
 }
 
 .information__website{
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -197,6 +199,11 @@ body{
     gap: 26px;
     margin: 0 auto;
     border: none;
+}
+
+.container_botoes a{
+   text-decoration: none;
+   color: #ffffff;
 }
 
 .popup_login, .popup_cadastro{
@@ -255,6 +262,7 @@ body{
 }
 
 .botoes{
+    margin-top: 20px;
     display: block;
     width: 148px;
     height: 40px;
@@ -408,9 +416,212 @@ body{
     justify-content:center;
 }
 
-h2 {
+.label_painel-principal {
     text-align: center;
     display: flex;
     margin-top: -150px;
 }
 
+/* css da pagina anuncio do motorista */
+
+  #container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  #bate_papo img{
+    width: 94%;
+    cursor: pointer;
+  }
+  
+  #info_motorista {
+    width: 40%;
+    text-align: center;
+  }
+
+  .descrição_motorista {
+    margin-bottom: 20px;
+  }
+
+  .container_nome_motorista{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nome_motorista{
+    margin-bottom: 20px;
+  }
+
+  .dados_motorista{
+    display: flex;
+    flex-direction: row;
+    gap:14px;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .container_img_caminhao{
+    display: block;
+    width: 400px;
+    margin-top: 20px;
+  }
+
+  #img_caminhao {
+    display:block;
+    width: 100%;
+  }
+  
+  .container_anuncio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+  
+  #comentarios {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+  }
+  
+  #avalicao{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  #avaliacao img {
+    margin-top: 14px;
+    width: 26px;
+  }
+
+  /* css da pagina dashboard */
+
+  .container_titulo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    background-color: #F2F2F2;
+  }
+
+  .description_dashboard{
+    border-bottom: 1px solid gray;
+    margin-bottom: 3px;
+    text-align: center;
+    padding: 3px;
+    background-color: #F2F2F2;
+}
+
+
+.sub_titulo {
+    font-size: 24px;
+    background-color:#cb3406dc;
+    color:#F2F2F2; 
+    display: flex;
+    border: solid 1vmax #f2f2f2;
+    padding: 1vmax;
+    margin:0 auto;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.form_dashboard {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f2f2f2;
+    /*margin: 0 auto;*/
+    padding: 2.5%;
+    display: flex  ;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap:nowrap;
+}
+
+.label_dashboard{
+    color:#000;
+    text-align: center;
+    margin: auto;
+}
+
+
+
+.input_dashboard {
+    display: flex;
+    margin: 0 auto;
+    height: 30px;
+    width: 90vw;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.input_dashboard:hover{
+    border: solid 0.15em; 
+}
+
+select{
+    display: flex;
+    margin: 0 auto;
+    height: 30px;
+    width: 90vw;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+select:hover{
+    border: solid 0.15em; 
+}
+
+.radio{
+    height: 30px;
+    width: 90vw;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 10px; 
+    display: flex;
+}
+
+textarea{
+    display: flex;
+    margin: 0 auto;
+    height: 40px;
+    width: 90vw;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+textarea:hover{
+    border: solid 0.15em; 
+}
+
+
+.botao_dashboard{
+    display: block;
+    width: 140px;
+    height: 50px;
+    cursor: pointer;
+    border-radius:70px ;
+    border: none;
+    background-color: #000000;
+    color: #ffffff;
+    /*margin-top: 1vh;*/
+ }
+
+  
