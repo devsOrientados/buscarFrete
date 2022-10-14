@@ -17,14 +17,13 @@ const dashboardController = {
         const novoDashboard = req.body;
         const newDashboard = {id:dashboard.length +1, ...novoDashboard}
                
-
         dashboard.push(newDashboard);  
-        fs.writeFileSync(
-            path.resolve('../models/data/dashboard.json'), 
-            JSON.stringify(dashboard));
-
+        //fs.writeFileSync(
+        //    path.resolve('../models/data/dashboard.json'), 
+        //    JSON.stringify(dashboard));
+        //console.log(file) teste de onde esstá indo as imagens do forms
         res.status(201).render;
-        res.redirect('/anuncio.js');
+        res.redirect('/anuncio');
     }
 }
 
