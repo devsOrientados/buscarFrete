@@ -1,3 +1,4 @@
+const { validationResult } = require('express-validator');
 const fs = require ('fs');
 const path = require('path')
 
@@ -6,13 +7,16 @@ const dashboardFilePath = path.join('/home/daniel/Documents/Guadalupe/projeto/bu
 const dashboardController = {
     /*redenrização do formulário de cadastro*/
     viewForm: (req, res) => {
-        return res.render('dashboard')
+        return res.render('dashboard',{errors: []})
     },
 
     /*criação de um novo anuncio/dashboard do motorista json*/
 
     salvarForm:(req,res) => {
-    
+        const {errors} = validationResult(req);
+        if (errors) {
+            return res.render('dashboard', {errors})
+        }
         const dashboard = JSON.parse(fs.readFileSync(dashboardFilePath,'utf-8'));
         const novoDashboard = req.body;
         const newDashboard = {id:dashboard.length +1, ...novoDashboard}

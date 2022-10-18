@@ -1,5 +1,5 @@
 {
-  "nextId": 19,
+  "nextId": 21,
   "motorista": [
     {
       "id": 1,
@@ -108,6 +108,18 @@
       "nome": "teste 8",
       "email": "email8@fake.com",
       "senha": "12345"
+    },
+    {
+      "id": 19,
+      "nome": "teste 9",
+      "email": "email9@fake.com",
+      "senha": "123"
+    },
+    {
+      "id": 20,
+      "nome": "teste 10",
+      "email": "emai10l@fake.com",
+      "senha": "1111"
     }
   ]
 }

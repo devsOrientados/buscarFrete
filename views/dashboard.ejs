@@ -6,7 +6,15 @@
        <h1 class="sub_titulo">CADASTRO DO MOTORISTA</h1>
        <p class="description_dashboard">Vamos preparar o seu anúncio, para isso precisamos de algumas informações.</p>
     </div>
-    
+    <div>
+        <% if (errors.length) { %>
+            <% errors.forEach(error => { %>
+               <li>
+                <%= error.param %>: <%= error.msg %> 
+               </li>
+            <% }) %>
+        <% } %>
+    </div>
     <form class="form_dashboard" action="/dashboard/create"  method="POST" enctype="multiport/form-data"> 
         <h3 class="sub_titulo">DADOS PESSOAIS</h3> 
         <div>
