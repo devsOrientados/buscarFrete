@@ -1,0 +1,97 @@
+.popup_login, .popup_cadastro{
+    display: none;
+}
+
+.open_popup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #4f4f4f23;
+    width: 100%;
+    height: 100%;
+    z-index: 7;
+}
+
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #4f4f4f;
+    width: 100%;
+    height: 100%;
+    z-index: 7;
+}
+
+.form_sistema{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #f2f2f2;
+    width: 400px;
+    height: 300px;  
+}
+
+.Label_Titulo{
+    color:#000;
+    text-align: center;
+}
+
+.inputs_cadastroLogin{
+    display: flex;
+    margin: 0 auto;
+    height: 30px;
+    width: 280px;
+    margin-top: 10px;
+}
+
+.botoes{
+    display:inline-flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 0 auto;
+}
+
+.btn_cadastrar{
+    display: block;
+    margin-top: 8px ;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.btn_login{
+    display: block;
+    margin-top: 8px;
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.btn_cadastrar a, .btn_login a{
+    text-decoration: none;
+    color:#000;
+}
+
+.no_active{
+    background-color: #f2f2f2;
+    border: 1px solid #000;
+}
+
+.active{
+    background-color: #cb3506;
+    border: 1px solid #000;
+}
+
+.active:hover{
+    background-color: #fff000;
+    border: 1px solid #000;
+}

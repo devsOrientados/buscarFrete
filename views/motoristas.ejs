@@ -1,6 +1,6 @@
 
 <%- include('partials/header')  %>
-
+<main>
         <aside>
         <select id="Estado" name="estado">
     <option value="" selected hidden>Estado</option>
@@ -37,19 +37,37 @@
         <option value="PE">Caruaru</option>
         </select>
         </aside>
+
+        <div class="container_botoes">
+           <button type="button" class="botoes no_active filtro">Filtrar</button>
+        </div>
+
         <section class="painel-principal">
-            <header>
-                <h2>Motorista em sua região</h2>
-            </header>
+                <h2 class="label_painel-principal">Motorista em sua região</h2>
         </section>
-        <div><img id="volvo" src="https://logodownload.org/wp-content/uploads/2017/10/volvo-logo-2-1.png"></id></div>
-        <div><img id="scania" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRhmgTXO96x-UtWlZ-8b0LjuZ_G2BmQrdTcw&usqp=CAU"></id></div>
-        <div><img id="ford" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0lZTb-TmKLKtVbCQetzTv5YT40zs0S-ZQ3w&usqp=CAU"></id></div>
-        <div><img id="volkswagen" src="https://marcas-logos.net/wp-content/uploads/2020/03/Volkswagen-Logo-1967.jpg"></id></div>
-        <div><img id="mercedes-benz" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReG5KVo7cf8VV81f-vdWyw3o07gTNEOhDW8g&usqp=CAU"></id></div>
-        <div><img id="iveco" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROfrKP2SFKN1BW_Wj3WUK3cD4dg6N-9cYFPQ&usqp=CAU"></id></div>
-    <div>
-        <button type="button" class="filtro">Filtrar</button>
-    </div>
+
+        <section class="painel_motoristas">
+           <div><img class="perfil_motorista" id="volvo" src="https://logodownload.org/wp-content/uploads/2017/10/volvo-logo-2-1.png"></id></div>
+           <div><img class="perfil_motorista" id="scania" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRhmgTXO96x-UtWlZ-8b0LjuZ_G2BmQrdTcw&usqp=CAU"></id></div>
+           <div><img class="perfil_motorista" id="ford" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0lZTb-TmKLKtVbCQetzTv5YT40zs0S-ZQ3w&usqp=CAU"></id></div>
+           <div><img class="perfil_motorista" id="volkswagen" src="https://marcas-logos.net/wp-content/uploads/2020/03/Volkswagen-Logo-1967.jpg"></id></div>
+           <div><img class="perfil_motorista" id="mercedes-benz" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReG5KVo7cf8VV81f-vdWyw3o07gTNEOhDW8g&usqp=CAU"></id></div>
+           <div><img class="perfil_motorista" id="iveco" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROfrKP2SFKN1BW_Wj3WUK3cD4dg6N-9cYFPQ&usqp=CAU"></id></div>
+           <div><img class="perfil_motorista" id="volvo" src="https://logodownload.org/wp-content/uploads/2017/10/volvo-logo-2-1.png"></id></div>
+           <div><img class="perfil_motorista" id="scania" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRhmgTXO96x-UtWlZ-8b0LjuZ_G2BmQrdTcw&usqp=CAU"></id></div>
+           <div><img class="perfil_motorista" id="ford" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0lZTb-TmKLKtVbCQetzTv5YT40zs0S-ZQ3w&usqp=CAU"></id></div>
+           <div><img class="perfil_motorista" id="volkswagen" src="https://marcas-logos.net/wp-content/uploads/2020/03/Volkswagen-Logo-1967.jpg"></id></div>
+           <div><img class="perfil_motorista" id="mercedes-benz" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReG5KVo7cf8VV81f-vdWyw3o07gTNEOhDW8g&usqp=CAU"></id></div>
+           <div><img class="perfil_motorista" id="iveco" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROfrKP2SFKN1BW_Wj3WUK3cD4dg6N-9cYFPQ&usqp=CAU"></id></div>
+           <div><img class="perfil_motorista" id="scania" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRhmgTXO96x-UtWlZ-8b0LjuZ_G2BmQrdTcw&usqp=CAU"></id></div>
+           <div><img class="perfil_motorista" id="ford" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0lZTb-TmKLKtVbCQetzTv5YT40zs0S-ZQ3w&usqp=CAU"></id></div>
+           <div><img class="perfil_motorista" id="volkswagen" src="https://marcas-logos.net/wp-content/uploads/2020/03/Volkswagen-Logo-1967.jpg"></id></div>
+           <div><img class="perfil_motorista" id="mercedes-benz" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReG5KVo7cf8VV81f-vdWyw3o07gTNEOhDW8g&usqp=CAU"></id></div>
+           <div><img class="perfil_motorista" id="iveco" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROfrKP2SFKN1BW_Wj3WUK3cD4dg6N-9cYFPQ&usqp=CAU"></id></div>
+        </section>
+
+          <%- include('partials/popup')  %>
+
+</main>
 
 <%- include('partials/footer')  %> 
