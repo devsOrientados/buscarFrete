@@ -39,8 +39,11 @@ FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
 
 CREATE TABLE veiculos (
 id_veiculo INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+modelo_veiculo VARCHAR (100),
 ano_veiculo INT,
 foto_veiculo1 VARCHAR(200),
 foto_veiculo2 VARCHAR(200),
-foto_veiculo3 VARCHAR(200)
+foto_veiculo3 VARCHAR(200),
+id_motorista INT UNSIGNED NOT NULL,
+FOREIGN KEY (id_motorista) REFERENCES clientes(id_cliente)
 );

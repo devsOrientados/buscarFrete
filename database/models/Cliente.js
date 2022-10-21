@@ -48,13 +48,25 @@ module.export = (sequelize, DataTypes) => {
         numero:{
             type: DataTypes.STRING,
             allowNull: false
+        },
+        id_usuario:{
+            type: DataTypes.INTEGER,
+            allowNull: false
         }
     };
     const config = {
         tableName: 'clientes',
         timestamps: false
-    }
+    };
 
     const Cliente = sequelize.define("Cliente", cols,config);
+
+    Cliente.associate = (models) => {
+        Cliente.belongsTo(models.Usuario, {
+        as:'usuario',
+        foreignKey:'id_usuario',
+    });
+    };
+
     return Cliente;
 };
