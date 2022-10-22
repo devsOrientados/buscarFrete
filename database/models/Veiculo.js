@@ -1,4 +1,4 @@
-module.export = (sequelize, DataTypes) =>{
+module.exports = (sequelize, DataTypes) =>{
     const cols = {
         id_veiculo: {
             type: DataTypes.INTEGER,
