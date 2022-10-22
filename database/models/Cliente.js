@@ -1,4 +1,4 @@
-module.export = (sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
     const cols = {
         id_cliente: {
             type: DataTypes.INTEGER,
@@ -18,6 +18,10 @@ module.export = (sequelize, DataTypes) => {
             allowNull: false
         },
         cnh: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        categoria_cnh: {
             type: DataTypes.STRING,
             allowNull: false
         },
