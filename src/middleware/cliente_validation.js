@@ -1,6 +1,12 @@
 const {check} = require ('express-validator');
 
-let dashboard_validation = [ 
+let cliente_validation = [
+    check('nome')
+      .notEmpty()
+        .withMessage('por favor, preencher o seu nome'),
+    check('sobrenome')
+      .notEmpty()
+        .withMessage('por favor, preencher o seu sobrenome'),
     check('cpf')
       .notEmpty()
       .isLength({min:11})
@@ -11,7 +17,7 @@ let dashboard_validation = [
     check('cnh')
         .notEmpty()
         .withMessage('por favor, preencher o numero da sua CNH'),
-    check('categoria')
+    check('categoria_cnh')
         .notEmpty()
         .withMessage('por favor, selecione a categoria da sua CNH'),
     check('cidade')
@@ -19,4 +25,4 @@ let dashboard_validation = [
         .withMessage('por favor, preencher o nome da cidade de origem que você costuma realizar fretes')
     ];
 
-module.exports=dashboard_validation;
+module.exports = cliente_validation;

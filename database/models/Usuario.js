@@ -20,5 +20,13 @@ module.exports = (sequelize, DataTypes) =>{
         timestamps: false
     }
     const Usuario = sequelize.define("Usuario", cols, config);
+    
+    Usuario.associate = (models) => {
+        Usuario.belongsTo(models.Cliente, {
+        as:'cliente',
+        foreignKey:'id_usuario',
+    });
+    };
+
     return Usuario;
 };

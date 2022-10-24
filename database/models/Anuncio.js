@@ -37,12 +37,12 @@ module.exports = (sequelize, DataTypes) =>{
 
     const Anuncio = sequelize.define("Anuncio", cols, config);
     
-    Anuncio.associate = (models) => {
-        Anuncio.belongsTo(models.Cliente, {
-        as:'motorista',
-        foreignKey:'id_motorista',
-    })
-    };
+   // Anuncio.associate = (models) => {
+    //    Anuncio.belongsTo(models.Cliente, {
+    //    as:'motorista',
+     //   foreignKey:'id_motorista',
+    //})
+   // };
 
     return Anuncio;
 }
