@@ -3,7 +3,7 @@
     <aside>
       <select id="estado" name="estado">
         <% cidadesEstados.forEach(estado=> { %>
-          <option value="<%= estado.siglas %> ">
+          <option value="<%= estado.sigla %>">
             <%= estado.nome %>
           </option>
           <% }) %>
@@ -64,5 +64,9 @@
     <%- include('partials/popup') %>
 
   </main>
+  <script src="/javascript/motoristas.js"></script>
+  <script>
+  iniciarEstadosCidades(<%- JSON.stringify(cidadesEstados) %>);
+  </script>
 
   <%- include('partials/footer') %>
