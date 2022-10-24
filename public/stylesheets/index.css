@@ -368,7 +368,7 @@ body{
 
 /*pagina filtro motorista*/
 
-#Estado {
+#estado {
     display: flex;
     line-height: 20px;
     width: 160px;
@@ -376,7 +376,7 @@ body{
     margin-top: 200px;
 }
 
-#Cidade {
+#cidade {
     display: flex;
     line-height: 20px;
     width: 160px;
