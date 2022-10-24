@@ -7,8 +7,8 @@ var logger = require('morgan');
 var cadastroRouter = require('./routes/cadastro');
 var indexRouter = require('./routes/index');
 var motoristasRouter = require('./routes/motoristas');
-var dashboardRouter = require('./routes/dashboard')
-var anuncioRouter = require('./routes/anuncio')
+var dashboardRouter = require('./routes/dashboard');
+var anuncioRouter = require('./routes/anuncio');
 
 var app = express();
 

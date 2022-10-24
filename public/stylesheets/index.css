@@ -561,7 +561,7 @@ body{
 
 .form_dashboard {
     width: 100vw;
-    height: 100vh;
+    /*height: 100vh;*/
     background-color: #f2f2f2;
     /*margin: 0 auto;*/
     padding: 2.5%;

@@ -2,52 +2,72 @@ const { validationResult } = require('express-validator');
 const fs = require ('fs');
 const path = require('path');
 const db = require ('../database/models');
-//const { Anuncio } = require ('../database/models');
-//const { Veiculo } = require ('../database/models');
-
-//const dashboardFilePath = path.join('/home/daniel/Documents/Guadalupe/projeto/buscarFrete/models/data/dashboard.json')
 
 const dashboardController = {
     /*redenrização do formulário de cadastro*/
-    viewForm: (req, res) => {
-        return res.render('dashboard',{errors: []})
+    viewCliente: (req, res) => {
+        return res.render('cliente',{errors: []})
     },
 
-    /*criação de um novo anuncio/dashboard do motorista bd*/
+    viewCadastroAnuncio: (req, res) => {
+        return res.render('cadastroAnuncio',{errors: []})
+    },
+    viewVeiculo: (req, res) => {
+        return res.render('veiculo',{errors: []})
+    },
 
-    salvarForm: async(req,res) => {
+    /*criação de um novo cliente(motorista) no bd*/
+
+    salvarCliente: async(req,res) => {
         try {
-        const {errors} = validationResult(req);
-        if (errors) {
-            return res.render('dashboard', {errors})
+           const {errors} = validationResult(req);
+           if (!errors.isEmpty) {
+               return res.render('cliente', {errors})
+            } else {
+            const {nome, sobrenome, cpf, cnh, categoria_cnh,telefone, cep, estado, cidade, bairro, logradouro, numero} =req.body;
+            const novoCliente = await db.Cliente.create({
+                nome, sobrenome, cpf, cnh, categoria_cnh,telefone, cep, estado, cidade, bairro, logradouro, numero
+            });
+            res.render('cadastroAnuncio',{id_cliente:novoCliente.id_cliente});
+            }
+        } catch (err) {
+            res.status(400).send({error: err.message});
         };
-
-        const {nome, sobrenome, cpf, cnh, categoria,telefone, cep, estado, cidade, bairro, logradouro, numero} =req.params;
-        await db.Cliente.create({
-            nome, sobrenome, cpf, cnh, categoria,telefone, cep, estado, cidade, bairro, logradouro, numero
-        });
-        const {servico, autodescricao, fotoPerfil, preco} = req.params;
-        await db.Anuncio.create({
-            servico, autodescricao, fotoPerfil, preco
-        });
-        const {veiculo,anoVeiculo,fotoVeiculo1, fotoVeiculo2, fotoVeiculo3}=req.params;
-        await db.Veiculo.create({
-            veiculo,anoVeiculo,fotoVeiculo1,fotoVeiculo2, fotoVeiculo3        
-        })} catch (err) {
-            return res.render('dashboard', {errors: [err.message]})
+    },
+    
+    salvarAnuncio: async(req,res) => {
+        try {
+            const {errors} = validationResult(req);
+            if (!errors.isEmpty) {
+                return res.render('cadastroAnuncio', {errors})
+             } else {
+            const novoAnuncio = {servico, autodescricao, fotoPerfil, preco} = req.body;
+            await db.Anuncio.create({servico, autodescricao, fotoPerfil, preco});
+            res.render('veiculo',{id_motorista:novoAnuncio.id_cliente})
         }
+        } catch (err) {
+            res.status(400).send({error: err.message});
+        };
+    },
 
-        res.render('/dashboard',res.status);
-        res.status(201).render;
-    }
+    salvarVeiculo: async(req,res) => {
+        try {
+            const {errors} = validationResult(req);
+            if (!errors.isEmpty) {
+                return res.render('veiculo', {errors})
+             } else {
+                const {veiculo,anoVeiculo,fotoVeiculo1, fotoVeiculo2, fotoVeiculo3}=req.body;
+                await db.Veiculo.create({veiculo,anoVeiculo,fotoVeiculo1,fotoVeiculo2, fotoVeiculo3});
+                res.render('perfildomotorista');
+             }
+             } catch (err) {
+               res.status(400).send({error: err.message});
+        };
+    },
+    
+
+        
 }
 
-//const dashboard = JSON.parse(fs.readFileSync(dashboardFilePath,'utf-8'));
-//const newDashboard = {id:dashboard.length +1, ...novoDashboard}
-//dashboard.push(newDashboard);  
-//fs.writeFileSync(
-//    path.resolve('../models/data/dashboard.json'), 
-//    JSON.stringify(dashboard));
-//console.log(file) teste de onde está indo as imagens do forms
 
 module.exports = dashboardController;

@@ -55,7 +55,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         id_usuario:{
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
         }
     };
     const config = {
@@ -64,13 +64,13 @@ module.exports = (sequelize, DataTypes) => {
     };
 
     const Cliente = sequelize.define("Cliente", cols,config);
-
     Cliente.associate = (models) => {
         Cliente.belongsTo(models.Usuario, {
         as:'usuario',
         foreignKey:'id_usuario',
-    });
-    };
+       allowNull:true,
+   });
+   };
 
-    return Cliente;
-};
+   return Cliente;
+}
