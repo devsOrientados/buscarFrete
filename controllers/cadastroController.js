@@ -8,10 +8,10 @@ const createCadastro = {
          const {errors} = validationResult(req);
          const {email, senha} = req.body;
          const novoUsuario = await db.Usuario.create({ email, senha});
-         res.render('cliente',{id_usuario:novoUsuario.id_usuario})
+         res.render('cliente',{id_usuario:novoUsuario.id_usuario,errors})
         }
       catch(err){
-            res.status(400).send({error: err.message})
+            res.status(400).send({errors: err.message})
       }
   }
 }
