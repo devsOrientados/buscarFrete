@@ -21,15 +21,16 @@ const dashboardController = {
     salvarCliente: async(req,res) => {
         try {
            const {errors} = validationResult(req);
-           if (!errors.isEmpty) {
-               return res.render('cliente', {errors})
-            } else {
+           //if (!errors.isEmpty) {
+            //   return res.render('cliente', {errors})
+            //} else {
             const {nome, sobrenome, cpf, cnh, categoria_cnh,telefone, cep, estado, cidade, bairro, logradouro, numero} =req.body;
+            const {id_usuario} = req.params;
+            console.log(" id do usuario: " +id_usuario);
             const novoCliente = await db.Cliente.create({
-                nome, sobrenome, cpf, cnh, categoria_cnh,telefone, cep, estado, cidade, bairro, logradouro, numero
-            });
-            res.render('cadastroAnuncio',{id_cliente:novoCliente.id_cliente});
-            }
+                nome, sobrenome, cpf, cnh, categoria_cnh,telefone, cep, estado, cidade, bairro, logradouro, numero, id_usuario});
+            res.render('cadastroAnuncio',{id_cliente:novoCliente.id_cliente,errors});
+            //}
         } catch (err) {
             res.status(400).send({error: err.message});
         };
