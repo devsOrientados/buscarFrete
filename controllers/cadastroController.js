@@ -1,23 +1,19 @@
-var  cadastroModels  = require ('../models/cadastro');
+const db = require('../database/models');
+const { validationResult } = require('express-validator');
+//var  cadastroModels  = require ('../models/cadastro');
 
 const createCadastro = {
    async Cadastro (req, res) {
-  
-      try{
-     
-         let cadastro = req.body;
-   
-         cadastro = await cadastroModels.insert(cadastro);
-         //res.send(cadastro)
-         res.redirect('/dashboard')
-      
-         }catch(err){
-            
-            res.status(400).send({error: err.message})
-      
-         }
-   }
-};
-
+      try {
+         const {errors} = validationResult(req);
+         const {email, senha} = req.body;
+         const novoUsuario = await db.Usuario.create({ email, senha});
+         res.render('cliente',{id_usuario:novoUsuario.id_usuario,errors})
+        }
+      catch(err){
+            res.status(400).send({errors: err.message})
+      }
+  }
+}
 
 module.exports = createCadastro;

@@ -368,20 +368,20 @@ body{
 
 /*pagina filtro motorista*/
 
-#Estado {
+#estado {
     display: flex;
     line-height: 20px;
     width: 160px;
     margin-left: 30px;
-    margin-top: 70px;
+    margin-top: 200px;
 }
 
-#Cidade {
+#cidade {
     display: flex;
     line-height: 20px;
     width: 160px;
     margin-left: 30px;
-    margin-top: 60px;
+    margin-top: 30px;
 }
 
 .painel_motoristas{
@@ -398,6 +398,8 @@ body{
     display: block;
     width: 120px;
     height: 140px;
+    margin-top: -130px;
+    margin-bottom: 120px;
 }
 
 .filtro {
@@ -419,7 +421,23 @@ body{
 .label_painel-principal {
     text-align: center;
     display: flex;
-    margin-top: -150px;
+    margin-top: -300px;
+}
+
+#setaEsquerda{
+    display: flex;
+    width: 36px;
+    height: 25px;
+    margin-left: 1050px;
+    margin-bottom: 70px;
+}
+
+#setaDireita{
+    display: flex;
+    width: 36px;
+    height: 23px;
+    margin-left: 1125px;
+    margin-top: 4px;
 }
 
 /* css da pagina anuncio do motorista */
@@ -543,7 +561,7 @@ body{
 
 .form_dashboard {
     width: 100vw;
-    height: 100vh;
+    /*height: 100vh;*/
     background-color: #f2f2f2;
     /*margin: 0 auto;*/
     padding: 2.5%;
