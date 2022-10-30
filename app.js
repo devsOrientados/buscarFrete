@@ -6,11 +6,10 @@ var logger = require('morgan');
 var session = require('express-session');
 
 //rotas
-var cadastroRouter = require('./routes/cadastro');
 var indexRouter = require('./routes/index');
-var motoristasRouter = require('./routes/motoristas');
-var dashboardRouter = require('./routes/dashboard');
+var clienteRouter = require('./routes/cliente');
 var anuncioRouter = require('./routes/anuncio');
+var motoristasRouter = require('./routes/motoristas');
 
 var app = express();
 
@@ -23,14 +22,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({secret:"area logada"}));
+//app.use(session({secret:"area logada"}));
 
 app.use('/', indexRouter);
-app.use('/motoristas', motoristasRouter);
-app.use('/cadastro', cadastroRouter);
-app.use('/dashboard', dashboardRouter);
+app.use('/cadastro', clienteRouter);
 app.use('/anuncio', anuncioRouter);
-
+app.use('/motoristas', motoristasRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
