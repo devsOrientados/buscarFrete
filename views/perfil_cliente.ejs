@@ -1,0 +1,40 @@
+ <%- include('partials/header')  %>
+
+  <main>
+   <section class="container_anuncio">
+
+    <div id="container">
+
+      <div class="container_img_caminhao">
+          <img id="img_caminhao" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-k2_VQ8ZMoDFqLPmNZ8DuIF9ul2KG6wckJw&usqp=CAU" alt="Imagem do transporte">
+      </div>
+
+        <div id="info_motorista"> 
+
+           <div class="container_nome_motorista">  <h2 class="nome_motorista">José Batista filho</h2> </div>
+
+           <div class="dados_motorista">
+              <div>
+                <h3>Telefone:</h3>
+                <p>telefone fake </p>
+              </div>
+              <div>
+                <h3>Serviço:</h3>
+                <p>Frete</p> <!--lista com os servicos prestados (se motorista com veiculos)/contratados (se cliente)-->
+              </div>
+            </div>
+        <a button class="botao_dashboard" href="anuncios/create" >Anuncie aqui 
+         </button> 
+         </a>
+        <a button class="botao_dashboard" href="veiculos/create" > Cadastrar veículo 
+          </button> 
+         </a>
+        </div>
+
+    </section>
+        
+        <%- include('partials/popup')  %>
+
+  </main>
+
+<%- include('partials/footer')  %> 
