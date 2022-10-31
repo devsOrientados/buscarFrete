@@ -1,16 +1,24 @@
 const db = require('../database/models');
 const { validationResult } = require('express-validator');
 
-const createCadastro = {
+const cliente = {
    async Cadastro (req, res) {
       try {
          const {errors} = validationResult(req);
+         if (!errors.isEmpty) {
+            console.log(errors);
+            return res.render('cliente_create', {errors})
+         } else {
          const {email, senha} = req.body;
          const novoUsuario = await db.Usuario.create({ email, senha});
-         res.render('cliente_create',{id_usuario:novoUsuario.id_usuario,errors})
+         const {nome, sobrenome, cpf, cnh, categoria_cnh,telefone, cep, estado, cidade, bairro, logradouro, numero} =req.body;
+         await db.Cliente.create({
+            nome, sobrenome, cpf, cnh, categoria_cnh,telefone, cep, estado, cidade, bairro, logradouro, numero, id_usuario:novoUsuario.id_usuario});
+         res.redirect('/',{errors});
         }
-      catch(err){
-            res.status(400).send({errors: err.message})
+      } catch(err){
+         console.log(err);
+         res.status(400).send({errors: err.message})
       }
   },
 
@@ -18,6 +26,14 @@ const createCadastro = {
    return res.render('cliente_create',{errors: []})
    },
 
+   //async Editar (req,res) => {
+   //   try {
+   //      const {errors} = validationResult(req);
+
+  //   }
+  //    catch {
+  //
+  //    }
 }
 
-module.exports = createCadastro;
+module.exports = cliente;

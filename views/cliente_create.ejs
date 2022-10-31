@@ -15,7 +15,7 @@
             <% }) %>
         <% } %>
     </div>
-    <form class="form_dashboard" action="/dashboard/create"  method="POST" enctype="multiport/form-data"> 
+    <form class="form_dashboard" action="/clientes/create"  method="POST" enctype="multiport/form-data"> 
     <h3 class="sub_titulo">DADOS PESSOAIS</h3> 
         <div>
             <label class="label_dashboard" for="nome">Nome:</label> 
@@ -24,6 +24,18 @@
         <div>
             <label class="label_dashboard" for="sobrenome">Sobrenome:</label> 
             <input class="input_dashboard" type="text"name="sobrenome" id="sobrenome" placeholder="digite o seu sobrenome" >
+        </div>
+        <div>
+            <label class="label_dashboard" for="email">Email:</label> 
+            <input class="input_dashboard" type="text"name="email" id="email" placeholder="digite o seu email" >
+        </div>
+        <div>
+            <label class="label_dashboard" for="senha">Senha:</label> 
+            <input class="input_dashboard" type="password"name="senha" id="senha" placeholder="digite o seu senha" >
+        </div>
+        <div>
+            <label class="label_dashboard" for="confirmarSenha">Confirmar senha:</label> 
+            <input class="input_dashboard" type="password"name="confirmarSenha" id="confirmarSenha" placeholder="digite o seu confirme sua senha" >
         </div>
         <div>
             <label class="label_dashboard" for="cpf">CPF:</label> 
