@@ -1,0 +1,44 @@
+ <%- include('partials/header')  %>
+
+  <main>
+   <section class="container_anuncio">
+
+    <div id="container">
+
+      <div class="container_img_caminhao"> <!-- buscar os dados que foram para o banco-->
+          <img id="img_caminhao" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-k2_VQ8ZMoDFqLPmNZ8DuIF9ul2KG6wckJw&usqp=CAU" alt="Imagem do transporte">
+      </div>
+
+        <div id="info_motorista"> 
+
+           <div class="container_nome_motorista">  <h2 class="nome_motorista">Nome do motorista/cliente</h2> </div> <!-- buscar os dados que foram para o banco-->
+
+           <div class="dados_motorista">
+              <div>
+                <h3>Telefone:</h3>
+                <p>telefone fake </p> <!-- buscar os dados que foram para o banco-->
+              </div>
+              <div>
+                <h3>Serviço:</h3>
+                <p>Aqui deve ter a lista dos servicos prestados e/ou contratados</p> <!--lista com os servicos prestados (se motorista com veiculos)/contratados (se cliente)-->
+              </div>
+              <div>
+                <h3>Veículo:</h3>
+                <p>Aqui deve ter a lista dos veículos cadastrados neste motorista</p> <!--lista com os servicos prestados (se motorista com veiculos)/contratados (se cliente)-->
+              </div>
+            </div>
+        <a button class="botao_dashboard" href="../anuncios/create" >ANUNCIE AQUI <!-- link para o formulario de cadastro de anuncio-->
+         </button> 
+         </a>
+        <a button class="botao_dashboard" href="../veiculos/create" > CADASTRAR VEÍCULO<!-- link para o formulário de cadastro de veiculos-->
+          </button> 
+         </a>
+        </div>
+
+    </section>
+        
+        <%- include('partials/popup')  %>
+
+  </main>
+
+<%- include('partials/footer')  %> 

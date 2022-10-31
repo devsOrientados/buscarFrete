@@ -5,7 +5,8 @@ const cliente = {
    async Cadastro (req, res) {
       try {
          const {errors} = validationResult(req);
-         if (!errors.isEmpty) {
+         console.log(errors);
+         if (errors.length) {
             console.log(errors);
             return res.render('cliente_create', {errors})
          } else {
@@ -14,7 +15,7 @@ const cliente = {
          const {nome, sobrenome, cpf, cnh, categoria_cnh,telefone, cep, estado, cidade, bairro, logradouro, numero} =req.body;
          await db.Cliente.create({
             nome, sobrenome, cpf, cnh, categoria_cnh,telefone, cep, estado, cidade, bairro, logradouro, numero, id_usuario:novoUsuario.id_usuario});
-         res.redirect('/',{errors});
+         res.redirect('perfil_cliente'); //**redirecionar para o dashboard do cliente, possibilidade de visualizar e cadastrar o anuncio e veiculo */
         }
       } catch(err){
          console.log(err);
@@ -25,6 +26,11 @@ const cliente = {
   viewCliente: (req, res) => {
    return res.render('cliente_create',{errors: []})
    },
+
+  viewPerfilCliente: (req, res) => {
+      return res.render('perfil_cliente')
+      },
+   
 
    //async Editar (req,res) => {
    //   try {
