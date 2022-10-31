@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //app.use(session({secret:"area logada"}));
 
 app.use('/', indexRouter);
-app.use('/cadastro', clienteRouter);
+app.use('/cliente_create', clienteRouter);
 app.use('/anuncio', anuncioRouter);
 app.use('/motoristas', motoristasRouter)
 
