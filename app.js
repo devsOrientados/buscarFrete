@@ -25,8 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 //app.use(session({secret:"area logada"}));
 
 app.use('/', indexRouter);
-app.use('/cliente_create', clienteRouter);
-app.use('/anuncio', anuncioRouter);
+app.use('/clientes', clienteRouter);
+app.use('/anuncios', anuncioRouter);
 app.use('/motoristas', motoristasRouter)
 
 // catch 404 and forward to error handler
