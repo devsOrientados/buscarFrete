@@ -15,8 +15,7 @@ const cliente = {
          const {nome, sobrenome, cpf, cnh, categoria_cnh,telefone, cep, estado, cidade, bairro, logradouro, numero} =req.body;
          await db.Cliente.create({
             nome, sobrenome, cpf, cnh, categoria_cnh,telefone, cep, estado, cidade, bairro, logradouro, numero, id_usuario:novoUsuario.id_usuario});
-           console.log("teste de rota perfil do cliente") ;
-         res.redirect('/perfil_cliente'); //**redirecionar para o dashboard do cliente, possibilidade de visualizar e cadastrar o anuncio e veiculo */
+         res.redirect('perfil_cliente'); //**redirecionar para o dashboard do cliente, possibilidade de visualizar e cadastrar o anuncio e veiculo */
         }
       } catch(err){
          console.log(err);
@@ -29,7 +28,6 @@ const cliente = {
    },
 
   viewPerfilCliente: (req, res) => {
-   console.log("teste de rota perfil do cliente pelo controller")
       return res.render('perfil_cliente')
       },
    
