@@ -7,7 +7,7 @@ router.get('/', servicoController.viewBuscaServico);
 
 
 /* visualizacao e cadastro do servico */
-router.get('/veiculo', servicoController.viewServico);
+router.get('/create', servicoController.viewServico);
 //router.post('/createVeiculo', servicoController.cadastroServico);
 
 /* visualizacao e cadastro do veiculo */
