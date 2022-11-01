@@ -17,8 +17,6 @@ const dashboardController = {
     },
 
     
-    
-
     salvarVeiculo: async(req,res) => {
         try {
             const {errors} = validationResult(req);
@@ -34,9 +32,6 @@ const dashboardController = {
         };
     },
     
-
-        
 }
-
 
 module.exports = dashboardController;
