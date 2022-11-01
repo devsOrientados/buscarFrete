@@ -5,7 +5,7 @@ const cliente = {
    async Cadastro (req, res) {
       try {
          const {errors} = validationResult(req);
-         if (!errors.isEmpty) {
+         if (errors.length) {
             console.log(errors);
             return res.render('cliente_create', {errors})
          } else {
