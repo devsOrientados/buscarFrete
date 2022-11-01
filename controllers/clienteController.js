@@ -32,7 +32,16 @@ const cliente = {
       },
    
 
-   //async Editar (req,res) => {
+   //async editar (req,res) => {
+   //   try {
+   //      const {errors} = validationResult(req);
+
+  //   }
+  //    catch {
+  //
+  //    }
+
+  //async deletar (req,res) => {
    //   try {
    //      const {errors} = validationResult(req);
 
