@@ -1,0 +1,35 @@
+<%- include('partials/header')  %>
+<!--pagina de login -->
+<section>
+
+    <div class="container_titulo">
+       <h1 class="sub_titulo">LOGIN</h1>
+       <p class="description_dashboard">Para acessar seu perfil, contratar servicos ou atualizar cadastro, realize seu login.</p>
+    </div>
+    <div class="description_dashboard">
+        <% if (errors.length) { %>
+            <% errors.forEach(error => { %>
+               <li>
+                <%= error.param %>: <%= error.msg %> 
+               </li>
+            <% }) %>
+        <% } %>
+    </div>
+    <form class="form_dashboard" action="/clientes/create"  method="POST" enctype="multiport/form-data"> 
+        <div>
+            <label class="label_dashboard" for="email">Email:</label> 
+            <input class="input_dashboard" type="text"name="email" id="email" placeholder="digite o seu email" >
+        </div>
+        <div>
+            <label class="label_dashboard" for="senha">Senha:</label> 
+            <input class="input_dashboard" type="password"name="senha" id="senha" placeholder="digite o seu senha" >
+        </div>
+             <div class="botao_dashboard">
+            <button class="botao_dashboard" type="submit" name="loginCliente">LOGIN</button>
+            <button class="botao_dashboard" type="reset" name="cancelarLogin">CANCELAR</button>
+        </div>
+</form>
+</section>
+
+
+<%- include('partials/footer')  %> 
