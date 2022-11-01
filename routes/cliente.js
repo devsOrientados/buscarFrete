@@ -24,5 +24,4 @@ router.get('/perfilCliente', clienteController.viewPerfilCliente)
 /**router.delete('/:id/excluir, clienteController.excluir) */
 
 
-
 module.exports = router;
