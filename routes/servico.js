@@ -14,5 +14,4 @@ router.get('/create', servicoController.viewServico);
 router.get('/veiculo', servicoController.viewVeiculo);
 //router.post('/createVeiculo', servicoController.cadastroVeiculo);
 
-
 module.exports = router;
