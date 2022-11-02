@@ -1,5 +1,5 @@
 CREATE DATABASE fretes;
-use fretes;
+USE fretes;
 
 CREATE TABLE usuarios (
 id_usuario INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -12,17 +12,15 @@ id_cliente INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 nome VARCHAR(50) NOT NULL,
 sobrenome VARCHAR(50) NOT NULL,
 cpf VARCHAR(15) NOT NULL,
-cnh VARCHAR(15) NOT NULL,
 categoria_cnh VARCHAR (3) NOT NULL,
+cnh VARCHAR(15) NOT NULL,
 telefone VARCHAR(20) NOT NULL,
 cep VARCHAR(10) NOT NULL,
 estado VARCHAR(50) NOT NULL,
 cidade VARCHAR(50) NOT NULL,
 bairro VARCHAR(30) NOT NULL,
 logradouro VARCHAR(50) NOT NULL,
-numero VARCHAR(4) NOT NULL,
-id_usuario INT UNSIGNED NOT NULL,
-FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
+numero VARCHAR(4) NOT NULL
 );
 
 CREATE TABLE veiculos (
