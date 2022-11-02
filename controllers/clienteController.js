@@ -52,6 +52,6 @@ const cliente = {
   //    catch {
   //
   //    }
-}
+};
 
 module.exports = cliente;

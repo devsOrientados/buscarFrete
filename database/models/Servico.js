@@ -38,4 +38,4 @@ module.exports = (sequelize, DataTypes) => {
     const Servico = sequelize.define("Servico", cols, config);
 
     return Servico;
-}
+};
