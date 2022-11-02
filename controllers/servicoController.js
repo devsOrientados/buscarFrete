@@ -1,5 +1,7 @@
 const cidadesEstados = require('../models/Estados_Cidades.json');
 const { validationResult } = require('express-validator');
+const db = require ('../database/models');
+
 
 const servicoController = {
     viewBuscaServico: (req, res) =>{
@@ -29,8 +31,8 @@ const servicoController = {
         };
     },
 
-
-    salvarVeiculo: async(req,res) => {
+ // ajustar as foreignKey de acordo com o modelo
+    cadastratVeiculo: async(req,res) => {
         try {
             const {errors} = validationResult(req);
             if (!errors.isEmpty) {
