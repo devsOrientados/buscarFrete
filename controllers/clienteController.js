@@ -1,21 +1,22 @@
 const db = require('../database/models');
 const { validationResult } = require('express-validator');
+const { hashSync } = require('bcryptjs');
 
 const cliente = {
    async cadastro (req, res) {
       try {
          const {errors} = validationResult(req);
-         console.log(errors);
          if (errors.length) {
-            console.log(errors);
             return res.render('cadastro', {errors})
          } else {
          const {email, senha} = req.body;
-         const novoUsuario = await db.Usuario.create({ email, senha});
+         const senhaEncriptada = hashSync(senha, 12);
+         const novoUsuario = await db.Usuario.create({ email, senha: senhaEncriptada});
          const {nome, sobrenome, cpf, cnh, categoria_cnh,telefone, cep, estado, cidade, bairro, logradouro, numero} =req.body;
+         
          await db.Cliente.create({
             nome, sobrenome, cpf, cnh, categoria_cnh,telefone, cep, estado, cidade, bairro, logradouro, numero, id_usuario:novoUsuario.id_usuario});
-         res.redirect('perfilCliente'); 
+         res.redirect('/login'); 
         }
       } catch(err){
          console.log(err);

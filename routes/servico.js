@@ -16,4 +16,3 @@ router.get('/veiculo', servicoController.viewVeiculo);
 
 
 module.exports = router;
-
