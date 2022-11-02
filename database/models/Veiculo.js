@@ -32,12 +32,12 @@ module.exports = (sequelize, DataTypes) =>{
 
     const Veiculo = sequelize.define("Veiculo", cols, config);
     
-  //  Veiculo.associate = (models) => {
-  //      Veiculo.belongsTo(models.Cliente, {
-  //      as:'motorista',
-  //      foreignKey:'id_motorista',
-  //  })
-  //  };
+    Veiculo.associate = (models) => {
+        Veiculo.belongsTo(models.Cliente, {
+       as:'motorista',
+       foreignKey:'id_motorista',
+   })
+   };
 
     return Veiculo;
 };

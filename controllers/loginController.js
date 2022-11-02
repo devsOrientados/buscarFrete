@@ -25,8 +25,9 @@ const loginController = {
 
     delete usuario.senha;
 
-    req.session.usuario = usuario
-    res.redirect('/servicos')
+    req.session.usuario = usuario;
+    console.log(usuario);
+    res.redirect('/servicos');
   }
 };
 

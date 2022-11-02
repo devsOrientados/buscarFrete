@@ -32,7 +32,7 @@ const servicoController = {
     },
 
  // ajustar as foreignKey de acordo com o modelo
-    cadastratVeiculo: async(req,res) => {
+    cadastrarVeiculo: async(req,res) => {
         try {
             const {errors} = validationResult(req);
             if (!errors.isEmpty) {
