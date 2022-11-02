@@ -15,4 +15,4 @@ console.log (estadoSelect);
     cidadeSelect.appendChild(opcao);
         })
     }
-}
+};

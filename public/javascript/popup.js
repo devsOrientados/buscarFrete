@@ -23,7 +23,4 @@ function closePopup(ListenerPopup){
         }
 
     })
-}
-
-
-
+};

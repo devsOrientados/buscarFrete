@@ -1,5 +1,5 @@
 CREATE DATABASE fretes;
-USE fretes;
+use fretes;
 
 CREATE TABLE usuarios (
 id_usuario INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,

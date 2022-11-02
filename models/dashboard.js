@@ -11,4 +11,3 @@ dashboard.push(newDashboard);
 fs.writeFileSync(
     path.resolve('../buscarFrete/models/data/dashboard.json'), 
     JSON.stringify(dashboard));
-
