@@ -38,7 +38,7 @@ const servicoController = {
             if (!errors.isEmpty) {
                 return res.render('veiculo', {errors})
              } else {
-                const {veiculo,anoVeiculo,fotoVeiculo1, fotoVeiculo2, fotoVeiculo3}=req.body;
+                const {veiculo,anoVeiculo,fotoVeiculo1, fotoVeiculo2, fotoVeiculo3} = req.body;
                 await db.Veiculo.create({veiculo,anoVeiculo,fotoVeiculo1,fotoVeiculo2, fotoVeiculo3});
                 res.render('perfildomotorista');
              }
