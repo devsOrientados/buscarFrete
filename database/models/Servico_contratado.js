@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false
     };
     // definir relacoes, id_cliente_contratante, id_cliente_anunciante, id_servico
-    const Servico = sequelize.define("Servico", cols, config);
+    const servicoContratado = sequelize.define("servicoContratado", cols, config);
 
-    return Servico_contratado;
+    return servicoContratado;
 };
