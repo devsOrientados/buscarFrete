@@ -7,7 +7,7 @@ const cliente = {
       try {
          const {errors} = validationResult(req);
          if (errors.length) {
-            return res.render('cadastro', {errors})
+            return res.render('cadastro', {errors, usuario:req.session.usuario})
          } else {
          const {email, senha} = req.body;
          const senhaEncriptada = hashSync(senha, 12);
@@ -16,8 +16,6 @@ const cliente = {
          const {nome, sobrenome, cpf, cnh, categoria_cnh,telefone, cep, estado, cidade, bairro, logradouro, numero} =req.body;
          const novoCliente = await db.Cliente.create({
             nome, sobrenome, cpf, cnh, categoria_cnh,telefone, cep, estado, cidade, bairro, logradouro, numero, id_usuario:novoUsuario.id_usuario});
-         console.log("imprimir novoCliente");
-         console.log(novoCliente);
             res.redirect('/login'); 
         }
       } catch(err){
@@ -27,11 +25,12 @@ const cliente = {
   },
 
   viewCadastro: (req, res) => {
-   return res.render('cadastro',{errors: []})
+   return res.render('cadastro',{errors: [],usuario:req.session.usuario})
    },
 
-  viewPerfilCliente: (req, res) => {
-      return res.render('perfilCliente')
+  viewPerfilCliente: async (req, res) => {
+      const cliente = await db.Cliente.findOne({where: {id_usuario:req.session.usuario.id_usuario}})
+      return res.render('perfilCliente',{usuario:req.session.usuario, cliente})
       },
    
 

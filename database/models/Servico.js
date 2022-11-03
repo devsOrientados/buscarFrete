@@ -36,6 +36,16 @@ module.exports = (sequelize, DataTypes) => {
     };
     // definir relacoes, id_cliente, id_veiculo
     const Servico = sequelize.define("Servico", cols, config);
+    Servico.associate = (models) => {
+        Servico.belongsTo(models.Cliente, {
+       as:'cliente',
+       foreignKey:'id_cliente'})
+
+       Servico.belongsTo(models.Veiculo, {
+        as:'veiculo',
+        foreignKey:'id_veiculo'})    
+       }
+       
 
     return Servico;
 };

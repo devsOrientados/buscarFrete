@@ -11,6 +11,13 @@ let cliente_validation = [
       .notEmpty()
       .isLength({min:11})
         .withMessage('por favor, preencher o seu cpf com os 11 números'),
+    check('email')
+        .notEmpty()
+        .isEmail()
+        .withMessage('por favor, digite um e-mail válido'),
+    check('senha')
+        .notEmpty()
+        .withMessage('por favor, digite senha'),
     check('telefone')
         .notEmpty()
         .withMessage('por favor, preencher o seu telefone'),

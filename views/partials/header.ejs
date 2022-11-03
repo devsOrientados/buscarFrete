@@ -1,45 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-Br">
 
-<%- include('head')  %> 
+<%- include('head') %>
 
-<body>
+    <body>
 
-    <header class="paginaInicial">
-        <nav class="Nav_paginaInicial">
+        <header class="paginaInicial">
+            <nav class="Nav_paginaInicial">
 
-            <div>
-                <img class="logoBuscarFrete" src="/images/logoBuscarFrete.png" alt="logo_buscarFrete">
+                <div>
+                    <img class="logoBuscarFrete" src="/images/logoBuscarFrete.png" alt="logo_buscarFrete">
+                </div>
+
+                <div class="container_menu">
+                    <ul class="menu_buscarFrete">
+                        <li>
+                            <a href="/">HOME</a>
+                        </li>
+                        <li>
+                            <a href="/servicos">CONSULTAR</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="minicart">
+                <button class="minicart_button" onclick="openMinicart()">
+                    <img class="img-bag_icon" src="/images/user-icon.png">
+                </button>
+
+                <div class="minicart_drawer">
+                    <img class="seta_minicart" src="/images/Polygon.png" />
+                    <ul>
+                        <li>
+                            <% if (usuario && usuario.email) { %>
+                                <a href="/login/logout">
+                                    LOGOUT
+                                </a>
+                            <%} else {%>
+                                <a href="/login">
+                                    LOGIN
+                                </a>
+                            <%} %>
+                        </li>
+                        <li> <a href="/clientes/create">
+                                CADASTRAR </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-           
-            <div class="container_menu">
-                <ul class="menu_buscarFrete">
-                    <li>
-                        <a  href="/">HOME</a>
-                    </li>
-                    <li>
-                        <a  href="/servicos" >CONSULTAR</a>
-                    </li>
-                 </ul>
-            </div>
-        </nav>
 
-        <div class="minicart">
-            <button class="minicart_button" onclick="openMinicart()">
-                <img class="img-bag_icon" src="/images/user-icon.png">
-            </button>
-     
-            <div class="minicart_drawer">
-                <img class="seta_minicart" src="/images/Polygon.png" />
-                <ul>
-                    <li> <a href="/login"> 
-                        LOGIN 
-                    </li>
-                    <li> <a href="/clientes/create"> 
-                             CADASTRAR </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-    </header>
+        </header>
