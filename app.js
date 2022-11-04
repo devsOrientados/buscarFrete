@@ -23,18 +23,20 @@ app.use(session({
   resave: true,
   saveUninitialized: true
 }))
+app.use(methodOverride('_method'));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 //app.use(session({secret:"area logada"}));
 
+//rotas
 app.use('/', indexRouter);
 app.use('/clientes', clienteRouter);
 app.use('/servicos', servicoRouter);
 app.use('/login', loginRouter);
-app.use(methodOverride('_method'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
