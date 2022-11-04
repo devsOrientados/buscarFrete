@@ -29,9 +29,10 @@
               <!--Aqui deve ter a lista dos veículos cadastrados neste motorista-->
               <% if (veiculo.length) { %>
                 <% veiculo.forEach(veiculo => { %>
-                    <li>
-                        modelo: <%= veiculo.modelo_veiculo %>
-                        ano: <%= veiculo.ano_veiculo %>
+                    <li class="dados-veiculos">
+                        <img class="avatar-veiculo" src="/images/profile/<%= veiculo.foto_veiculo1 %>" alt="">
+                        <h4>modelo: <%= veiculo.modelo_veiculo %></h4>
+                        <h4>ano: <%= veiculo.ano_veiculo %></h4>
                     </li>
                     <% }) %>
                     <% } else { %>
@@ -55,7 +56,7 @@
                     <% } %>
                 </div>
           </div>
-          <a button class="botao_dashboard" href="/servicos/veiculo"> CADASTRAR VEÍCULO
+          <a button class="botao_dashboard" href="/servicos/veiculo">CADASTRAR VEÍCULO
             <!-- link para o formulário de cadastro de veiculos-->
             </button>
           </a>

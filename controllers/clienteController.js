@@ -15,7 +15,7 @@ const cliente = {
       try {
          const { errors } = validationResult(req);
          if (errors.length) {
-            return res.render('cadastro', { errors, usuario: req.session.usuario })
+            return res.render('cadastro', { errors, cidadesEstados, usuario: req.session.usuario })
          } else {
             const { email, senha } = req.body;
             const senhaEncriptada = hashSync(senha, 12);
@@ -42,11 +42,12 @@ const cliente = {
    async viewEditar(req, res) {
       try {
          const { errors } = validationResult(req);
+         const { id_usuario } = req.session.usuario
          if (errors.length) {
             return res.render('cadastroEdit', { errors, usuario: req.session.usuario });
          } else {
-            const usuario = await db.Usuario.findOne({ where: { id_usuario: req.session.usuario.id_usuario } });
-            const cliente = await db.Cliente.findOne({ where: { id_cliente: usuario.id_usuario } });
+            const usuario = await db.Usuario.findOne({ where: { id_usuario }});
+            const cliente = await db.Cliente.findOne({ where: { id_usuario }});
             return res.render('cadastroEdit', { errors, cidadesEstados, usuario, cliente });
          };
       }
@@ -88,8 +89,8 @@ const cliente = {
             return res.render('cadastroEdit', { errors, usuario: req.session.usuario })
          } else {
             const usuario = req.params.id;
-            await db.Usuario.destroy({ where: { id_usuario: usuario } });
             await db.Cliente.destroy({ where: { id_usuario: usuario } });
+            await db.Usuario.destroy({ where: { id_usuario: usuario } });
             return res.redirect('/');
          }
       } catch (err) {

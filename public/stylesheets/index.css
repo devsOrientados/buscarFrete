@@ -319,7 +319,6 @@ body{
     border: 1px solid #000;
 }
 
-
 .footer__website{
     display: flex;
     flex-direction:row;
@@ -367,8 +366,7 @@ body{
 }
 
 /*pagina filtro motorista*/
-
-#estado {
+main aside #estado {
     display: flex;
     line-height: 20px;
     width: 160px;
@@ -376,7 +374,7 @@ body{
     margin-top: 200px;
 }
 
-#cidade {
+main aside #cidade {
     display: flex;
     line-height: 20px;
     width: 160px;
@@ -441,103 +439,101 @@ body{
 }
 
 /* css da pagina anuncio do motorista */
-
-  #container {
+#container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 10px;
-  }
+}
   
-  #bate_papo img{
+#bate_papo img{
     width: 94%;
     cursor: pointer;
-  }
+}
   
-  #info_motorista {
+#info_motorista {
     width: 40%;
     text-align: center;
-  }
+}
 
-  .descrição_motorista {
+.descrição_motorista {
     margin-bottom: 20px;
-  }
+}
 
-  .container_nome_motorista{
+.container_nome_motorista{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .nome_motorista{
+.nome_motorista{
     margin-bottom: 20px;
-  }
+}
 
-  .dados_motorista{
+.dados_motorista{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap:14px;
     justify-content: center;
     text-align: center;
     margin-bottom: 40px;
-  }
+}
   
-  .container_img_caminhao{
+.container_img_caminhao{
     display: block;
     width: 400px;
     margin-top: 20px;
-  }
+}
 
-  #img_caminhao {
+#img_caminhao {
     display:block;
     width: 100%;
-  }
+}
   
-  .container_anuncio{
+.container_anuncio{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin-bottom: 50px;
-  }
+}
   
-  #comentarios {
+#comentarios {
     margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 80%;
-  }
+}
   
-  #avalicao{
+#avalicao{
     margin-top: 10px;
     display: flex;
     justify-content: center;
     margin-top: 50px;
   }
   
-  #avaliacao img {
+#avaliacao img {
     margin-top: 14px;
     width: 26px;
-  }
+}
 
   /* css da pagina dashboard */
-
-  .container_titulo{
+.container_titulo{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding-top: 10px;
     background-color: #F2F2F2;
-  }
+}
 
-  .description_dashboard{
+.description_dashboard{
     border-bottom: 1px solid gray;
     margin-bottom: 3px;
     text-align: center;
@@ -577,8 +573,6 @@ body{
     text-align: center;
     margin: auto;
 }
-
-
 
 .input_dashboard {
     display: flex;
@@ -629,15 +623,33 @@ textarea:hover{
     border: solid 0.15em; 
 }
 
-
 .botao_dashboard{
+    min-width: 10rem;
+    font-size: 16px;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    text-align: center;
     display: block;
-    width: 140px;
-    height: 50px;
+    padding: 0.5rem;
     cursor: pointer;
-    border-radius:70px ;
+    border-radius:70px;
     border: none;
     background-color: #000000;
     color: #ffffff;
     /*margin-top: 1vh;*/
+ }
+
+ .avatar-veiculo{
+    width: 3rem;
+    height: 3rem;
+    border-radius: .2rem;
+ }
+
+ .dados-veiculos{
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0.2rem 0.2rem 0.2rem gray;
  }
