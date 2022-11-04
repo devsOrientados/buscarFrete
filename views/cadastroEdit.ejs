@@ -17,20 +17,19 @@
     </div>
     
 <!-- buscar os valores de acordo com área logada e id do motorista-->  
-   <!-- para o formulario de editar: action="/clientes/edit/id[id do motorista]?__method=PUT" method=POST-->  
-    <form class="form_dashboard" action="/clientes/create"  method="POST" enctype="multiport/form-data"> 
+    <form class="form_dashboard" action="/clientes/:<%= usuario.id_usuario %>/editar?__method=PUT"  method="POST" enctype="multiport/form-data"> 
     <h3 class="sub_titulo">DADOS PESSOAIS</h3> 
         <div>
             <label class="label_dashboard" for="nome">Nome:</label> 
-            <input class="input_dashboard" type="text"name="nome" id="nome" placeholder="digite o seu nome" >
+            <input class="input_dashboard" type="text"name="nome" id="nome"  value= "<%= cliente.nome %>">
         </div>
         <div>
             <label class="label_dashboard" for="sobrenome">Sobrenome:</label> 
-            <input class="input_dashboard" type="text"name="sobrenome" id="sobrenome" placeholder="digite o seu sobrenome" >
+            <input class="input_dashboard" type="text"name="sobrenome" id="sobrenome"  value= "<%= cliente.sobrenome %>" >
         </div>
         <div>
             <label class="label_dashboard" for="email">Email:</label> 
-            <input class="input_dashboard" type="text"name="email" id="email" placeholder="digite o seu email" >
+            <input class="input_dashboard" type="text"name="email" id="email"  value= "<%= usuario.email %>" >
         </div>
         <div>
             <label class="label_dashboard" for="senha">Senha:</label> 
@@ -42,16 +41,16 @@
         </div>
         <div>
             <label class="label_dashboard" for="cpf">CPF:</label> 
-            <input class="input_dashboard" type="number"name="cpf" id="cpf" placeholder="digite o CPF, apenas números" >
+            <input class="input_dashboard" type="number"name="cpf" id="cpf"  value= "<%= cliente.cpf %>">
         </div>
         <div>
             <label class="label_dashboard" for="cnh">CNH:</label> 
-            <input class="input_dashboard" type="number"name="cnh" id="cnh" placeholder="digite o número da sua CNH"  >
+            <input class="input_dashboard" type="number"name="cnh" id="cnh"  value= "<%= cliente.cnh %>" >
         </div>
         <div>
             <label class="label_dashboard" for="categoria">Categoria da sua CNH:</label> 
             <select id="categoria_cnh" name="categoria_cnh">
-                <option value="" selected hidden>selecione</option>
+                <option value="<%= cliente.categoria_cnh %>" selected hidden>selecione</option>
                 <option value="A">A</option>
                 <option value="B">B</option>
                 <option value="C">C</option>
@@ -61,16 +60,16 @@
         </div>
         <div>
             <label class="label_dashboard" for="telefone">Telefone para contato:</label> 
-            <input class="input_dashboard" type="tel"name="telefone" id="telefone" placeholder="(11)11111-1111"  >
+            <input class="input_dashboard" type="tel"name="telefone" id="telefone"  value="<%= cliente.telefone %>" >
         </div>
         <div>
             <label class="label_dashboard" for="cep">CEP:</label> 
-            <input class="input_dashboard" type="number"name="cep" id="cep" placeholder="Digite seu CEP, apenas números"  >
+            <input class="input_dashboard" type="number"name="cep" id="cep"  value="<%= cliente.cep %>" >
         </div>
         <div class="estado_cliente">
             <label class="label_dashboard" for="Estado">Estado:</label> 
                 <select id="estado_cliente" name="estado">
-                    <option value="" selected hidden>Estado</option>
+                    <option value="<%= cliente.estado %>" selected hidden>Estado</option>
                     <option value="AC">Acre</option>
                     <option value="AL">Alagoas</option>
                     <option value="AP">Amapá</option>
@@ -102,24 +101,27 @@
         </div>
         <div>
             <label class="label_dashboard" for="cidade">Cidade:</label> 
-            <input class="input_dashboard" type="text" name="cidade" id="cidade_cliente" placeholder="cidade principal" >
+            <input class="input_dashboard" type="text" name="cidade" id="cidade_cliente" value="<%= cliente.cidade %> ">
         </div>
         <div>
             <label class="label_dashboard" for="bairro">Bairro:</label> 
-            <input class="input_dashboard" type="text" name="bairro" id="bairro" placeholder="digite seu bairro"  >
+            <input class="input_dashboard" type="text" name="bairro" id="bairro" " value="<%= cliente.bairro %>" >
         </div>
         <div>
             <label class="label_dashboard" for="logradouro">Logradouro:</label> 
-            <input class="input_dashboard" type="text" name="logradouro" id="logradouro" placeholder="Rua,Avenida..."  >
+            <input class="input_dashboard" type="text" name="logradouro" id="logradouro"  value="<%= cliente.logradouro %>" >
         </div>
         <div>
             <label class="label_dashboard" for="numero">Número:</label> 
-            <input class="input_dashboard" type="text" name="numero" id="numero"  >
+            <input class="input_dashboard" type="text" name="numero" id="numero" value= "<%= cliente.numero %>" >
         </div>
         <div class="botao_dashboard">
-            <button class="botao_dashboard" type="submit" name="cadastrarCliente">CADASTRAR</button>
+            <button class="botao_dashboard" type="submit" name="editarCliente">EDITAR</button>
         </div>
 </form>
+<div class="botao_dashboard">
+    <a href= "/clientes/excluir/<% usuario.id_usuario %>" button class="botao_dashboard" type="submit" name="deletarCliente">APAGAR CADASTRO</button></a>
+</div>
 </section>
 
 <%- include('partials/footer')  %> 

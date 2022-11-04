@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
+var methodOverride =require('method-override');
 
 //rotas
 var indexRouter = require('./routes/index');
@@ -33,7 +34,7 @@ app.use('/', indexRouter);
 app.use('/clientes', clienteRouter);
 app.use('/servicos', servicoRouter);
 app.use('/login', loginRouter);
-
+app.use(methodOverride('__method'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

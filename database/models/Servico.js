@@ -23,7 +23,6 @@ module.exports = (sequelize, DataTypes) => {
         },
         foto_motorista: {
             type: DataTypes.STRING,
-            allowNull: false
         },
         preco: {
             type: DataTypes.INTEGER
