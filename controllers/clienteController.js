@@ -63,13 +63,13 @@ const cliente = {
          } else {
             const { email, senha } = req.body;
             const senhaEncriptada = hashSync(senha, 12);
-            const novoUsuario = await db.Usuario.update({ email, senha: senhaEncriptada },
-               { where: { id_usuario: req.session.usuario } });
+            const usuario = await db.Usuario.update({ email, senha: senhaEncriptada },
+               { where: { id_usuario: req.params.id } });
+            console.log (usuario)
             const { nome, sobrenome, cpf, cnh, categoria_cnh, telefone, cep, estado, cidade, bairro, logradouro, numero } = req.body;
             await db.Cliente.update({
-               nome, sobrenome, cpf, cnh, categoria_cnh, telefone, cep, estado, cidade, bairro, logradouro, numero, id_usuario: novoUsuario.id_usuario
-            },
-               { where: { id_cliente: usuario.id_usuario } });
+               nome, sobrenome, cpf, cnh, categoria_cnh, telefone, cep, estado, cidade, bairro, logradouro, numero, id_usuario: usuario.id_usuario },
+               { where: { id_usuario: usuario.id_usuario } });
                return res.render('perfilCliente', { usuario: req.session.usuario, cliente, veiculo, servico })
          }
       } catch (err) {
