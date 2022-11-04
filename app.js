@@ -32,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 //app.use(session({secret:"area logada"}));
 
+//rotas
 app.use('/', indexRouter);
 app.use('/clientes', clienteRouter);
 app.use('/servicos', servicoRouter);
