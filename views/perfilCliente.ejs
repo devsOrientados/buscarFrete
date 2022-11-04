@@ -25,21 +25,6 @@
               <!--lista com os servicos prestados (se motorista com veiculos)/contratados (se cliente)-->
             </div>
             <div>
-              <h3>Anuncio:</h3>
-              <!-- <p>Aqui deve ter a lista dos anuncios cadastrados</p> -->
-              <% if (servico.length) { %>
-                <% servico.forEach(servico=> { %>
-                    <li>
-                        <%= servico.tipo_viagem %>
-                        preco/km: <%= servico.preco %>
-                    </li>
-                    <% }) %>
-                    <% } else { %>
-                     você näo tem anuncios cadastrados, deseja cadastar?
-                     <a href="/servicos/create"> clique aqui</a>
-                    <% } %>
-                </div>
-            <div>
               <h3>Veículo:</h3>
               <!--Aqui deve ter a lista dos veículos cadastrados neste motorista-->
               <% if (veiculo.length) { %>
@@ -54,6 +39,21 @@
                       <a href="/servicos/veiculo"> clique aqui</a>
                      <% } %>
             </div>
+            <div>
+              <h3>Anuncio:</h3>
+              <!-- <p>Aqui deve ter a lista dos anuncios cadastrados</p> -->
+              <% if (servico.length) { %>
+                <% servico.forEach(servico=> { %>
+                    <li>
+                        <%= servico.tipo_viagem %>
+                        preco/km: <%= servico.preco %>
+                    </li>
+                    <% }) %>
+                    <% } else { %>
+                     você näo tem anuncios cadastrados, deseja cadastar?
+                     <a href="/servicos/create"> clique aqui</a>
+                    <% } %>
+                </div>
           </div>
           <a button class="botao_dashboard" href="/servicos/veiculo"> CADASTRAR VEÍCULO
             <!-- link para o formulário de cadastro de veiculos-->

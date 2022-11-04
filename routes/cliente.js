@@ -12,12 +12,12 @@ router.get('/perfilCliente', clienteController.viewPerfilCliente)
 //uploadFile.fields([{name:'fotoPerfil',maxCount:1},{name:'fotoVeiculo1',maxCount:1},{name:'fotoVeiculo2',maxCount:1},{name:'fotoVeiculo3',maxCount:1}]), 
 
 /**editar um cliente já cadastrado */
-router.get('/editar',clienteController.viewEditar); 
 router.put('/:id/editar', clienteController.editar);
-
+router.get('/editar',clienteController.viewEditar); 
 
 /**deletar um cliente já cadastrado */
-router.delete('excluir/:id', clienteController.deletar) 
+router.delete('/excluir/:id', clienteController.deletar) 
+
 
 
 module.exports = router;

@@ -17,7 +17,7 @@
     </div>
     
 <!-- buscar os valores de acordo com área logada e id do motorista-->  
-    <form class="form_dashboard" action="/clientes/:<%= usuario.id_usuario %>/editar?__method=PUT"  method="POST" enctype="multiport/form-data"> 
+    <form class="form_dashboard" action="/clientes/<%= usuario.id_usuario %>/editar?_method=PUT"  method="POST" enctype="multiport/form-data"> 
     <h3 class="sub_titulo">DADOS PESSOAIS</h3> 
         <div>
             <label class="label_dashboard" for="nome">Nome:</label> 
@@ -105,7 +105,7 @@
         </div>
         <div>
             <label class="label_dashboard" for="bairro">Bairro:</label> 
-            <input class="input_dashboard" type="text" name="bairro" id="bairro" " value="<%= cliente.bairro %>" >
+            <input class="input_dashboard" type="text" name="bairro" id="bairro"  value="<%= cliente.bairro %>" >
         </div>
         <div>
             <label class="label_dashboard" for="logradouro">Logradouro:</label> 
@@ -119,9 +119,11 @@
             <button class="botao_dashboard" type="submit" name="editarCliente">EDITAR</button>
         </div>
 </form>
-<div class="botao_dashboard">
-    <a href= "/clientes/excluir/<% usuario.id_usuario %>" button class="botao_dashboard" type="submit" name="deletarCliente">APAGAR CADASTRO</button></a>
-</div>
+<form class="form_dashboard" action="/clientes/excluir/<%= usuario.id_usuario %>?_method=DELETE"  method="POST" enctype="multiport/form-data">
+    <div class="botao_dashboard">
+        <button class="botao_dashboard" type="submit" name="deletarCliente">APAGAR CADASTRO</button>
+    </div>  
+</form>
 </section>
 
 <%- include('partials/footer')  %> 
