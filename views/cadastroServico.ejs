@@ -15,26 +15,26 @@
             <% }) %>
         <% } %>
     </div>
-    <form class="form_dashboard" action="/servico/createServico"  method="POST" enctype="multiport/form-data"> 
+    <form class="form_dashboard" action="/servicos/createServico"  method="POST" enctype="multiport/form-data"> 
     <h3 class="sub_titulo">DADOS DO SERVIÇO</h3>  
         <div>
-            <label class="label_dashboard" for="servico">Selecione o alcance das viagens que pretende fazer:</label>
+            <label class="label_dashboard" for="tipo_viagem">Selecione o alcance das viagens que pretende fazer:</label>
             <div class="radio">
-                <input class="input_dashboard" type="radio" name="servico" value="viagens locais">
+                <input class="input_dashboard" type="radio" name="tipo_viagem" value="viagens locais">
                 <label class="label_dashboard">Viagens locais</label>
-                <input class="input_dashboard" type="radio" name="servico" value="viagens intermunicipais">
+                <input class="input_dashboard" type="radio" name="tipo_viagem" value="viagens intermunicipais">
                 <label class="label_dashboard">Viagens intermunicipais</label>
-                <input class="input_dashboard" type="radio" name="servico" value="viagens interestaduais">
+                <input class="input_dashboard" type="radio" name="tipo_viagem" value="viagens interestaduais">
                 <label class="label_dashboard">Viagens interestaduais</label>
             </div>
         </div>
         <div>
             <label class="label_dashboard" for="autoDescricao">Escreva sobre você para seus clientes te conhecerem:</label>
-            <textarea class="seuPerfil" name="autoDescricao" id="autoDescricao">Sobre você</textarea>
+            <textarea class="seuPerfil" name="auto_descricao" id="autoDescricao">Sobre você</textarea>
         </div>
         <div>
             <label class="label_dashboard">Sua foto de perfil</label>
-            <input class="input_dashboard" type="file" name="fotoPerfil" accept="image/*">
+            <input class="input_dashboard" type="file" name="foto_motorista" accept="image/*">
         </div>
         <div>    
             <label class="label_dashboard" for="preco">Preço médio por kilometro:</label> 

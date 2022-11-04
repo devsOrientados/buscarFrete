@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
     const cols = {
-        id_serviço: {
+        id_servico: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true

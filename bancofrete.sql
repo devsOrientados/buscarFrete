@@ -27,7 +27,7 @@ FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario),
 
 CREATE TABLE veiculos (
 id_veiculo INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-modelo_veiuclo VARCHAR(100),
+modelo_veiculo VARCHAR(100),
 ano_veiculo INT,
 foto_veiculo1 VARCHAR(200),
 foto_veiculo2 VARCHAR(200),
