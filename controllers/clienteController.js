@@ -62,14 +62,18 @@ const cliente = {
             return res.render('cadastroEdit', { errors, usuario: req.session.usuario })
          } else {
             const { email, senha } = req.body;
+            console.log(req.body);
             const senhaEncriptada = hashSync(senha, 12);
-            const usuario = await db.Usuario.update({ email, senha: senhaEncriptada },
+            const usuarioEditado = await db.Usuario.update({ email, senha: senhaEncriptada },
                { where: { id_usuario: req.params.id } });
-            console.log (usuario)
             const { nome, sobrenome, cpf, cnh, categoria_cnh, telefone, cep, estado, cidade, bairro, logradouro, numero } = req.body;
             await db.Cliente.update({
-               nome, sobrenome, cpf, cnh, categoria_cnh, telefone, cep, estado, cidade, bairro, logradouro, numero, id_usuario: usuario.id_usuario },
-               { where: { id_usuario: usuario.id_usuario } });
+               nome, sobrenome, cpf, cnh, categoria_cnh, telefone, cep, estado, cidade, bairro, logradouro, numero, id_usuario: usuarioEditado },
+               { where: { id_usuario: usuarioEditado } });
+            console.log(cliente)
+            const cliente = await db.Cliente.findOne({ where: { id_usuario: req.session.usuario.id_usuario } })
+            const veiculo = await db.Veiculo.findAll({ where: { id_motorista: cliente.id_cliente } });
+            const servico = await db.Servico.findAll({ where: { id_cliente: cliente.id_cliente } });
                return res.render('perfilCliente', { usuario: req.session.usuario, cliente, veiculo, servico })
          }
       } catch (err) {
