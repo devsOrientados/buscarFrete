@@ -1,0 +1,57 @@
+<%- include('partials/header') %>
+    <!--inicio do Dashboard do motorista, dados pessoais -->
+    <section>
+
+        <div class="container_titulo">
+            <h1 class="sub_titulo">CADASTRO DO ANÚNCIO</h1>
+            <p class="description_dashboard">Vamos preparar o seu anúncio, para isso precisamos de algumas informações.</p>
+            <p class="description_dashboard">Ainda näo cadastrou nenhum veículo?</p>
+            <a button class="botao_dashboard" href="/servicos/veiculo"> CADASTRAR VEÍCULO
+                <!-- link para o formulário de cadastro de veiculos-->
+                </button>
+            </a>
+        </div>
+        <div class="description_dashboard">
+            <% if (errors.length) { %>
+                <% errors.forEach(error=> { %>
+                    <li>
+                        <%= error.msg %>
+                    </li>
+                    <% }) %>
+                        <% } %>
+        </div>
+        <form class="form_dashboard" action="/servicos/createServico" method="POST" enctype="multiport/form-data">
+            <h3 class="sub_titulo">DADOS DO SERVIÇO</h3>
+            <div>
+                <label class="label_dashboard" for="tipo_viagem">Selecione o alcance das viagens que pretende
+                    fazer:</label>
+                <div class="radio">
+                    <input class="input_dashboard" type="radio" name="tipo_viagem" value="viagens locais">
+                    <label class="label_dashboard">Viagens locais</label>
+                    <input class="input_dashboard" type="radio" name="tipo_viagem" value="viagens intermunicipais">
+                    <label class="label_dashboard">Viagens intermunicipais</label>
+                    <input class="input_dashboard" type="radio" name="tipo_viagem" value="viagens interestaduais">
+                    <label class="label_dashboard">Viagens interestaduais</label>
+                </div>
+            </div>
+            <div>
+                <label class="label_dashboard" for="autoDescricao">Escreva sobre você para seus clientes te
+                    conhecerem:</label>
+                <textarea class="seuPerfil" name="auto_descricao" id="autoDescricao">Sobre você</textarea>
+            </div>
+            <div>
+                <label class="label_dashboard">Sua foto de perfil</label>
+                <input class="input_dashboard" type="file" name="foto_motorista" accept="image/*">
+            </div>
+            <div>
+                <label class="label_dashboard" for="preco">Preço médio por kilometro:</label>
+                <input class="input_dashboard" type="text" name="preco" id="preco"
+                    placeholder="preço médio do kilometro percorrido no frete">
+            </div>
+            <div class="botao_dashboard">
+                <button class="botao_dashboard" type="submit" name="cadastrarAnuncio">CADASTRAR ANUNCIO</button>
+            </div>
+        </form>
+    </section>
+
+    <%- include('partials/footer') %>
