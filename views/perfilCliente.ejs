@@ -5,11 +5,11 @@
 
       <div id="container">
 
-        <div class="container_img_caminhao">
+        <div class="container_img_cliente">
           <!-- buscar os dados que foram para o banco-->
-          <img id="img_caminhao"
+            <img id="img_caminhao"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-k2_VQ8ZMoDFqLPmNZ8DuIF9ul2KG6wckJw&usqp=CAU"
-            alt="Imagem do transporte">
+            alt="Imagem do transporte"> 
         </div>
 
         <div id="info_motorista">
@@ -17,20 +17,42 @@
           <div class="container_nome_motorista">
             <h2 class="nome_motorista"> <%=cliente.nome + " " + cliente.sobrenome %> </h2>
           </div>
+          <p><h3>Telefone: <%= cliente.telefone %></h3></p>
           <div class="dados_motorista">
-            <div>
-              <h3>Telefone:</h3>
-              <p> <%= cliente.telefone %> </p> 
-            </div>
             <div>
               <h3>Serviço:</h3>
               <p>Aqui deve ter a lista dos servicos prestados e/ou contratados</p>
               <!--lista com os servicos prestados (se motorista com veiculos)/contratados (se cliente)-->
             </div>
             <div>
+              <h3>Anuncio:</h3>
+              <!-- <p>Aqui deve ter a lista dos anuncios cadastrados</p> -->
+              <% if (servico.length) { %>
+                <% servico.forEach(servico=> { %>
+                    <li>
+                        <%= servico.tipo_viagem %>
+                        preco/km: <%= servico.preco %>
+                    </li>
+                    <% }) %>
+                    <% } else { %>
+                     você näo tem anuncios cadastrados, deseja cadastar?
+                     <a href="/servicos/create"> clique aqui</a>
+                    <% } %>
+                </div>
+            <div>
               <h3>Veículo:</h3>
-              <p>Aqui deve ter a lista dos veículos cadastrados neste motorista</p>
-              <!--lista com os servicos prestados (se motorista com veiculos)/contratados (se cliente)-->
+              <!--Aqui deve ter a lista dos veículos cadastrados neste motorista-->
+              <% if (veiculo.length) { %>
+                <% veiculo.forEach(veiculo => { %>
+                    <li>
+                        modelo: <%= veiculo.modelo_veiculo %>
+                        ano: <%= veiculo.ano_veiculo %>
+                    </li>
+                    <% }) %>
+                    <% } else { %>
+                      Você näo tem veiculos cadastrados, deseja cadastar?
+                      <a href="/servicos/veiculo"> clique aqui</a>
+                     <% } %>
             </div>
           </div>
           <a button class="botao_dashboard" href="/servicos/veiculo"> CADASTRAR VEÍCULO
@@ -38,6 +60,10 @@
             </button>
           </a>
           <a button class="botao_dashboard" href="/servicos/create">ANUNCIE AQUI
+            <!-- link para o formulario de cadastro de anuncio-->
+            </button>
+          </a>
+          <a button class="botao_dashboard" href="/clientes/editar">EDITAR MEU CADASTRO
             <!-- link para o formulario de cadastro de anuncio-->
             </button>
           </a>
