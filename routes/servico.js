@@ -11,7 +11,7 @@ router.get('/', authMiddleware, servicoController.viewBuscaServico);
 
 /* visualizacao e cadastro do veiculo */
 router.get('/veiculo', authMiddleware, servicoController.viewVeiculo);
-router.post('/createVeiculo', authMiddleware, uploadFile.fields([{name:'foto', maxCount:3}]), servicoController.cadastrarVeiculo);
+router.post('/createVeiculo', authMiddleware, uploadFile.array('fotos_veiculos', 3), servicoController.cadastrarVeiculo);
 //uploadFile.fields([{name:'fotoPerfil',maxCount:1},{name:'fotoVeiculo1',maxCount:1},{name:'fotoVeiculo2',maxCount:1},{name:'fotoVeiculo3',maxCount:1}]), 
 
 /* visualizacao e cadastro do servico */

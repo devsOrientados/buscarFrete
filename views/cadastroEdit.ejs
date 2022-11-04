@@ -1,106 +1,111 @@
-<%- include('partials/header')  %>
-<!--inicio do Dashboard do motorista, dados pessoais -->
-<section>
+<%- include('partials/header') %>
+    <!--inicio do Dashboard do motorista, dados pessoais -->
+    <section>
 
-    <div class="container_titulo">
-       <h1 class="sub_titulo">CADASTRO</h1>
-       <p class="description_dashboard">Precisamos de algumas informações para oferecermos as melhores opções para você.</p>
-    </div>
-    <div class="description_dashboard">
-        <% if (errors.length) { %>
-            <% errors.forEach(error => { %>
-               <li>
-                <%= error.param %>: <%= error.msg %> 
-               </li>
-            <% }) %>
-        <% } %>
-    </div>
-    
-<!-- buscar os valores de acordo com área logada e id do motorista-->  
-    <form class="form_dashboard" action="/clientes/<%= usuario.id_usuario %>/editar?_method=PUT"  method="POST" enctype="multiport/form-data"> 
-    <h3 class="sub_titulo">DADOS PESSOAIS</h3> 
-        <div>
-            <label class="label_dashboard" for="nome">Nome:</label> 
-            <input class="input_dashboard" type="text"name="nome" id="nome"  value= "<%= cliente.nome %>">
+        <div class="container_titulo">
+            <h1 class="sub_titulo">CADASTRO</h1>
+            <p class="description_dashboard">Precisamos de algumas informações para oferecermos as melhores opções para
+                você.</p>
         </div>
-        <div>
-            <label class="label_dashboard" for="sobrenome">Sobrenome:</label> 
-            <input class="input_dashboard" type="text"name="sobrenome" id="sobrenome"  value= "<%= cliente.sobrenome %>" >
+        <div class="description_dashboard">
+            <% if (errors.length) { %>
+                <% errors.forEach(error=> { %>
+                    <li>
+                        <%= error.param %>: <%= error.msg %>
+                    </li>
+                    <% }) %>
+                        <% } %>
         </div>
-        <div>
-            <label class="label_dashboard" for="email">Email:</label> 
-            <input class="input_dashboard" type="text"name="email" id="email"  value= "<%= usuario.email %>" >
-        </div>
-        <div>
-            <label class="label_dashboard" for="senha">Senha:</label> 
-            <input class="input_dashboard" type="password"name="senha" id="senha" placeholder="digite o seu senha" >
-        </div>
-        <div>
-            <label class="label_dashboard" for="confirmarSenha">Confirmar senha:</label> 
-            <input class="input_dashboard" type="password"name="confirmarSenha" id="confirmarSenha" placeholder="digite o seu confirme sua senha" >
-        </div>
-        <div>
-            <label class="label_dashboard" for="cpf">CPF:</label> 
-            <input class="input_dashboard" type="number"name="cpf" id="cpf"  value= "<%= cliente.cpf %>">
-        </div>
-        <div>
-            <label class="label_dashboard" for="cnh">CNH:</label> 
-            <input class="input_dashboard" type="number"name="cnh" id="cnh"  value= "<%= cliente.cnh %>" >
-        </div>
-        <div>
-            <label class="label_dashboard" for="categoria">Categoria da sua CNH:</label> 
-            <select id="categoria_cnh" name="categoria_cnh">
-                <option value="<%= cliente.categoria_cnh %>" selected hidden>selecione</option>
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">C</option>
-                <option value="D">D</option>
-                <option value="E">E</option>
+
+        <!-- buscar os valores de acordo com área logada e id do motorista-->
+        <form class="form_dashboard" action="/clientes/<%= usuario.id_usuario %>/editar?_method=PUT" method="POST">
+            <h3 class="sub_titulo">DADOS PESSOAIS</h3>
+            <div>
+                <label class="label_dashboard" for="nome">Nome:</label>
+                <input class="input_dashboard" type="text" name="nome" id="nome" value="<%= cliente.nome %>">
+            </div>
+            <div>
+                <label class="label_dashboard" for="sobrenome">Sobrenome:</label>
+                <input class="input_dashboard" type="text" name="sobrenome" id="sobrenome"
+                    value="<%= cliente.sobrenome %>">
+            </div>
+            <div>
+                <label class="label_dashboard" for="email">Email:</label>
+                <input class="input_dashboard" type="text" name="email" id="email" value="<%= usuario.email %>">
+            </div>
+            <div>
+                <label class="label_dashboard" for="senha">Senha:</label>
+                <input class="input_dashboard" type="password" name="senha" id="senha" placeholder="digite o seu senha">
+            </div>
+            <div>
+                <label class="label_dashboard" for="confirmarSenha">Confirmar senha:</label>
+                <input class="input_dashboard" type="password" name="confirmarSenha" id="confirmarSenha"
+                    placeholder="digite o seu confirme sua senha">
+            </div>
+            <div>
+                <label class="label_dashboard" for="cpf">CPF:</label>
+                <input class="input_dashboard" type="number" name="cpf" id="cpf" value="<%= cliente.cpf %>">
+            </div>
+            <div>
+                <label class="label_dashboard" for="cnh">CNH:</label>
+                <input class="input_dashboard" type="number" name="cnh" id="cnh" value="<%= cliente.cnh %>">
+            </div>
+            <div>
+                <label class="label_dashboard" for="categoria">Categoria da sua CNH:</label>
+                <select id="categoria_cnh" name="categoria_cnh">
+                    <option value="<%= cliente.categoria_cnh %>" selected hidden>selecione</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                </select>
+            </div>
+            <div>
+                <label class="label_dashboard" for="telefone">Telefone para contato:</label>
+                <input class="input_dashboard" type="tel" name="telefone" id="telefone" value="<%= cliente.telefone %>">
+            </div>
+            <div>
+                <label class="label_dashboard" for="cep">CEP:</label>
+                <input class="input_dashboard" type="number" name="cep" id="cep" value="<%= cliente.cep %>">
+            </div>
+            <label class="label_dashboard" for="estado">Estado:</label>
+            <select class="input_dashboard" id="estado" name="estado">
+                <option value="" selected ></option>
+                <% cidadesEstados.forEach(estado=> { %>
+                    <option value="<%= estado.sigla %>">
+                        <%= estado.nome %>
+                    </option>
+                    <% }) %>
             </select>
-        </div>
-        <div>
-            <label class="label_dashboard" for="telefone">Telefone para contato:</label> 
-            <input class="input_dashboard" type="tel"name="telefone" id="telefone"  value="<%= cliente.telefone %>" >
-        </div>
-        <div>
-            <label class="label_dashboard" for="cep">CEP:</label> 
-            <input class="input_dashboard" type="number"name="cep" id="cep"  value="<%= cliente.cep %>" >
-        </div>
-        <label class="label_dashboard" for="Estado">Estado:</label> 
-        <select id="estado" name="estado">
-            <% cidadesEstados.forEach(estado=> { %>
-              <option value="<%= estado.sigla %>">
-                <%= estado.nome %>
-              </option>
-              <% }) %>
-          </select>
-        <label class="label_dashboard" for="cidade">Cidade:</label> 
-        <select id="cidade" name="cidade">
-        </select>
-        <div>
-            <label class="label_dashboard" for="bairro">Bairro:</label> 
-            <input class="input_dashboard" type="text" name="bairro" id="bairro"  value="<%= cliente.bairro %>" >
-        </div>
-        <div>
-            <label class="label_dashboard" for="logradouro">Logradouro:</label> 
-            <input class="input_dashboard" type="text" name="logradouro" id="logradouro"  value="<%= cliente.logradouro %>" >
-        </div>
-        <div>
-            <label class="label_dashboard" for="numero">Número:</label> 
-            <input class="input_dashboard" type="text" name="numero" id="numero" value= "<%= cliente.numero %>" >
-        </div>
-        <div class="botao_dashboard">
-            <button class="botao_dashboard" type="submit" name="editarCliente">EDITAR</button>
-        </div>
-</form>
-<form class="form_dashboard" action="/clientes/excluir/<%= usuario.id_usuario %>?_method=DELETE"  method="POST" enctype="multiport/form-data">
-    <div class="botao_dashboard">
-        <button class="botao_dashboard" type="submit" name="deletarCliente">APAGAR CADASTRO</button>
-    </div>  
-</form>
-</section>
-<script src="/javascript/motoristas.js"></script>
-  <script>
-  iniciarEstadosCidades(<%- JSON.stringify(cidadesEstados) %>);
-  </script>
-<%- include('partials/footer')  %> 
+            <label class="label_dashboard" for="cidade">Cidade:</label>
+            <select class="input_dashboard" id="cidade" name="cidade">
+            </select>
+            <div>
+                <label class="label_dashboard" for="bairro">Bairro:</label>
+                <input class="input_dashboard" type="text" name="bairro" id="bairro" value="<%= cliente.bairro %>">
+            </div>
+            <div>
+                <label class="label_dashboard" for="logradouro">Logradouro:</label>
+                <input class="input_dashboard" type="text" name="logradouro" id="logradouro"
+                    value="<%= cliente.logradouro %>">
+            </div>
+            <div>
+                <label class="label_dashboard" for="numero">Número:</label>
+                <input class="input_dashboard" type="text" name="numero" id="numero" value="<%= cliente.numero %>">
+            </div>
+            <div>
+                <button class="botao_dashboard" type="submit" name="editarCliente">EDITAR</button>
+            </div>
+        </form>
+        <form class="form_dashboard" action="/clientes/excluir/<%= usuario.id_usuario %>?_method=DELETE" method="POST">
+            <div>
+                <button class="botao_dashboard" type="submit" name="deletarCliente">APAGAR CADASTRO</button>
+            </div>
+        </form>
+    </section>
+    <script src="/javascript/motoristas.js"></script>
+    <script>
+        iniciarEstadosCidades(<%- JSON.stringify(cidadesEstados) %>);
+    </script>
+    <%- include('partials/footer') %>

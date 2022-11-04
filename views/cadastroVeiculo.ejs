@@ -15,7 +15,7 @@
             <% }) %>
         <% } %>
     </div>
-    <form class="form_dashboard" action="/servicos/createVeiculo"  method="POST" enctype="multiport/form-data"> 
+    <form class="form_dashboard" action="/servicos/createVeiculo"  method="POST" enctype="multipart/form-data"> 
     <h3 class="sub_titulo">DADOS DO VEICULO</h3>
         <div>    
             <label class="label_dashboard" for="veiculo">Modelo:</label> 
@@ -26,19 +26,17 @@
             <input class="input_dashboard" type="year"name="ano_veiculo" id="anoVeiculo" placeholder="Ano de fabricação do veículo">
         </div>
         <div>
-            <input class="input_dashboard" type="file" name="foto" accept="image/*">
-            <input class="input_dashboard" type="file" name="foto" accept="image/*">
-            <input class="input_dashboard" type="file" name="foto" accept="image/*">
+            <input class="input_dashboard" type="file" name="fotos_veiculos" accept="image/*">
+            <input class="input_dashboard" type="file" name="fotos_veiculos" accept="image/*">
+            <input class="input_dashboard" type="file" name="fotos_veiculos" accept="image/*">
         </div>
-        <div class="botao_dashboard">
+        <div>
             <button class="botao_dashboard" type="submit" name="cadastrarVeiculo">CADASTRAR VEÍCULO</button>
+            <a class="botao_dashboard" href="/servicos/create">ANUNCIE AQUI</a>
         </div>
 </form>
 <!-- link para o formulario de cadastro de anuncio-->
-<a button class="botao_dashboard" href="/servicos/create">ANUNCIE AQUI
-    </button>
-  </a>
-</section>
 
+</section>
 
 <%- include('partials/footer')  %> 

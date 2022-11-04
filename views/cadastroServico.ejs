@@ -5,11 +5,10 @@
         <div class="container_titulo">
             <h1 class="sub_titulo">CADASTRO DO ANÚNCIO</h1>
             <p class="description_dashboard">Vamos preparar o seu anúncio, para isso precisamos de algumas informações.</p>
-            <p class="description_dashboard">Ainda näo cadastrou nenhum veículo?</p>
-            <a button class="botao_dashboard" href="/servicos/veiculo"> CADASTRAR VEÍCULO
-                <!-- link para o formulário de cadastro de veiculos-->
-                </button>
-            </a>
+            <p class="description_dashboard">Ainda não cadastrou nenhum veículo?</p>
+            <a  class="botao_dashboard" href="/servicos/veiculo">CADASTRAR VEÍCULO</a>
+             <!-- link para o formulário de cadastro de veiculos-->
+
         </div>
         <div class="description_dashboard">
             <% if (errors.length) { %>
@@ -20,7 +19,7 @@
                     <% }) %>
                         <% } %>
         </div>
-        <form class="form_dashboard" action="/servicos/createServico" method="POST" enctype="multiport/form-data">
+        <form class="form_dashboard" action="/servicos/createServico" method="POST" enctype="multipart/form-data">
             <h3 class="sub_titulo">DADOS DO SERVIÇO</h3>
             <div>
                 <label class="label_dashboard" for="tipo_viagem">Selecione o alcance das viagens que pretende
@@ -48,7 +47,7 @@
                 <input class="input_dashboard" type="text" name="preco" id="preco"
                     placeholder="preço médio do kilometro percorrido no frete">
             </div>
-            <div class="botao_dashboard">
+            <div>
                 <button class="botao_dashboard" type="submit" name="cadastrarAnuncio">CADASTRAR ANUNCIO</button>
             </div>
         </form>

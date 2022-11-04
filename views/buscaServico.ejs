@@ -27,6 +27,14 @@
     </div>
 
     <section class="painel_motoristas">
+      <% servicos.forEach(servico => { %>
+      <div> 
+        <img src="" alt="">
+        <h4><%= servico.tipo_viagem %> </h4>
+        <h4><%= servico.auto_descricao %> </h4>
+        <h4><%= servico.preco %> </h4>
+      </div>
+      <% }) %>
       <div><img class="perfil_motorista" id="volvo"
           src="https://logodownload.org/wp-content/uploads/2017/10/volvo-logo-2-1.png"></id>
       </div>

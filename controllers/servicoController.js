@@ -1,11 +1,18 @@
 const cidadesEstados = require('../database/models/Estados_Cidades.json');
 const { validationResult } = require('express-validator');
 const db = require('../database/models');
+const { Op } = require('sequelize');
 
 
 const servicoController = {
-    viewBuscaServico: (req, res) => {
-        return res.render('buscaServico', { cidadesEstados, usuario: req.session.usuario });
+    viewBuscaServico: async (req, res) => {
+        const cliente = await db.Cliente.findOne({where: {id_usuario: req.session.usuario.id_usuario}});
+        const servicos = await db.Servico.findAll({
+            where: {
+                id_cliente:{[Op.not]: cliente.id_cliente}
+                }
+            });
+        return res.render('buscaServico', { servicos, cidadesEstados, usuario: req.session.usuario });
     },
     viewServico: (req, res) => {
         return res.render('cadastroServico', { errors: [], usuario: req.session.usuario });
@@ -16,7 +23,6 @@ const servicoController = {
 
     },
 
-
     cadastrarVeiculo: async (req, res) => {
         try {
             const { errors } = validationResult(req);
@@ -24,8 +30,16 @@ const servicoController = {
                 return res.render('cadastroVeiculo', { errors, usuario: req.session.usuario })
             } else {
                 const cliente = await db.Cliente.findOne({ where: { id_usuario: req.session.usuario.id_usuario } });
-                const { modelo_veiculo, ano_veiculo, foto_veiculo1, foto_veiculo2, foto_veiculo3 } = req.body;
-                await db.Veiculo.create({ modelo_veiculo, ano_veiculo, foto_veiculo1, foto_veiculo2, foto_veiculo3, id_motorista: cliente.id_cliente });
+                const { modelo_veiculo, ano_veiculo } = req.body;
+                const fotosVeiculos = req.files.map( file => file.filename);
+                await db.Veiculo.create({
+                    modelo_veiculo,
+                    ano_veiculo,
+                    foto_veiculo1: fotosVeiculos[0],
+                    foto_veiculo2: fotosVeiculos[1],
+                    foto_veiculo3: fotosVeiculos[2],
+                    id_motorista: cliente.id_cliente
+                });
                 res.redirect('/clientes/perfilCliente');
             }
         } catch (err) {
