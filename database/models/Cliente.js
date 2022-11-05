@@ -59,7 +59,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     };
     const config = {
-        tableName: 'clientes',
+        tableName:  'clientes',
         timestamps: false
     };
 
@@ -67,8 +67,8 @@ module.exports = (sequelize, DataTypes) => {
 
     Cliente.associate = (models) => {
         Cliente.belongsTo(models.Usuario, {
-            as: 'usuario',
-            foreignKey: 'id_usuario',
+            as:'usuario',
+            foreignKey:'id_usuario',
             allowNull: true,
         });
     };

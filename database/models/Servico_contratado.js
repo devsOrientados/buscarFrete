@@ -40,18 +40,18 @@ module.exports = (sequelize, DataTypes) => {
 
     servico_contratado.associate = (models) => {
         servico_contratado.belongsTo(models.Servico, {
-            as: 'Servico',
-            foreignKey: 'id_servico',
+            as:'Servico',
+            foreignKey:'id_servico',
         })
 
         servico_contratado.belongsTo(models.servico_contratado, {
-            as: 'servico_contratados',
-            foreignKey: 'id_cliente_contratante'
+            as:'servico_contratados',
+            foreignKey:'id_cliente_contratante'
         });
 
         servico_contratado.belongsTo(models.servico_contratado, {
-            as: 'servico_contratado',
-            foreignKey: 'id_cliente_anunciante'
+            as:'servico_contratado',
+            foreignKey:'id_cliente_anunciante'
         })
     };
     return servico_contratado;

@@ -38,15 +38,14 @@ module.exports = (sequelize, DataTypes) => {
 
     Servico.associate = (models) => {
         Servico.belongsTo(models.Cliente, {
-            as: 'cliente',
-            foreignKey: 'id_cliente'
+            as:'cliente',
+            foreignKey:'id_cliente'
         })
 
         Servico.belongsTo(models.Veiculo, {
-            as: 'veiculo',
-            foreignKey: 'id_veiculo'
+            as:'veiculo',
+            foreignKey:'id_veiculo'
         })
     };
-
     return Servico;
 };
