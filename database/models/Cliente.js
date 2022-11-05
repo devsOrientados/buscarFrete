@@ -49,11 +49,11 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        numero:{
+        numero: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        id_usuario:{
+        id_usuario: {
             type: DataTypes.INTEGER,
             allowNull: true
         }
@@ -63,14 +63,15 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false
     };
 
-    const Cliente = sequelize.define("Cliente", cols,config);
+    const Cliente = sequelize.define("Cliente", cols, config);
+
     Cliente.associate = (models) => {
         Cliente.belongsTo(models.Usuario, {
-        as:'usuario',
-        foreignKey:'id_usuario',
-       allowNull:true,
-   });
-   };
+            as: 'usuario',
+            foreignKey: 'id_usuario',
+            allowNull: true,
+        });
+    };
 
-   return Cliente;
+    return Cliente;
 };

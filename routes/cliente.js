@@ -18,6 +18,4 @@ router.get('/editar', authMiddleware, clienteController.viewEditar);
 /**deletar um cliente já cadastrado */
 router.delete('/excluir/:id', authMiddleware, clienteController.deletar) 
 
-
-
 module.exports = router;
