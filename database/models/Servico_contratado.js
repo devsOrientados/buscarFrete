@@ -36,7 +36,23 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false
     };
     // definir relacoes, id_cliente_contratante, id_cliente_anunciante, id_servico
-    const servicoContratado = sequelize.define("servicoContratado", cols, config);
+    const servico_contratado = sequelize.define("servico_contratado", cols, config);
 
-    return servicoContratado;
+    servico_contratado.associate = (models) => {
+        servico_contratado.belongsTo(models.Servico, {
+            as:'Servico',
+            foreignKey:'id_servico',
+        })
+
+        servico_contratado.belongsTo(models.servico_contratado, {
+            as:'servico_contratados',
+            foreignKey:'id_cliente_contratante'
+        });
+
+        servico_contratado.belongsTo(models.servico_contratado, {
+            as:'servico_contratado',
+            foreignKey:'id_cliente_anunciante'
+        })
+    };
+    return servico_contratado;
 };
