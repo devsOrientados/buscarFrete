@@ -11,51 +11,44 @@
 
         <div id="info_motorista"> 
 
-           <div class="container_nome_motorista">  <h2 class="nome_motorista"><%= motorista.nome%> <%= motorista.sobrenome%></h2> </div>
+           <div class="container_nome_motorista">  <h2 class="nome_motorista"><%= servico.cliente.nome%> <%= servico.cliente.sobrenome%></h2> </div>
 
            <div class="dados_motorista">
               <div>
                 <h3>Telefone:</h3>
-                <p><%= motorista.telefone%></p>
+                <p><%= servico.cliente.telefone%></p>
+                <p class="descrição_motorista">
+                  <%= servico.auto_descricao %>  
+                </p>
               </div>
               <div>
                 <h3>Serviço:</h3>
-                <% servico.forEach(servico=> { %>
                   <div>
-                    <img class="avatar-veiculo" src="/images/profile/<%= servico.foto_motorista %>" alt="">
-                    <h4>
-                      <%= servico.tipo_viagem %>
+                      <p><%= servico.tipo_viagem %></p>
+                    <h3>Veiculo:</h3>
+                      <h4>modelo: <%= servico.veiculo.modelo_veiculo %></h4>
+                      <h4>ano: <%= servico.veiculo.ano_veiculo %></h4>
+                      <img class="avatar-veiculo" src="/images/profile/<%= servico.veiculo.foto_veiculo1 %>" alt="">
                     </h4>
                     <h4>
-                      Veiculo:
-                      <img class="avatar-veiculo" src="/images/profile/<%= veiculo.foto_veiculo1 %>" alt="">
-                        <h4>modelo: <%= veiculo.modelo_veiculo %></h4>
-                        <h4>ano: <%= veiculo.ano_veiculo %></h4>
+                      Preço/km: <%= servico.preco %>
                     </h4>
-                    <h4>
-                      Preço/km<%= servico.preco %>
-                    </h4>
-                    <form action="/servicos/detalhe/<%= motorista.id_cliente %>/<%= usuario.id_usuario  %>" method="POST">
                       <div>
-                          <button class="botoes no_active" type="submit" name="verDetalhe">CONTRATAR</button>
+                          <a href="/servicos/contratar/<%= servico.id_servico %>"><button class="botao_dashboard" id="detalhe" type="submit" name="verDetalhe">CONTRATAR</button>
+                          </a>
                       </div> 
-                    <% }) %>
-
               </div>  
             </div>
 
-            <p class="descrição_motorista">
-              <%= servico.auto_descricao %>  
-            </p>
         </div>
 
-        <div id="bate_papo">
+        <!-- <div id="bate_papo">
            <img src="images/whatsapp.svg">
-        </div>
+        </div> -->
 
     </div>
 
-    <h3>
+    <!-- <h3>
         Comentários
     </h3>
 
@@ -68,7 +61,7 @@
         <img src="https://img2.gratispng.com/20180325/kue/kisspng-star-cartoon-clip-art-5-star-5ab7efc7016fa1.6508644315220039110059.jpg" alt="avaliação">
         <img src="https://img2.gratispng.com/20180325/kue/kisspng-star-cartoon-clip-art-5-star-5ab7efc7016fa1.6508644315220039110059.jpg" alt="avaliação">
         <img src="https://img2.gratispng.com/20180325/kue/kisspng-star-cartoon-clip-art-5-star-5ab7efc7016fa1.6508644315220039110059.jpg" alt="avaliação">
-    </div>
+    </div> -->
 
     </div>
     </section>

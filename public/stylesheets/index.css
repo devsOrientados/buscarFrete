@@ -242,10 +242,20 @@ body{
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    margin-top: 12%;
+    margin-top: 3%;
     background-color: #f2f2f2;
     width: 400px;
     height: 300px;  
+}
+
+#contratar{
+    margin: 7%;
+    margin-left: 20%;
+}
+
+#detalhe{
+    margin: 2%;
+    margin-left: 38%;
 }
 
 .Label_Titulo{
@@ -366,22 +376,35 @@ body{
 }
 
 /*pagina filtro motorista*/
-main aside #estado {
+aside {
     display: flex;
-    line-height: 20px;
-    width: 160px;
-    margin-left: 30px;
-    margin-top: 200px;
-}
-
-main aside #cidade {
-    display: flex;
-    line-height: 20px;
-    width: 160px;
+    width: 180px;
     margin-left: 30px;
     margin-top: 30px;
+    flex-direction: column;
 }
 
+.form_buscaServico{
+    display: inline;
+    line-height: 20px;
+    width: inherit;
+    margin-left: 20px;
+    margin-top: 20px;
+    flex-direction: column;
+}
+
+#cidade {
+    width: inherit;
+}
+
+#estado{
+    width: inherit;
+}
+
+.container_botoes
+{
+    margin-left: 50px;
+}
 .painel_motoristas{
     margin: -60px auto;
     width: 800px;
@@ -409,7 +432,7 @@ main aside #cidade {
 
 .painel-principal{
     margin: 0 auto;
-    width: 800px;
+    width: 100vw;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -419,7 +442,7 @@ main aside #cidade {
 .label_painel-principal {
     text-align: center;
     display: flex;
-    margin-top: -300px;
+    margin-top: -200px;
 }
 
 #setaEsquerda{
@@ -454,7 +477,7 @@ main aside #cidade {
 }
   
 #info_motorista {
-    width: 40%;
+    width: 100%;
     text-align: center;
 }
 
@@ -487,6 +510,7 @@ main aside #cidade {
     display: block;
     width: 400px;
     margin-top: 20px;
+    text-align: center;
 }
 
 #img_caminhao {
@@ -500,6 +524,8 @@ main aside #cidade {
     align-items: center;
     flex-direction: column;
     margin-bottom: 50px;
+    text-align: center;
+    margin: 2%;
 }
   
 #comentarios {
@@ -640,8 +666,8 @@ textarea:hover{
  }
 
  .avatar-veiculo{
-    width: 3rem;
-    height: 3rem;
+    width: 6rem;
+    height: 6rem;
     border-radius: .2rem;
  }
 

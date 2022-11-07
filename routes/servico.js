@@ -19,6 +19,10 @@ router.get('/create', servicoController.viewServico);
 router.post('/createServico', authMiddleware, servico_validation, uploadFile.single('foto_motorista'), servicoController.cadastrarServico);
 
 /* visualizacao dos detalhes do motorista*/
-router.post('/detalhe/:id', authMiddleware, servicoController.viewDetalhe);
+router.get('/detalhe/:id', authMiddleware, servicoController.viewDetalhe);
+
+/* visualizacao da pagina de contratar servico*/
+router.get('/contratar/:id_servico', authMiddleware, servicoController.viewContratarServico);
+router.post('/contratar/:id_servico', authMiddleware, servicoController.contratarServico);
 
 module.exports = router;

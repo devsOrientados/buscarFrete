@@ -6,21 +6,26 @@ const { Op } = require('sequelize');
 
 const servicoController = {
     viewBuscaServico: async (req, res) => {
+        const {estado, cidade}= req.query;
         const cliente = await db.Cliente.findOne({ where: { id_usuario: req.session.usuario.id_usuario } });
         const servicos = await db.Servico.findAll({
+            include: {model: db.Cliente, as:'cliente', where: {
+                estado: estado || cliente.estado,
+                cidade: cidade || cliente.cidade
+            }},
             where: {
-                id_cliente: { [Op.not]: cliente.id_cliente }
+                id_cliente: { [Op.not]: cliente.id_cliente },   
             }
         });
         return res.render('buscaServico', { servicos, cidadesEstados, usuario: req.session.usuario });
     },
+
     viewServico: (req, res) => {
         return res.render('cadastroServico', { errors: [], usuario: req.session.usuario });
-
     },
+
     viewVeiculo: (req, res) => {
         return res.render('cadastroVeiculo', { errors: [], usuario: req.session.usuario });
-
     },
 
     cadastrarVeiculo: async (req, res) => {
@@ -52,7 +57,7 @@ const servicoController = {
         try {
             const { errors } = validationResult(req);
             // if (errors.length) {
-            //      return res.render('cadastroServico', { errors, usuario: req.session.usuario })
+            //       return res.render('cadastroServico', { errors, usuario: req.session.usuario })
             // } else {
                 const cliente = await db.Cliente.findOne({ where: { id_usuario: req.session.usuario.id_usuario } });
                 const { tipo_viagem, auto_descricao, preco } = req.body;
@@ -66,27 +71,78 @@ const servicoController = {
                     id_cliente: cliente.id_cliente, 
                     id_veiculo: veiculo.id_veiculo });
                 res.redirect('/clientes/perfilCliente')
-            //  }
+            //   }
         } catch (err) {
             res.status(400).send({ error: err.message });
         };
     },
+    
     viewDetalhe: async (req,res) =>{
         try{
             const { errors } = validationResult(req);
             if (errors.length) {
-                  return res.render('cadastroServico', { errors, usuario: req.session.usuario })
+                  return res.render('detalheServico', { errors, usuario: req.session.usuario })
              } else {
-            const id_motorista = req.params.id;
-            const motorista = await db.Cliente.findOne({where:{id_cliente:id_motorista}});
-            const veiculo = await db.Veiculo.findAll({ where: { id_motorista: motorista.id_cliente } });
-            const servico = await db.Servico.findAll({ where: { id_cliente: motorista.id_cliente } });
-            res.render('detalheServico', { usuario: req.session.usuario, motorista, veiculo, servico })
+            const id_servico = req.params.id;
+            const servico = await db.Servico.findOne(
+                { include:[ 
+                    {model: db.Veiculo, as:'veiculo'}, 
+                    {model:db.Cliente, as:'cliente'}
+                ],
+                    where: { id_servico } });
+            res.render('detalheServico', { usuario: req.session.usuario, servico })
+             }
+        } catch (err) {
+            res.status(400).send({ error: err.message });
+        };
+    },
+
+    viewContratarServico: async (req,res) => {
+        try{
+            const { errors } = validationResult(req);
+            if (errors.length) {
+                  return res.render('contratarServico', { errors, usuario: req.session.usuario })
+             } else {
+            const {id_servico} = req.params;
+            const servico = await db.Servico.findOne(
+                {include:[ 
+                    {model: db.Veiculo, as:'veiculo'}, 
+                    {model: db.Cliente, as:'cliente'}
+                ],
+                where: { id_servico } });
+            const cliente_contratante = await db.Cliente.findOne({where:{id_usuario:req.session.usuario.id_usuario}});
+            res.render('contratarServico', { usuario: req.session.usuario, cliente_contratante, servico })
+             }
+        } catch (err) {
+            res.status(400).send({ error: err.message });
+        };
+    },
+
+    contratarServico: async(req,res) => {
+        try{
+            const { errors } = validationResult(req);
+            if (errors.length) {
+                  return res.render('detalheServico', { errors, usuario: req.session.usuario })
+             } else {
+            const {distancia, data_frete, horario}= req.body;
+            const {id_servico} = req.params;
+            const servico = await db.Servico.findOne({ where: { id_servico  } });
+            const cliente_contratante = await db.Cliente.findOne({where:{id_usuario:req.session.usuario.id_usuario}});
+            await db.ServicoContratado.create({ 
+                id_cliente_contratante: cliente_contratante.id_cliente,
+                id_servico:servico.id_servico, 
+                distancia, 
+                data_viagem: new Date(data_frete+'T00:00'),
+                preco_final:distancia * servico.preco,
+                horario });
+            res.redirect('/clientes/perfilCliente')
              }
         } catch (err) {
             res.status(400).send({ error: err.message });
         };
     }
-};
+
+}
+
 
 module.exports = servicoController;

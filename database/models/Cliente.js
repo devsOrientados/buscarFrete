@@ -71,6 +71,12 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey:'id_usuario',
             allowNull: true,
         });
+
+        Cliente.belongsToMany(models.Servico, {
+            through: models.ServicoContratado,
+            as:'servicosContratados',
+            foreignKey:'id_cliente_contratante',
+        })
     };
 
     return Cliente;
