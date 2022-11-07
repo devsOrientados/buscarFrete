@@ -44,13 +44,13 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey:'id_servico',
         })
 
-        servico_contratado.belongsTo(models.servico_contratado, {
-            as:'servico_contratados',
+        servico_contratado.belongsTo(models.Cliente, {
+            as:'cliente_contratante',
             foreignKey:'id_cliente_contratante'
         });
 
-        servico_contratado.belongsTo(models.servico_contratado, {
-            as:'servico_contratado',
+        servico_contratado.belongsTo(models.Cliente, {
+            as:'cliente_anunciante',
             foreignKey:'id_cliente_anunciante'
         })
     };
