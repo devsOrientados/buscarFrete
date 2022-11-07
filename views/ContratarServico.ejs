@@ -1,0 +1,67 @@
+ <%- include('partials/header')  %>
+
+  <main>
+   <section class="container_anuncio">
+    <h3>Olá <%= cliente_contratante.nome %>, confirme os dados do serviço, preencha data, horário e distância a ser percorrida para contratar o serviço</h3>
+
+    <div id="container">
+
+      <div class="container_img_caminhao">
+        <img class="avatar-veiculo" src="/images/profile/<%= servico.foto_motorista %>" alt="">
+      </div>
+
+        <div id="info_motorista"> 
+
+           <div class="container_nome_motorista">  <h2 class="nome_motorista">Motorista: <%= servico.cliente.nome%> <%= servico.cliente.sobrenome%></h2> </div>
+
+           <div class="dados_motorista">
+              <div>
+                <h3>Telefone:</h3>
+                <%= servico.cliente.telefone%>
+              </div>
+              <div>
+                <h3>Serviço:</h3>
+                  <div>
+                    <h4>
+                      <%= servico.tipo_viagem %>
+                    </h4>
+                    <h3>Veiculo:</h3>
+                      <h4>modelo: <%= servico.veiculo.modelo_veiculo %></h4>
+                      <h4>ano: <%= servico.veiculo.ano_veiculo %></h4>
+                      <img class="avatar-veiculo" src="/images/profile/<%= servico.veiculo.foto_veiculo1 %>" alt="">
+                      <img class="avatar-veiculo" src="/images/profile/<%= servico.veiculo.foto_veiculo2 %>" alt="">
+                      <img class="avatar-veiculo" src="/images/profile/<%= servico.veiculo.foto_veiculo3 %>" alt="">
+                    </h4>
+                    <h4>
+                      Preço/km: <%= servico.preco %>
+                    </h4>
+                    <form class="form_sistema" action="/servicos/contratar/<%= servico.id_servico %>" method="POST">
+                      <div class="form_contratar">
+                        <div>
+                          <label class="Label_Titulo" for="data_frete">Data do frete:</label> 
+                          <input class="inputs_cadastroLogin" type="date" name="data_frete" id="data_frete">
+                      </div>
+                      <div>
+                        <label class="Label_Titulo" for="horario">Horario:</label> 
+                        <input class="inputs_cadastroLogin" type="text" name="horario" id="horario">
+                    </div>
+                      <div>
+                        <label class="Label_Titulo" for="distancia">Distancia do trajeto:</label> 
+                        <input class="inputs_cadastroLogin" type="text" name="distancia" id="distancia">
+                    </div>
+                          <button class="botao_dashboard" id="contratar" type="submit" name="verDetalhe">CONTRATAR</button>
+                    </div> 
+              </div>  
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+    </section>
+        
+        <%- include('partials/popup')  %>
+
+  </main>
+
+<%- include('partials/footer')  %> 

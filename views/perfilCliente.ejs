@@ -22,8 +22,18 @@
           <div class="dados_motorista">
             <div>
               <h3>Serviço:</h3>
-              <p>Aqui deve ter a lista dos servicos prestados e/ou contratados</p>
-              <!--lista com os servicos prestados (se motorista com veiculos)/contratados (se cliente)-->
+              <% if (servicoContratado.length) { %>
+                <% servicoContratado.forEach(servicoContratado=> { %>
+                    <li class="dados-veiculos">
+                      <h4>Data: <%= servicoContratado.data_viagem %></h4>
+                        <h4>Distancia: <%= servicoContratado.distancia %></h4>
+                        <h4>Preço Final: <%= servicoContratado.preco_final %></h4>                       
+                    </li>
+                    <% }) %>
+                    <% } else { %>
+                      Você não tem serviços contratados, deseja contratar?
+                      <a href="/servicos"> clique aqui</a>
+                     <% } %>
             </div>
             <div>
               <h3>Veículo:</h3>
@@ -37,7 +47,7 @@
                     </li>
                     <% }) %>
                     <% } else { %>
-                      Você näo tem veiculos cadastrados, deseja cadastar?
+                      Você não tem veiculos cadastrados, deseja cadastar?
                       <a href="/servicos/veiculo"> clique aqui</a>
                      <% } %>
             </div>
@@ -46,10 +56,10 @@
               <!-- <p>Aqui deve ter a lista dos anuncios cadastrados</p> -->
               <% if (servico.length) { %>
                 <% servico.forEach(servico=> { %>
-                    <li>
+                    <li class="dados-veiculos">
                       <img class="avatar-veiculo" src="/images/profile/<%= servico.foto_motorista %>" alt="">
-                        <%= servico.tipo_viagem %>
-                        preco/km: <%= servico.preco %>
+                        <p><%= servico.tipo_viagem %></p>
+                        <p>Preco/km: <%= servico.preco %></p>
                     </li>
                     <% }) %>
                     <% } else { %>

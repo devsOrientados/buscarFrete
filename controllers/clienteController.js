@@ -32,10 +32,11 @@ const cliente = {
    },
    // rederizando a pagina de Perfil do Cliente
    viewPerfilCliente: async (req, res) => {
-      const cliente = await db.Cliente.findOne({ where: { id_usuario: req.session.usuario.id_usuario } })
-      const veiculo = await db.Veiculo.findAll({ where: { id_motorista: cliente.id_cliente } })
-      const servico = await db.Servico.findAll({ where: { id_cliente: cliente.id_cliente } })
-      return res.render('perfilCliente', { usuario: req.session.usuario, cliente, veiculo, servico })
+      const cliente = await db.Cliente.findOne({ where: { id_usuario: req.session.usuario.id_usuario } });
+      const veiculo = await db.Veiculo.findAll({ where: { id_motorista: cliente.id_cliente } });
+      const servico = await db.Servico.findAll({ where: { id_cliente: cliente.id_cliente } });
+      const servicoContratado = await db.ServicoContratado.findAll({ where: { id_cliente_contratante: cliente.id_cliente } });
+      return res.render('perfilCliente', { usuario: req.session.usuario, cliente, veiculo, servico,servicoContratado })
    },
 
    // editando cliente cadastrado
@@ -74,7 +75,8 @@ const cliente = {
             const cliente = await db.Cliente.findOne({ where: { id_usuario: req.session.usuario.id_usuario } })
             const veiculo = await db.Veiculo.findAll({ where: { id_motorista: cliente.id_cliente } })
             const servico = await db.Servico.findAll({ where: { id_cliente: cliente.id_cliente } })
-            return res.render('perfilCliente', { usuario: req.session.usuario, cliente, veiculo, servico })
+            const servicoContratado = await db.ServicoContratado.findAll({ where: { id_cliente_contratante: cliente.id_cliente } });
+            return res.render('perfilCliente', { usuario: req.session.usuario, cliente, veiculo, servico, servicoContratado })
          }
       } catch (err) {
          res.status(400).send({ errors: err.message })
