@@ -63,7 +63,6 @@ const cliente = {
             return res.render('cadastroEdit', { errors, usuario: req.session.usuario })
          } else {
             const { email, senha } = req.body;
-            console.log(req.body);
             const senhaEncriptada = hashSync(senha, 12);
             const usuarioEditado = await db.Usuario.update({ email, senha: senhaEncriptada },
                { where: { id_usuario: req.params.id } });

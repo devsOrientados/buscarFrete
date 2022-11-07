@@ -40,7 +40,7 @@ CREATE TABLE servicos (
 id_servico INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 id_cliente INT UNSIGNED NOT NULL,
 id_veiculo INT UNSIGNED NOT NULL,
-tipo_viagem VARCHAR(20) NOT NULL,
+tipo_viagem VARCHAR(30) NOT NULL,
 auto_descricao VARCHAR(100) NOT NULL,
 foto_motorista VARCHAR(200),
 preco INT(100),
