@@ -7,9 +7,10 @@
 
         <div class="container_img_cliente">
           <!-- buscar os dados que foram para o banco-->
-            <img id="img_caminhao"
+             <img src="/images/profile/<%= servico.foto_motorista %>" alt="">
+              <!-- <img id="img_caminhao"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-k2_VQ8ZMoDFqLPmNZ8DuIF9ul2KG6wckJw&usqp=CAU"
-            alt="Imagem do transporte"> 
+            alt="Imagem do transporte">  -->
         </div>
 
         <div id="info_motorista">
@@ -46,6 +47,7 @@
               <% if (servico.length) { %>
                 <% servico.forEach(servico=> { %>
                     <li>
+                      <img class="avatar-veiculo" src="/images/profile/<%= servico.foto_motorista %>" alt="">
                         <%= servico.tipo_viagem %>
                         preco/km: <%= servico.preco %>
                     </li>

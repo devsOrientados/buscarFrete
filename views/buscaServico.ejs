@@ -24,13 +24,12 @@
 
     <div class="container_botoes">
       <button class="botoes no_active"><a href="/clientes/perfilCliente">MEU PERFIL</a></button>
-      <!-- checar a lógica para entrar apenas se logado, senão estiver logado, direcionar para a página login, se logado ir para o perfilCliente-->
     </div>
 
     <section class="painel_motoristas">
       <% servicos.forEach(servico=> { %>
         <div>
-          <img src="" alt="">
+          <img class="avatar-veiculo" src="/images/profile/<%= servico.foto_motorista %>" alt="">
           <h4>
             <%= servico.tipo_viagem %>
           </h4>
@@ -38,11 +37,16 @@
             <%= servico.auto_descricao %>
           </h4>
           <h4>
-            <%= servico.preco %>
+            Preco/km<%= servico.preco %>
           </h4>
+          <form action="/servicos/detalhe/<%= servico.id_cliente %>" method="POST">
+            <div>
+                <button class="botoes no_active" type="submit" name="verDetalhe">VER</button>
+            </div>
+        </form>
         </div>
         <% }) %>
-          <div><img class="perfil_motorista" id="volvo"
+          <!-- <div><img class="perfil_motorista" id="volvo"
               src="https://logodownload.org/wp-content/uploads/2017/10/volvo-logo-2-1.png"></id>
           </div>
           <div><img class="perfil_motorista" id="volvo"
@@ -80,7 +84,7 @@
             <img class="perfil_motorista" id="mercedes-benz"
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReG5KVo7cf8VV81f-vdWyw3o07gTNEOhDW8g&usqp=CAU">
             </id>
-          </div>
+          </div> -->
     </section>
 
     <%- include('partials/popup') %>
