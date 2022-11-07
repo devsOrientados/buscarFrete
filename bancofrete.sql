@@ -40,7 +40,7 @@ CREATE TABLE servicos (
 id_servico INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 id_cliente INT UNSIGNED NOT NULL,
 id_veiculo INT UNSIGNED NOT NULL,
-tipo_viagem VARCHAR(20) NOT NULL,
+tipo_viagem VARCHAR(30) NOT NULL,
 auto_descricao VARCHAR(100) NOT NULL,
 foto_motorista VARCHAR(200),
 preco INT(100),
@@ -49,15 +49,13 @@ FOREIGN KEY (id_veiculo) REFERENCES veiculos(id_veiculo)
 );
 
 CREATE TABLE servicos_contratados (
-id_servico_contradado INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+id_servico_contratado INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 id_cliente_contratante INT UNSIGNED NOT NULL,
-id_cliente_anunciante INT UNSIGNED NOT NULL,
 id_servico INT UNSIGNED NOT NULL,
 distancia VARCHAR(100),
 data_viagem DATE,
 preco_final VARCHAR(100),
 horario VARCHAR(5),
 FOREIGN KEY (id_cliente_contratante) REFERENCES clientes(id_cliente),
-FOREIGN KEY (id_cliente_anunciante) REFERENCES clientes(id_cliente),
 FOREIGN KEY (id_servico) REFERENCES servicos(id_servico)
 );

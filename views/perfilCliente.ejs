@@ -7,9 +7,10 @@
 
         <div class="container_img_cliente">
           <!-- buscar os dados que foram para o banco-->
-            <img id="img_caminhao"
+             <img src="/images/profile/<%= servico.foto_motorista %>" alt="">
+              <!-- <img id="img_caminhao"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-k2_VQ8ZMoDFqLPmNZ8DuIF9ul2KG6wckJw&usqp=CAU"
-            alt="Imagem do transporte"> 
+            alt="Imagem do transporte">  -->
         </div>
 
         <div id="info_motorista">
@@ -21,21 +22,32 @@
           <div class="dados_motorista">
             <div>
               <h3>Serviço:</h3>
-              <p>Aqui deve ter a lista dos servicos prestados e/ou contratados</p>
-              <!--lista com os servicos prestados (se motorista com veiculos)/contratados (se cliente)-->
+              <% if (servicoContratado.length) { %>
+                <% servicoContratado.forEach(servicoContratado=> { %>
+                    <li class="dados-veiculos">
+                      <h4>Data: <%= servicoContratado.data_viagem %></h4>
+                        <h4>Distancia: <%= servicoContratado.distancia %></h4>
+                        <h4>Preço Final: <%= servicoContratado.preco_final %></h4>                       
+                    </li>
+                    <% }) %>
+                    <% } else { %>
+                      Você não tem serviços contratados, deseja contratar?
+                      <a href="/servicos"> clique aqui</a>
+                     <% } %>
             </div>
             <div>
               <h3>Veículo:</h3>
               <!--Aqui deve ter a lista dos veículos cadastrados neste motorista-->
               <% if (veiculo.length) { %>
                 <% veiculo.forEach(veiculo => { %>
-                    <li>
-                        modelo: <%= veiculo.modelo_veiculo %>
-                        ano: <%= veiculo.ano_veiculo %>
+                    <li class="dados-veiculos">
+                        <img class="avatar-veiculo" src="/images/profile/<%= veiculo.foto_veiculo1 %>" alt="">
+                        <h4>modelo: <%= veiculo.modelo_veiculo %></h4>
+                        <h4>ano: <%= veiculo.ano_veiculo %></h4>
                     </li>
                     <% }) %>
                     <% } else { %>
-                      Você näo tem veiculos cadastrados, deseja cadastar?
+                      Você não tem veiculos cadastrados, deseja cadastar?
                       <a href="/servicos/veiculo"> clique aqui</a>
                      <% } %>
             </div>
@@ -44,9 +56,10 @@
               <!-- <p>Aqui deve ter a lista dos anuncios cadastrados</p> -->
               <% if (servico.length) { %>
                 <% servico.forEach(servico=> { %>
-                    <li>
-                        <%= servico.tipo_viagem %>
-                        preco/km: <%= servico.preco %>
+                    <li class="dados-veiculos">
+                      <img class="avatar-veiculo" src="/images/profile/<%= servico.foto_motorista %>" alt="">
+                        <p><%= servico.tipo_viagem %></p>
+                        <p>Preco/km: <%= servico.preco %></p>
                     </li>
                     <% }) %>
                     <% } else { %>
@@ -55,7 +68,7 @@
                     <% } %>
                 </div>
           </div>
-          <a button class="botao_dashboard" href="/servicos/veiculo"> CADASTRAR VEÍCULO
+          <a button class="botao_dashboard" href="/servicos/veiculo">CADASTRAR VEÍCULO
             <!-- link para o formulário de cadastro de veiculos-->
             </button>
           </a>

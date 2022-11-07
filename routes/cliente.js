@@ -8,8 +8,8 @@ var authMiddleware = require ('../src/middleware/auth')
 router.get('/create', clienteController.viewCadastro);
 router.post('/create',cliente_validation, clienteController.cadastro);
 
+// renderizando a pagina de perfil do cliente
 router.get('/perfilCliente', authMiddleware, clienteController.viewPerfilCliente)
-//uploadFile.fields([{name:'fotoPerfil',maxCount:1},{name:'fotoVeiculo1',maxCount:1},{name:'fotoVeiculo2',maxCount:1},{name:'fotoVeiculo3',maxCount:1}]), 
 
 /**editar um cliente já cadastrado */
 router.put('/:id/editar', authMiddleware, clienteController.editar);
@@ -17,7 +17,5 @@ router.get('/editar', authMiddleware, clienteController.viewEditar);
 
 /**deletar um cliente já cadastrado */
 router.delete('/excluir/:id', authMiddleware, clienteController.deletar) 
-
-
 
 module.exports = router;

@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
     const cols = {
-        id_serviço_contratado: {
+        id_servico_contratado: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
@@ -9,11 +9,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        id_cliente_anunciante: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        id_serviço: {
+        id_servico: {
             type: DataTypes.INTEGER,
             primaryKey: true,
         },
@@ -21,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
         },
         data_viagem: {
-            type: DataTypes.DATE,
+            type: DataTypes.DATEONLY,
         },
         preco_final: {
             type: DataTypes.INTEGER
@@ -36,7 +32,19 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false
     };
     // definir relacoes, id_cliente_contratante, id_cliente_anunciante, id_servico
-    const servicoContratado = sequelize.define("servicoContratado", cols, config);
+    const ServicoContratado = sequelize.define("ServicoContratado", cols, config);
 
-    return servicoContratado;
+    ServicoContratado.associate = (models) => {
+        ServicoContratado.belongsTo(models.Servico, {
+            as:'Servico',
+            foreignKey:'id_servico',
+        })
+
+        ServicoContratado.belongsTo(models.Cliente, {
+            as:'cliente_contratante',
+            foreignKey:'id_cliente_contratante'
+        });
+
+    };
+    return ServicoContratado;
 };

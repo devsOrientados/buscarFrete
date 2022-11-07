@@ -38,6 +38,5 @@ module.exports = (sequelize, DataTypes) =>{
        foreignKey:'id_motorista',
    })
    };
-
     return Veiculo;
 };

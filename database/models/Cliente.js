@@ -49,28 +49,35 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        numero:{
+        numero: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        id_usuario:{
+        id_usuario: {
             type: DataTypes.INTEGER,
             allowNull: true
         }
     };
     const config = {
-        tableName: 'clientes',
+        tableName:  'clientes',
         timestamps: false
     };
 
-    const Cliente = sequelize.define("Cliente", cols,config);
+    const Cliente = sequelize.define("Cliente", cols, config);
+
     Cliente.associate = (models) => {
         Cliente.belongsTo(models.Usuario, {
-        as:'usuario',
-        foreignKey:'id_usuario',
-       allowNull:true,
-   });
-   };
+            as:'usuario',
+            foreignKey:'id_usuario',
+            allowNull: true,
+        });
 
-   return Cliente;
+        Cliente.belongsToMany(models.Servico, {
+            through: models.ServicoContratado,
+            as:'servicosContratados',
+            foreignKey:'id_cliente_contratante',
+        })
+    };
+
+    return Cliente;
 };
