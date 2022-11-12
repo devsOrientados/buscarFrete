@@ -21,7 +21,7 @@ cidade VARCHAR(50) NOT NULL,
 bairro VARCHAR(30) NOT NULL,
 logradouro VARCHAR(50) NOT NULL,
 numero VARCHAR(4) NOT NULL,
-id_usuario INT NOT NULL,
+id_usuario INT UNSIGNED NOT NULL,
 FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
 );
 
@@ -37,7 +37,7 @@ FOREIGN KEY (id_motorista) REFERENCES clientes(id_cliente)
 );
 
 CREATE TABLE servicos (
-id_servico INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+id_servico INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 id_cliente INT UNSIGNED NOT NULL,
 id_veiculo INT UNSIGNED NOT NULL,
 tipo_viagem VARCHAR(30) NOT NULL,
