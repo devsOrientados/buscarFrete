@@ -36,7 +36,7 @@ const cliente = {
       const veiculo = await db.Veiculo.findAll({ where: { id_motorista: cliente.id_cliente } });
       const servico = await db.Servico.findAll({ where: { id_cliente: cliente.id_cliente } });
       const servicoContratado = await db.ServicoContratado.findAll({ where: { id_cliente_contratante: cliente.id_cliente } });
-      return res.render('perfilCliente', { usuario: req.session.usuario, cliente, veiculo, servico,servicoContratado })
+      return res.render('perfilCliente', { usuario: req.session.usuario, cliente, veiculo, servico, servicoContratado })
    },
 
    // editando cliente cadastrado
